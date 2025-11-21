@@ -49,6 +49,7 @@
   transition: 0.2s ease;
   width: 100%; /* que ocupe todo el ancho disponible */
   max-width: none; /* quitar límite para móviles */
+  box-sizing: border-box; /* para que el padding no aumente tamaño */
 }
 
 /* Imagen */
@@ -184,7 +185,7 @@
 /* Móviles pequeños (≤ 480px) */
 @media (max-width: 480px) {
   .section {
-    padding: 40px 5px; /* padding mínimo para aprovechar al máximo */
+    padding: 40px 2px; /* padding lateral mínimo para máximo ancho */
   }
 
   .title {
@@ -200,21 +201,28 @@
   .grid {
     grid-template-columns: 1fr;
     gap: 16px;
-    padding: 0 5px;
+    padding: 0 2px; /* casi sin padding lateral */
     max-width: 100vw;
   }
 
   .card {
     width: 100%;
     max-width: none;
+    box-sizing: border-box;
+    padding: 0 10px; /* un poco de padding interno para que se vea más ancho */
   }
 
   .img {
-    height: 260px;
+    height: 320px; /* más alto para alargar imagen */
+    width: 100%; /* que tome el ancho menos el padding */
+    margin: 0 auto; /* centrar imagen */
+    border-radius: 12px 12px 0 0;
+    display: block;
+    border-radius: 12px 12px 0 0;
   }
 
   .info {
-    padding: 16px 8px; /* padding muy reducido */
+    padding: 14px 10px; /* un poco más de padding para comodidad */
   }
 
   .nombre {
