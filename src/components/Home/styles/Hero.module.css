@@ -1,0 +1,111 @@
+/* Hero.module.css */
+
+.hero {
+  position: relative;
+  height: 95vh;
+  width: 100%;
+  /* Imagen de fondo */
+  background: url("/") center center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+.content {
+  max-width: 800px;
+  z-index: 5;
+  backdrop-filter: blur(3px);
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 40px 30px;
+  border-radius: 10px;
+}
+
+.subtitle {
+  font-size: 16px;
+  margin-bottom: 8px;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.title {
+  font-size: 2.8rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.ctaButton {
+  background-color: #cba15f;
+  border: none;
+  padding: 14px 28px;
+  font-weight: 600;
+  font-size: 16px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.ctaButton:hover {
+  background-color: #a17f35;
+}
+
+/* Ocultamos la imagen container que no usaremos porque usamos fondo */
+.imageContainer {
+  display: none;
+}
+
+/* Media queries para responsivo */
+
+/* Tablets (pantallas menores a 768px) */
+@media (max-width: 768px) {
+  .hero {
+    height: 80vh; /* Reducir altura para no ocupar toda la pantalla */
+    padding: 0 15px;
+  }
+
+  .content {
+    padding: 30px 20px;
+    max-width: 600px;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .ctaButton {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}
+
+/* Móviles (pantallas menores a 480px) */
+@media (max-width: 480px) {
+  .hero {
+    height: 70vh;
+    padding: 0 10px;
+  }
+
+  .content {
+    padding: 20px 15px;
+    max-width: 100%;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+  }
+
+  .ctaButton {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}

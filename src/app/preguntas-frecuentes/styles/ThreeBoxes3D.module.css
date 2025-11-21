@@ -1,0 +1,142 @@
+.container {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  align-items: stretch;
+}
+
+.icon {
+  font-size: 30px;
+  color: #b38d32; /* color dorado */
+  margin-bottom: 12px;
+}
+
+/* Wrapper que da perspectiva para 3D */
+.cardWrapper {
+  perspective: 1200px;
+}
+
+/* Cubo que rota al hover */
+.card {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  transform-style: preserve-3d;
+  transition: transform 0.7s ease;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgb(0 0 0 / 0.05);
+  cursor: pointer;
+}
+
+.cardWrapper:hover .card {
+  transform: rotateY(180deg);
+}
+
+/* Caras del cubo */
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 24px 28px;
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 8px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.front {
+  justify-content: flex-start;
+}
+
+.back {
+  justify-content: center;
+  transform: rotateY(180deg);
+  color: #444;
+  font-size: 15px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* Icono dorado arriba */
+.icon {
+  font-size: 34px;
+  color: #b38d32;
+  margin-bottom: 12px;
+}
+
+/* Título */
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #191919;
+}
+
+/* Línea dorada debajo del título */
+.line {
+  width: 40px;
+  border-bottom: 2px solid #b38d32;
+  margin-bottom: 20px;
+}
+
+/* Texto descripción */
+.text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #4b4b4b;
+  flex-grow: 1;
+}
+
+/* Bloque destacado a la derecha */
+.highlightBlock {
+  background-color: #beae95;
+  color: white;
+  border-radius: 8px;
+  padding: 30px 25px;
+  font-family: "Times New Roman", serif;
+  font-size: 16px;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  user-select: none;
+}
+
+.highlightBlock h3 {
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 16px;
+  color: white;
+}
+
+/* ================================
+   🔥 RESPONSIVE DESIGN
+   ================================ */
+
+/* Tablets (máx 900px) → 2 columnas */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Móviles (máx 600px) → 1 columna */
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    height: 320px; /* Un poco más grande para texto */
+  }
+}

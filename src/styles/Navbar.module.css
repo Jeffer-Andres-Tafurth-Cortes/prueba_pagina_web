@@ -1,0 +1,134 @@
+/* ============================
+   NAVBAR GENERAL
+============================ */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
+  height: 85px;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  background: transparent;
+}
+
+/* Navbar con fondo blanco (siempre activo en tu caso) */
+.scrolled {
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================
+   CONTENEDOR INTERNO
+============================ */
+.container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ============================
+   LOGO
+============================ */
+.logo {
+  font-size: 24px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* light (cuando navbar es transparente o en home arriba) */
+.light {
+  color: #ffffff;
+}
+
+/* dark (cuando navbar tiene fondo blanco) */
+.dark {
+  color: #1a1a1a;
+}
+
+/* ============================
+   LINKS (DESKTOP)
+============================ */
+.links {
+  list-style: none;
+  display: flex;
+  gap: 36px;
+  transition: right 0.3s ease;
+}
+
+.links a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+/* ============================
+   MENÚ HAMBURGUESA
+============================ */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: #1a1a1a;
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+
+/* ============================
+   RESPONSIVE (TABLET / MOBILE)
+============================ */
+@media (max-width: 850px) {
+  /* Mostrar hamburguesa */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Menú móvil oculto inicialmente */
+  .links {
+    position: fixed;
+    top: 115px; /* debajo del topbar + navbar */
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: #ffffff;
+    flex-direction: column;
+    gap: 28px;
+    padding: 40px 20px;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
+    z-index: 998;
+    transition: right 0.35s ease;
+  }
+
+  /* Cuando está activo → aparece */
+  .active {
+    right: 0;
+  }
+
+  /* Links del menú móvil */
+  .links a {
+    font-size: 18px;
+    color: #1a1a1a !important;
+    font-weight: 600;
+  }
+}
+
+/* ============================
+   RESPONSIVE EXTRA (MÓVILES PEQUEÑOS)
+============================ */
+@media (max-width: 480px) {
+  .logo {
+    font-size: 20px;
+  }
+}

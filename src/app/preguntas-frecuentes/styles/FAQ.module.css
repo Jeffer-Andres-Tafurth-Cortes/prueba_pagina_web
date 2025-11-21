@@ -1,0 +1,132 @@
+.faqSection {
+  max-width: 700px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #0d48ad;
+}
+
+/* CORREGIDO: los valores NO deben llevar comillas */
+.faq2section {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #f9f7f1;
+}
+
+.accordion {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(11, 61, 145, 0.15);
+}
+
+.accordionItem {
+  border-top: 1px solid #d4af37;
+  background: white;
+  transition: background-color 0.3s ease;
+}
+
+.accordionItem:first-child {
+  border-top: none;
+}
+
+.accordionItem.active {
+  background: #f9f7f1;
+}
+
+.accordionButton {
+  background: transparent;
+  border: none;
+  width: 100%;
+  padding: 1.25rem 2rem;
+  text-align: left;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #0b3d91;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.accordionButton:hover,
+.accordionItem.active .accordionButton {
+  color: #d4af37;
+}
+
+.icon {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: inherit;
+  user-select: none;
+  transition: transform 0.3s ease;
+}
+
+.accordionItem.active .icon {
+  transform: rotate(180deg);
+}
+
+.accordionContent {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  padding: 0 2rem;
+  background-color: white;
+  color: #444444;
+}
+
+.accordionContent p {
+  margin: 1rem 0 1.5rem;
+  line-height: 1.5;
+}
+
+/* 📱 RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .faq2section {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
+
+  .accordionButton {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .icon {
+    font-size: 1.25rem;
+  }
+
+  .accordionContent {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 1.7rem;
+  }
+
+  .accordionButton {
+    padding: 0.9rem 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  .accordionContent p {
+    font-size: 0.9rem;
+  }
+}

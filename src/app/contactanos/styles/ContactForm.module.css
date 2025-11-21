@@ -1,0 +1,170 @@
+.contactSection {
+  width: 100%;
+  background: white;
+  box-sizing: border-box;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #4b4b4b;
+}
+
+.icon {
+  font-size: 1.5rem;
+}
+
+/* Contenedor interno */
+.contactContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 60px;
+  padding: 40px 60px;
+  background-color: #fff;
+  border: 3px solid #cbb699;
+  border-radius: 6px;
+  box-shadow: 0 0 20px rgb(0 0 0 / 0.1);
+  color: #4b4b4b;
+}
+
+/* Columna izquierda */
+.details {
+  flex: 1;
+}
+
+.details h2 {
+  font-weight: 700;
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #000;
+}
+
+.block h3 {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #b38d32;
+  margin-bottom: 12px;
+}
+
+.block p {
+  margin-left: 16px;
+  line-height: 1.4;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+/* Íconos sociales */
+.socialIcons {
+  display: flex;
+  gap: 14px;
+  font-size: 18px;
+}
+
+.socialIcons a {
+  color: #b38d32;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+socialIcons a:hover {
+  color: #8a711c;
+}
+
+/* Formulario */
+.form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form label {
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+}
+
+.form input,
+.form textarea {
+  font-family: "Times New Roman", serif;
+  font-size: 14px;
+  padding: 10px;
+  border: 1.5px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.form input:focus,
+.form textarea:focus {
+  border-color: #b38d32;
+  outline: none;
+}
+
+/* Boton */
+.button {
+  background-color: #b38d32;
+  color: white;
+  border: none;
+  padding: 14px 0;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+}
+
+.button:hover {
+  background-color: #8a711c;
+}
+
+/* Mapa */
+.mapContainer {
+  margin-top: 80px;
+  width: 100%;
+  height: 400px;
+}
+
+.mapContainer iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* ======================================
+   📱 RESPONSIVE DESIGN
+   ====================================== */
+
+/* Tablets (≤ 992px) */
+@media (max-width: 992px) {
+  .contactContainer {
+    gap: 40px;
+    padding: 30px 40px;
+  }
+
+  .details h2 {
+    font-size: 26px;
+  }
+}
+
+/* Móviles (≤ 768px) */
+@media (max-width: 768px) {
+  .contactContainer {
+    flex-direction: column;
+    padding: 25px;
+    gap: 24px;
+  }
+
+  .details h2 {
+    text-align: center;
+  }
+
+  .socialIcons {
+    justify-content: center;
+  }
+
+  .mapContainer {
+    height: 300px;
+    margin-top: 50px;
+  }
+}

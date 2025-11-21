@@ -1,0 +1,166 @@
+.container {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #4b4b4b;
+  flex-wrap: wrap;
+}
+
+/* Ícono dorado */
+.icon {
+  color: #b38d32;
+  margin-right: 10px;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.textSection {
+  flex: 1 1 500px;
+  max-width: 600px;
+  color: #4b4b4b;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #efefef;
+  margin-bottom: 10px;
+}
+
+.line {
+  width: 50px;
+  height: 2px;
+  background-color: #b38d32;
+  margin-bottom: 24px;
+  border-radius: 1px;
+  border: none;
+}
+
+.textSection p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #efefef;
+}
+
+.checkList {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 30px;
+}
+
+.checkList li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: #efefef;
+}
+
+.button {
+  padding: 14px 32px;
+  background-color: #b38d32;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #8a711c;
+}
+
+.imageSection {
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  user-select: none;
+}
+
+/* ===========================
+   📱 RESPONSIVE DESIGN
+   =========================== */
+
+/* Tablets */
+@media (max-width: 900px) {
+  .container {
+    gap: 40px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .textSection p,
+  .checkList li {
+    font-size: 15px;
+  }
+
+  .image {
+    max-width: 350px;
+  }
+}
+
+/* Móviles */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+    margin: 40px auto;
+  }
+
+  .textSection {
+    max-width: 100%;
+  }
+
+  .checkList li {
+    justify-content: center;
+  }
+
+  .button {
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  .imageSection {
+    max-width: 100%;
+    margin-top: 30px;
+  }
+
+  .image {
+    max-width: 300px;
+  }
+}
+
+/* Extra pequeño (teléfonos muy pequeños) */
+@media (max-width: 480px) {
+  .title {
+    font-size: 24px;
+  }
+
+  .textSection p,
+  .checkList li {
+    font-size: 14px;
+  }
+
+  .image {
+    max-width: 260px;
+  }
+}

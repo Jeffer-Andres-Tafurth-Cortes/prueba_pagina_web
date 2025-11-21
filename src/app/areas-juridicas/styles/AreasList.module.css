@@ -1,0 +1,183 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto 80px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.icon {
+  font-size: 1.5rem;
+  color: #d3b97d;
+}
+
+.subtitle {
+  color: #d3b97d;
+  font-size: 14px;
+  margin-bottom: 4px;
+  font-weight: 400;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #d3b97d;
+}
+
+/* GRID PRINCIPAL */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* TARJETA 3D */
+.cardWrapper {
+  width: 320px;
+  height: 350px;
+  perspective: 1200px;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.75s ease;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+/* Rotación en hover (solo desktop) */
+@media (min-width: 769px) {
+  .cardWrapper:hover .card {
+    transform: rotateY(180deg);
+  }
+}
+
+/* CARAS */
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 30px 24px;
+  border: 1.2px solid #d3b97d;
+  border-radius: 6px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  color: #4b4b4b;
+  background-color: white;
+}
+
+.front {
+  justify-content: start;
+}
+
+.icon {
+  font-size: 30px;
+  color: #b38d32;
+  margin-bottom: 12px;
+}
+
+.cardTitle {
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.frontText {
+  font-size: 14px;
+  line-height: 1.4;
+  flex-grow: 1;
+}
+
+.back {
+  transform: rotateY(180deg);
+  justify-content: center;
+  font-size: 15px;
+  line-height: 1.5;
+  padding-top: 40px;
+  text-align: center;
+  color: #4b4b4b;
+}
+
+.bulletList {
+  margin: 0;
+  padding-left: 20px;
+  list-style-type: disc;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #4b4b4b;
+  text-align: left;
+}
+
+/* ============================
+   RESPONSIVE
+============================ */
+
+/* Tablets medianas */
+@media (max-width: 1024px) {
+  .title {
+    font-size: 32px;
+  }
+
+  .cardWrapper {
+    width: 300px;
+    height: 330px;
+  }
+}
+
+/* Tablets pequeñas / móviles grandes */
+@media (max-width: 768px) {
+  .title {
+    font-size: 28px;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .grid {
+    gap: 20px;
+  }
+
+  .cardWrapper {
+    width: 85%;
+    max-width: 320px;
+    height: 320px;
+  }
+
+  /* Para móviles se activa flip al tocar */
+  .cardWrapper:active .card {
+    transform: rotateY(180deg);
+  }
+}
+
+/* Teléfonos pequeños */
+@media (max-width: 480px) {
+  .title {
+    font-size: 24px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+  }
+
+  .cardWrapper {
+    width: 100%;
+    height: 300px;
+  }
+
+  .cardTitle {
+    font-size: 18px;
+  }
+
+  .frontText,
+  .bulletList {
+    font-size: 13px;
+  }
+}

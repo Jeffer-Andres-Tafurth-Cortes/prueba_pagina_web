@@ -1,0 +1,121 @@
+/* CONTENEDOR PRINCIPAL */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+
+/* TARJETA DE CONTADOR */
+.counterCard {
+  background: rgba(255 255 255 / 0.1);
+  padding: 30px 40px;
+  border-radius: 8px;
+  text-align: center;
+  min-width: 140px;
+  backdrop-filter: blur(4px);
+}
+
+/* NUMERO PRINCIPAL */
+.count {
+  font-size: 48px;
+  color: #cbb699;
+  margin: 0 0 12px 0;
+  font-weight: 700;
+  font-family: serif;
+}
+
+/* SUBTÍTULOS */
+.subtitle {
+  font-size: 28px;
+  color: #fff;
+}
+
+/* TEXTO DESCRIPTIVO */
+.text {
+  font-size: 18px;
+  color: #e7e7e7;
+  margin-top: 8px;
+}
+
+.title {
+  font-size: 16px;
+  color: white;
+  margin: 0;
+}
+
+/* ===============================
+   TABLETS GRANDES (<= 992px)
+================================ */
+@media (max-width: 992px) {
+  .container {
+    gap: 40px;
+  }
+
+  .count {
+    font-size: 42px;
+  }
+
+  .subtitle {
+    font-size: 26px;
+  }
+}
+
+/* ===============================
+   TABLETS PEQUEÑAS / MÓVILES GRANDES (<= 768px)
+================================ */
+@media (max-width: 768px) {
+  .container {
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  .counterCard {
+    padding: 24px 32px;
+    min-width: 130px;
+  }
+
+  .count {
+    font-size: 36px;
+  }
+
+  .subtitle {
+    font-size: 22px;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+}
+
+/* ===============================
+   MÓVILES PEQUEÑOS (<= 480px)
+================================ */
+@media (max-width: 480px) {
+  .container {
+    gap: 20px;
+  }
+
+  .counterCard {
+    padding: 20px 26px;
+    min-width: 120px;
+  }
+
+  .count {
+    font-size: 30px;
+  }
+
+  .subtitle {
+    font-size: 20px;
+  }
+
+  .text {
+    font-size: 14px;
+  }
+
+  .title {
+    font-size: 14px;
+  }
+}

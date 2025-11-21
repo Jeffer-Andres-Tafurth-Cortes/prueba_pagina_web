@@ -1,0 +1,252 @@
+.container {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+  display: flex;
+  gap: 60px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #4b4b4b;
+  align-items: stretch; /* para que izquierda y derecha tengan igual alto */
+  flex-wrap: wrap;
+}
+
+.icon {
+  color: #b38d32; /* color dorado */
+  font-size: 28px;
+  margin-right: 14px;
+  flex-shrink: 0;
+}
+
+/* IZQUIERDA */
+
+.left {
+  flex: 1 1 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  color: #efefef;
+}
+
+.underline {
+  margin-bottom: 24px;
+  width: 40px;
+  height: 2px;
+  background-color: #b38d32;
+  border-radius: 1px;
+  border: none;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  color: #efefef;
+}
+
+.bulletList {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 40px;
+  color: #efefef;
+}
+
+.bulletList li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.icon {
+  color: #b38d32;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.bulletList strong {
+  margin-right: 6px;
+  color: #b9b2b2;
+}
+
+/* Botón */
+
+.button {
+  align-self: flex-start;
+  background-color: #b38d32;
+  color: white;
+  border: none;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 28px;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #8a711c;
+}
+
+/* DERECHA */
+
+.right {
+  width: 320px;
+  background-color: #b38d32;
+  color: white;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+.scheduleTitle {
+  font-size: 20px;
+  font-weight: 500;
+  padding: 24px 30px;
+  margin: 0;
+  border-bottom: 1px solid rgba(255 255 255 / 0.2);
+}
+
+.scheduleList {
+  margin: 0;
+  padding: 0 30px 30px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.scheduleList li {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  font-size: 14px;
+  border-bottom: 1px solid rgba(255 255 255 / 0.2);
+}
+
+.scheduleList li:last-child {
+  border-bottom: none;
+  color: #f0e5cf;
+  font-weight: 600;
+  padding-top: 16px;
+}
+
+/* Media queries para responsivo */
+
+/* Tablets (pantallas menores a 768px) */
+@media (max-width: 768px) {
+  .container {
+    gap: 40px;
+    padding: 0 15px;
+  }
+
+  .left {
+    flex: 1 1 100%;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .description {
+    font-size: 15px;
+  }
+
+  .bulletList li {
+    font-size: 14px;
+  }
+
+  .icon {
+    font-size: 20px;
+  }
+
+  .right {
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  .scheduleTitle {
+    font-size: 18px;
+    padding: 20px 25px;
+  }
+
+  .scheduleList {
+    padding: 0 25px 25px;
+  }
+
+  .scheduleList li {
+    font-size: 13px;
+    padding: 10px 0;
+  }
+}
+
+/* Móviles (pantallas menores a 480px) */
+@media (max-width: 480px) {
+  .container {
+    gap: 20px;
+    padding: 0 10px;
+    margin: 40px auto;
+  }
+
+  .left {
+    flex: 1 1 100%;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .underline {
+    margin-bottom: 20px;
+  }
+
+  .description {
+    font-size: 14px;
+    margin-bottom: 25px;
+  }
+
+  .bulletList li {
+    font-size: 13px;
+    margin-bottom: 14px;
+  }
+
+  .icon {
+    font-size: 18px;
+  }
+
+  .button {
+    padding: 8px 24px;
+    font-size: 13px;
+  }
+
+  .right {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .scheduleTitle {
+    font-size: 16px;
+    padding: 18px 20px;
+  }
+
+  .scheduleList {
+    padding: 0 20px 20px;
+  }
+
+  .scheduleList li {
+    font-size: 12px;
+    padding: 8px 0;
+  }
+}

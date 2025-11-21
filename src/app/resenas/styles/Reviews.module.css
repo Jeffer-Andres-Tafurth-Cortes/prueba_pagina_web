@@ -1,0 +1,112 @@
+.container {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 0 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: #3a3a3a;
+}
+
+.icon {
+  font-size: 1.5rem;
+}
+
+.heading {
+  font-size: 34px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #b38d32;
+}
+
+.underline {
+  width: 40px;
+  height: 2px;
+  margin: 0 auto 48px;
+  background-color: #b38d32;
+  border-radius: 1px;
+}
+
+/* GRID BASE */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 60px 40px;
+  text-align: left;
+}
+
+/* CARD */
+.card {
+  position: relative;
+  padding-left: 40px;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  min-height: 180px;
+}
+
+.quoteIcon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 22px;
+  color: #b38d32;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 18px;
+  margin: 0 0 8px 0;
+  color: #efefef;
+}
+
+.text {
+  font-size: 14px;
+  margin-bottom: 12px;
+  color: #efefef;
+  line-height: 1.5;
+}
+
+.author {
+  font-size: 14px;
+  font-style: italic;
+  color: #b38d32;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+  .heading {
+    font-size: 28px;
+  }
+
+  .grid {
+    gap: 40px 20px;
+  }
+
+  .card {
+    padding-left: 30px;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+}
+
+/* 📱 Extra pequeño (celulares muy chicos) */
+@media (max-width: 480px) {
+  .heading {
+    font-size: 24px;
+  }
+
+  .text {
+    font-size: 13px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .quoteIcon {
+    font-size: 20px;
+  }
+
+  .card {
+    min-height: 160px;
+  }
+}

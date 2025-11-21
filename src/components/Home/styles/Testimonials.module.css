@@ -1,0 +1,141 @@
+.testimonialsSection {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.textContainer h2 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.textContainer p {
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 32px;
+}
+
+.reviewCard {
+  background-color: #cbb699;
+  color: #fff;
+  padding: 30px 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 320px;
+  box-sizing: border-box;
+}
+
+.message {
+  font-style: italic;
+  margin-bottom: 25px;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.photo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 2px solid #fff;
+}
+
+.name {
+  font-weight: 700;
+  margin: 0;
+  font-size: 18px;
+}
+
+.title {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.8;
+  color: rgb(71, 71, 241);
+}
+
+/* Media queries para responsivo */
+
+/* Tablets (pantallas menores a 768px) */
+@media (max-width: 768px) {
+  .testimonialsSection {
+    max-width: 700px;
+    padding: 30px 15px;
+  }
+
+  .textContainer h2 {
+    font-size: 1.8rem;
+  }
+
+  .textContainer p {
+    font-size: 0.9rem;
+    margin-bottom: 24px;
+  }
+
+  .reviewCard {
+    padding: 25px 18px;
+    min-height: 280px;
+  }
+
+  .message {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+
+  .photo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .name {
+    font-size: 16px;
+  }
+
+  .title {
+    font-size: 13px;
+  }
+}
+
+/* Móviles (pantallas menores a 480px) */
+@media (max-width: 480px) {
+  .testimonialsSection {
+    max-width: 100%;
+    padding: 20px 10px;
+  }
+
+  .textContainer h2 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+  }
+
+  .textContainer p {
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+  }
+
+  .reviewCard {
+    padding: 20px 15px;
+    min-height: 240px;
+  }
+
+  .message {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+
+  .photo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .name {
+    font-size: 14px;
+  }
+
+  .title {
+    font-size: 12px;
+  }
+}

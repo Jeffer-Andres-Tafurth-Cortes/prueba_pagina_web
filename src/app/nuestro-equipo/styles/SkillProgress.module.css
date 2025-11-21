@@ -1,0 +1,158 @@
+/* ===========================
+   CONTENEDOR GENERAL
+=========================== */
+.container {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  flex-wrap: wrap; /* Responsivo */
+  font-family: Arial, Helvetica, sans-serif;
+  color: #444;
+}
+
+/* ===========================
+   COLUMNA IZQUIERDA (IMAGEN)
+=========================== */
+.left {
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* ===========================
+   COLUMNA DERECHA (TEXTO)
+=========================== */
+.right {
+  flex: 1 1 500px;
+  max-width: 600px;
+}
+
+.right h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #efefef;
+}
+
+.right p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 32px;
+  color: #efefee;
+}
+
+/* ===========================
+   SKILLS
+=========================== */
+.skill {
+  margin-bottom: 24px;
+}
+
+.skillHeader {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #efefef;
+}
+
+/* Barra general */
+.progressBar {
+  width: 100%;
+  height: 8px;
+  background-color: #e4e1de;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Parte llena */
+.filled {
+  height: 100%;
+  background-color: #b38d32;
+  transition: width 0.4s ease;
+}
+
+/* ===========================
+   🔥 RESPONSIVE DESIGN
+=========================== */
+
+/* --- Laptops y tablets horizontales (≤ 1024px) --- */
+@media (max-width: 1024px) {
+  .container {
+    gap: 40px;
+  }
+
+  .image {
+    height: 420px;
+  }
+
+  .right h2 {
+    font-size: 28px;
+  }
+}
+
+/* --- Tablets y móviles grandes (≤ 768px) --- */
+@media (max-width: 768px) {
+  .container {
+    margin: 60px auto;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .right {
+    max-width: 100%;
+  }
+
+  .image {
+    height: 350px;
+  }
+
+  .right h2 {
+    font-size: 26px;
+  }
+
+  .right p {
+    font-size: 15px;
+  }
+
+  .skillHeader {
+    font-size: 14px;
+  }
+}
+
+/* --- Teléfonos pequeños (≤ 480px) --- */
+@media (max-width: 480px) {
+  .container {
+    margin: 40px auto;
+    gap: 30px;
+  }
+
+  .image {
+    height: 260px;
+  }
+
+  .right h2 {
+    font-size: 22px;
+  }
+
+  .right p {
+    font-size: 14px;
+  }
+
+  .progressBar {
+    height: 7px;
+  }
+}

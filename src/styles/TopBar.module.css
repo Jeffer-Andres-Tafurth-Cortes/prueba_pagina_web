@@ -1,0 +1,102 @@
+/* TopBar.module.css */
+
+.topBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #052a47;
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 6px 30px;
+  font-size: 14px;
+  z-index: 1000;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.icon {
+  height: 15px;
+  width: auto;
+}
+
+.emailLink {
+  color: white;
+  text-decoration: none;
+}
+
+.socialIcon {
+  height: 22px;
+  width: auto;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.socialIcon:hover {
+  color: #b38d32; /* Color dorado al hover */
+}
+
+/* Media queries para responsivo */
+
+/* Tablets (pantallas menores a 768px) */
+@media (max-width: 768px) {
+  .topBar {
+    padding: 4px 20px;
+    font-size: 12px;
+    justify-content: center; /* Centrar las redes sociales ya que la info de contacto está oculta */
+  }
+
+  .leftSection {
+    display: none; /* Ocultar información de contacto */
+  }
+
+  .rightSection {
+    gap: 10px;
+  }
+
+  .socialIcon {
+    height: 18px;
+  }
+}
+
+/* Móviles (pantallas menores a 480px) */
+@media (max-width: 480px) {
+  .topBar {
+    flex-direction: column;
+    padding: 4px 10px;
+    font-size: 11px;
+    text-align: center;
+    justify-content: center; /* Centrar verticalmente */
+  }
+
+  .leftSection {
+    display: none; /* Ocultar información de contacto */
+  }
+
+  .rightSection {
+    gap: 12px;
+  }
+
+  .socialIcon {
+    height: 16px;
+  }
+}

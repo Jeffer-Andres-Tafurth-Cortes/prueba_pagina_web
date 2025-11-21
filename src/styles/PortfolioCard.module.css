@@ -1,0 +1,96 @@
+.cardWrapper {
+  width: 280px;
+  height: 320px;
+  perspective: 1000px;
+  margin: 20px;
+}
+
+.highlight {
+  background-color: #cbb699;
+  border-radius: 8px;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.cardWrapper:hover .card {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  box-sizing: border-box;
+  padding: 24px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #3f3f3f;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.highlight .front {
+  background-color: #cbb699;
+  color: white;
+  box-shadow: none;
+}
+
+.back {
+  transform: rotateY(180deg);
+  background-color: #f0e5cf;
+  color: #3f3f3f;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.number {
+  font-family: serif;
+  font-size: 20px;
+  color: #cbb699;
+  margin: 0 0 8px 0;
+  user-select: none;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 20px;
+  margin: 0 0 12px 0;
+  user-select: none;
+}
+
+.frontText,
+.backText {
+  flex-grow: 1;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 16px;
+  user-select: none;
+}
+
+.button {
+  background-color: #bc9238;
+  border: none;
+  padding: 10px 16px;
+  font-weight: 700;
+  font-size: 13px;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  align-self: flex-start;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #9b742b;
+}
