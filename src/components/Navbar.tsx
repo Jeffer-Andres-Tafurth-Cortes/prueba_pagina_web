@@ -25,7 +25,7 @@ export default function Navbar() {
         {/* LOGO */}
         <Link href="/" className={`${styles.logo} ${styles.dark}`}>
           <Image
-            src="/logoPravice.png"
+            src="/logopravice.png"
             alt="Logo Pravice"
             width={75}
             height={70}

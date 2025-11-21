@@ -7,7 +7,6 @@
   padding: 0 20px;
 }
 
-/* Card */
 .card {
   position: relative;
   height: 280px;
@@ -15,31 +14,31 @@
   overflow: hidden;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
   cursor: pointer;
-  background-size: cover; /* IMPORTANTE PARA RESPONSIVIDAD */
-  background-position: center; /* IMPORTANTE PARA RESPONSIVIDAD */
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
+  transition: transform 0.3s ease;
 }
 
-/* Capa del fondo con zoom */
+.card:hover {
+  transform: scale(1.03);
+}
+
+/* Capa oscura para mejorar lectura */
 .card::before {
   content: "";
   position: absolute;
   inset: 0;
   z-index: 1;
-  background-image: inherit;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: transform 0.5s ease;
+  background: rgba(0, 0, 0, 0.45);
   border-radius: 6px;
-  filter: brightness(0.55);
+  transition: background 0.3s ease;
 }
 
 .card:hover::before {
-  transform: scale(1.12);
+  background: rgba(0, 0, 0, 0.6);
 }
 
-/* Contenido */
 .content {
   position: relative;
   z-index: 2;
@@ -49,12 +48,55 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
 }
 
-/* ----------------------------------
-   RESPONSIVE DESIGN
----------------------------------- */
+/* Título */
+.title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  line-height: 1.2;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limita a 2 líneas */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Extracto */
+.excerpt {
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0 0 15px 0;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limita a 3 líneas */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Botón */
+.button {
+  align-self: start;
+  background-color: #b38d32;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.button:hover {
+  background-color: #9a7927;
+}
+
+/* RESPONSIVE */
 
 /* Tablets y pantallas medianas */
 @media (max-width: 992px) {
@@ -65,6 +107,25 @@
 
   .card {
     height: 250px;
+  }
+
+  .content {
+    padding: 18px 25px;
+  }
+
+  .title {
+    font-size: 18px;
+    -webkit-line-clamp: 2;
+  }
+
+  .excerpt {
+    font-size: 13px;
+    -webkit-line-clamp: 3;
+  }
+
+  .button {
+    font-size: 13px;
+    padding: 7px 14px;
   }
 }
 
@@ -78,6 +139,25 @@
   .card {
     height: 240px;
   }
+
+  .content {
+    padding: 16px 20px;
+  }
+
+  .title {
+    font-size: 17px;
+    -webkit-line-clamp: 2;
+  }
+
+  .excerpt {
+    font-size: 13px;
+    -webkit-line-clamp: 2;
+  }
+
+  .button {
+    font-size: 13px;
+    padding: 7px 14px;
+  }
 }
 
 /* Móviles pequeños */
@@ -87,6 +167,21 @@
   }
 
   .content {
-    padding: 16px 20px;
+    padding: 12px 16px;
+  }
+
+  .title {
+    font-size: 16px;
+    -webkit-line-clamp: 1;
+  }
+
+  .excerpt {
+    font-size: 12px;
+    -webkit-line-clamp: 2;
+  }
+
+  .button {
+    font-size: 12px;
+    padding: 6px 12px;
   }
 }

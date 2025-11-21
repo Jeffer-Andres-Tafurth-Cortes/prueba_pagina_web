@@ -31,7 +31,7 @@ const Footer: FC = () => {
         {/* Logo */}
         <div className={styles.logoSection}>
           <Image
-            src="/logoPravice.png"
+            src="/logopravice.png"
             alt="Logo Pravice Abogados"
             className={styles.logo}
             width={100}

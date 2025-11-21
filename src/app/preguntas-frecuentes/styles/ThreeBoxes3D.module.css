@@ -26,13 +26,17 @@
 .card {
   position: relative;
   width: 100%;
-  height: 300px;
+  min-height: 300px; /* mínimo alto */
+  height: auto; /* para que crezca si el contenido es más alto */
   transform-style: preserve-3d;
   transition: transform 0.7s ease;
   border: 1px solid transparent;
   border-radius: 8px;
   box-shadow: 0 0 10px rgb(0 0 0 / 0.05);
   cursor: pointer;
+  overflow: hidden; /* evita que el contenido se salga visualmente */
+  display: flex;
+  flex-direction: column;
 }
 
 .cardWrapper:hover .card {
@@ -52,6 +56,9 @@
   backface-visibility: hidden;
   display: flex;
   flex-direction: column;
+  overflow-wrap: break-word; /* que el texto se quiebre y no se salga */
+  word-wrap: break-word;
+  word-break: break-word;
 }
 
 .front {
@@ -80,6 +87,7 @@
   font-size: 20px;
   margin-bottom: 10px;
   color: #191919;
+  word-wrap: break-word;
 }
 
 /* Línea dorada debajo del título */
@@ -95,6 +103,9 @@
   line-height: 1.5;
   color: #4b4b4b;
   flex-grow: 1;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 
 /* Bloque destacado a la derecha */
@@ -110,6 +121,9 @@
   flex-direction: column;
   justify-content: center;
   user-select: none;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 
 .highlightBlock h3 {
@@ -121,12 +135,22 @@
 
 /* ================================
    🔥 RESPONSIVE DESIGN
-   ================================ */
+================================= */
 
 /* Tablets (máx 900px) → 2 columnas */
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card {
+    min-height: 320px; /* ajusta un poco más */
+    height: auto;
+  }
+
+  .front,
+  .back {
+    padding: 20px 24px;
   }
 }
 
@@ -137,6 +161,20 @@
   }
 
   .card {
-    height: 320px; /* Un poco más grande para texto */
+    min-height: 350px; /* más alto para contenido */
+    height: auto;
+  }
+
+  .front,
+  .back {
+    padding: 18px 20px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .text {
+    font-size: 13px;
   }
 }

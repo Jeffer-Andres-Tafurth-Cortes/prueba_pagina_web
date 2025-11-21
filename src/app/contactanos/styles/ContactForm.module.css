@@ -23,11 +23,13 @@
   border-radius: 6px;
   box-shadow: 0 0 20px rgb(0 0 0 / 0.1);
   color: #4b4b4b;
+  flex-wrap: wrap; /* Permite que los hijos bajen en pantallas pequeñas */
 }
 
 /* Columna izquierda */
 .details {
-  flex: 1;
+  flex: 1 1 400px; /* base flexible con mínimo 400px */
+  min-width: 280px; /* evitar que se haga demasiado pequeño */
 }
 
 .details h2 {
@@ -66,13 +68,14 @@
   font-weight: 700;
 }
 
-socialIcons a:hover {
+.socialIcons a:hover {
   color: #8a711c;
 }
 
 /* Formulario */
 .form {
-  flex: 1;
+  flex: 1 1 400px; /* base flexible con mínimo 400px */
+  min-width: 280px;
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -92,6 +95,8 @@ socialIcons a:hover {
   border: 1.5px solid #ccc;
   border-radius: 4px;
   resize: vertical;
+  width: 100%; /* para que no desborden */
+  box-sizing: border-box;
 }
 
 .form input:focus,
@@ -100,7 +105,7 @@ socialIcons a:hover {
   outline: none;
 }
 
-/* Boton */
+/* Botón */
 .button {
   background-color: #b38d32;
   color: white;
@@ -122,6 +127,7 @@ socialIcons a:hover {
   margin-top: 80px;
   width: 100%;
   height: 400px;
+  box-sizing: border-box;
 }
 
 .mapContainer iframe {

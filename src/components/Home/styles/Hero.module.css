@@ -1,22 +1,31 @@
-/* Hero.module.css */
-
 .hero {
   position: relative;
   height: 95vh;
   width: 100%;
-  /* Imagen de fondo */
-  background: url("/") center center/cover no-repeat;
+  background: url("/foto-grupal.jpg") center 40% / cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 20px;
   color: white;
   text-align: center;
   overflow: hidden;
 }
 
+/* Overlay azul */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 60, 130, 0.45);
+  z-index: 1;
+}
+
 .content {
   max-width: 800px;
+  position: relative;
   z-index: 5;
   backdrop-filter: blur(3px);
   background-color: rgba(0, 0, 0, 0.4);
@@ -61,11 +70,18 @@
 
 /* Media queries para responsivo */
 
-/* Tablets (pantallas menores a 768px) */
+/* Tablets y móviles */
 @media (max-width: 768px) {
   .hero {
-    height: 80vh; /* Reducir altura para no ocupar toda la pantalla */
+    height: 80vh;
     padding: 0 15px;
+    /* Cambiar fondo a color sólido para mejorar legibilidad */
+    background: #808080; /* gris sólido */
+  }
+
+  /* Remover overlay porque ya no hay imagen */
+  .hero::before {
+    background: transparent;
   }
 
   .content {
@@ -83,11 +99,11 @@
   }
 }
 
-/* Móviles (pantallas menores a 480px) */
+/* Móviles más pequeños */
 @media (max-width: 480px) {
   .hero {
     height: 70vh;
-    padding: 0 10px;
+    padding: 0;
   }
 
   .content {

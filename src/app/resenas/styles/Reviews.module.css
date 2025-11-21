@@ -85,6 +85,7 @@
     padding-left: 30px;
     border-right: none;
     border-bottom: 1px solid #ddd;
+    min-height: 160px;
   }
 }
 
@@ -107,6 +108,65 @@
   }
 
   .card {
-    min-height: 160px;
+    padding-left: 0 !important; /* Quitar padding para centrar contenido */
+    margin: 0 auto;
+    min-height: 140px;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    position: relative;
+  }
+
+  .grid {
+    grid-template-columns: 1fr; /* Una columna para ocupar todo el ancho */
+    gap: 30px 15px;
+    text-align: center;
+  }
+
+  .quoteIcon {
+    position: relative;
+    left: auto;
+    top: auto;
+    margin: 0 auto 10px;
+    display: block;
+  }
+}
+
+/* Celulares muy pequeños (<= 360px) */
+@media (max-width: 360px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  .grid {
+    gap: 20px 10px;
+  }
+
+  .card {
+    min-height: 120px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-bottom: 1px solid #ddd;
+    border-right: none;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 14px;
+  }
+
+  .text {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .quoteIcon {
+    font-size: 18px;
+    left: 10px;
+    top: 5px;
+  }
+
+  .author {
+    font-size: 12px;
   }
 }

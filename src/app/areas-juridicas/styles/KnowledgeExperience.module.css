@@ -86,18 +86,20 @@
     flex-direction: column;
     text-align: center;
     margin: 40px auto;
+    padding: 0 5px; /* MÁS REDUCCIÓN DE PADDING LATERAL */
   }
 
   .imageWrapper,
   .content {
     max-width: 100%;
     flex: none;
+    padding: 0 5px; /* MÁS ESPACIO PARA EL TEXTO */
   }
 
   .bulletList {
     text-align: left;
     margin: 20px auto;
-    max-width: 90%;
+    max-width: 98%; /* Ocupa casi todo el ancho */
   }
 }
 
@@ -105,8 +107,16 @@
    TELÉFONOS PEQUEÑOS
 =========================== */
 @media (max-width: 480px) {
+  .container {
+    padding: 0 3px; /* Casi sin padding para que ocupe el máximo espacio */
+  }
+
   .title {
     font-size: 24px;
+  }
+
+  .content {
+    padding: 0 3px; /* Mínimo padding para el texto */
   }
 
   .content p {
@@ -115,5 +125,6 @@
 
   .bulletList {
     font-size: 14px;
+    max-width: 100%; /* Todo el ancho disponible */
   }
 }

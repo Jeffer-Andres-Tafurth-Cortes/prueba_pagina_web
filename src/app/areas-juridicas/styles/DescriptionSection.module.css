@@ -140,16 +140,17 @@
   }
 
   .container {
-    padding: 0 16px;
+    padding: 0 10px; /* Reducir padding lateral para aprovechar ancho */
   }
 
   .grid {
     gap: 20px;
+    justify-content: center;
   }
 
-  /* Cards más pequeñas y flexibles */
+  /* Cards más flexibles y centradas */
   .cardWrapper {
-    width: 90%;
+    width: 95%;
     max-width: 320px;
     height: 320px;
   }
@@ -181,6 +182,10 @@
 @media (max-width: 400px) {
   .title {
     font-size: 22px;
+  }
+
+  .container {
+    padding: 0 5px; /* Mínimo padding para aprovechar espacio */
   }
 
   .cardWrapper {

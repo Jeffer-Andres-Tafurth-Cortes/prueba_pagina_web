@@ -186,10 +186,30 @@
 
   .topSection {
     gap: 30px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .logoSection,
+  .contactSection,
+  .rightsSection,
+  .followSection {
+    flex: none;
+    width: 100%;
+    max-width: 400px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .logoSection {
+    align-items: center;
   }
 
   .newsletterForm {
     flex-direction: column;
+    width: 100%;
   }
 
   .newsletterButton {
@@ -201,13 +221,16 @@
 @media (max-width: 768px) {
   .topSection {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
   }
 
   .contactSection,
   .rightsSection,
   .followSection {
     width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
   }
 
   .fixedButtons {

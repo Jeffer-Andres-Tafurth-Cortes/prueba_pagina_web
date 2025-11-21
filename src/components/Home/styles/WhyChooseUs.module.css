@@ -8,6 +8,7 @@
   color: #4b4b4b;
   align-items: stretch; /* para que izquierda y derecha tengan igual alto */
   flex-wrap: wrap;
+  justify-content: center; /* Centramos los items horizontalmente */
 }
 
 .icon {
@@ -18,12 +19,12 @@
 }
 
 /* IZQUIERDA */
-
 .left {
   flex: 1 1 600px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  align-items: flex-start; /* Por defecto alinea a la izquierda */
 }
 
 .title {
@@ -54,6 +55,7 @@
   padding-left: 0;
   margin-bottom: 40px;
   color: #efefef;
+  width: 100%;
 }
 
 .bulletList li {
@@ -77,7 +79,6 @@
 }
 
 /* Botón */
-
 .button {
   align-self: flex-start;
   background-color: #b38d32;
@@ -90,6 +91,8 @@
   cursor: pointer;
   user-select: none;
   transition: background-color 0.3s;
+  /* Para que el botón pueda centrarse en tablets */
+  transition: background-color 0.3s ease;
 }
 
 .button:hover {
@@ -97,7 +100,6 @@
 }
 
 /* DERECHA */
-
 .right {
   width: 320px;
   background-color: #b38d32;
@@ -110,6 +112,7 @@
   box-sizing: border-box;
 }
 
+/* Contenido derecho */
 .scheduleTitle {
   font-size: 20px;
   font-weight: 500;
@@ -149,10 +152,14 @@
   .container {
     gap: 40px;
     padding: 0 15px;
+    /* Centramos todo en tablets */
+    justify-content: center;
   }
 
   .left {
     flex: 1 1 100%;
+    align-items: center; /* Centramos texto y lista */
+    text-align: center;
   }
 
   .title {
@@ -163,12 +170,22 @@
     font-size: 15px;
   }
 
+  .bulletList {
+    margin-bottom: 30px;
+  }
+
   .bulletList li {
     font-size: 14px;
+    justify-content: center; /* Centrar íconos y texto */
   }
 
   .icon {
     font-size: 20px;
+  }
+
+  /* Centrar el botón y cambiar align-self */
+  .button {
+    align-self: center;
   }
 
   .right {
@@ -201,6 +218,8 @@
 
   .left {
     flex: 1 1 100%;
+    align-items: center;
+    text-align: center;
   }
 
   .title {
@@ -220,6 +239,7 @@
   .bulletList li {
     font-size: 13px;
     margin-bottom: 14px;
+    justify-content: center;
   }
 
   .icon {
@@ -229,6 +249,7 @@
   .button {
     padding: 8px 24px;
     font-size: 13px;
+    align-self: center;
   }
 
   .right {

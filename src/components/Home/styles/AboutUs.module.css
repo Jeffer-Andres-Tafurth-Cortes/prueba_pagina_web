@@ -8,6 +8,7 @@
   font-family: Arial, Helvetica, sans-serif;
   color: #b3881f;
   flex-wrap: wrap;
+  overflow-x: hidden; /* Previene scroll horizontal */
 }
 
 .textSection {
@@ -73,9 +74,10 @@
 
 .image {
   width: 100%;
+  max-width: 100%; /* Evita que la imagen exceda el contenedor */
   height: 650px;
   object-fit: cover;
-  object-position: center;
+  object-position: center; /* Cambia a 'center top' si quieres mostrar más la parte superior */
   border-radius: 12px;
 }
 
@@ -107,6 +109,8 @@
 
   .image {
     height: 400px; /* Reducir altura de imagen */
+    object-position: center top;
+    max-width: 100%;
   }
 }
 
@@ -146,5 +150,7 @@
 
   .image {
     height: 300px; /* Altura aún más pequeña para móviles */
+    object-position: center top;
+    max-width: 100%;
   }
 }

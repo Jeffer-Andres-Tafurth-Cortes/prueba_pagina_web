@@ -27,7 +27,7 @@ const equipo = [
   },
   {
     nombre: "Milena Torres",
-    cargo: "Abogada",
+    cargo: "Contadora",
     img: "/doc-milena.jpg",
   },
   {

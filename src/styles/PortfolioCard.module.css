@@ -1,3 +1,13 @@
+/* Contenedor padre para las cards (pon esta clase en el contenedor que agrupa las cards) */
+.portfolioContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centra horizontalmente */
+  gap: 20px; /* Espacio entre cards */
+  padding: 0 10px; /* Un poco de padding para evitar que pegue a los bordes */
+  overflow-x: hidden; /* Evita scroll horizontal */
+}
+
 .cardWrapper {
   width: 280px;
   height: 320px;
@@ -93,4 +103,46 @@
 
 .button:hover {
   background-color: #9b742b;
+}
+
+/* Ajustes para pantallas muy pequeñas (<= 400px) */
+@media (max-width: 400px) {
+  .cardWrapper {
+    width: 90vw; /* Ocupa 90% del ancho de la ventana */
+    max-width: 260px; /* No exceder 260px para mantener legibilidad */
+    height: auto;
+    margin: 15px auto;
+  }
+
+  .card {
+    height: auto;
+    min-height: 280px;
+  }
+
+  .front,
+  .back {
+    padding: 16px;
+  }
+
+  .frontText,
+  .backText {
+    font-size: 12.5px;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .title {
+    font-size: 17px;
+    margin-bottom: 8px;
+  }
+
+  .number {
+    font-size: 17px;
+  }
+
+  .button {
+    font-size: 11px;
+    padding: 7px 12px;
+  }
 }
