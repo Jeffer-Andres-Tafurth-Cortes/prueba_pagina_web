@@ -6,6 +6,13 @@ import Link from "next/link";
 import styles from "../styles/Navbar.module.css";
 import Image from "next/image";
 
+const handleClick = () => {
+  window.open(
+    "https://api.whatsapp.com/message/RE7FEN4IGOISD1?autoload=1&app_absent=0",
+    "_blank"
+  );
+};
+
 export default function Navbar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -37,32 +44,40 @@ export default function Navbar() {
         <ul className={`${styles.links} ${menuOpen ? styles.active : ""}`}>
           <li>
             <Link href="/" onClick={() => setMenuOpen(false)}>
-              Inicio
+              INICIO
             </Link>
           </li>
           <li>
             <Link href="/areas-juridicas" onClick={() => setMenuOpen(false)}>
-              Areas jurídicas
+              AREAS DE PRACTICA
             </Link>
           </li>
           <li>
             <Link href="/nuestro-equipo" onClick={() => setMenuOpen(false)}>
-              Nuestro equipo
+              NUESTRO EQUIPO
             </Link>
           </li>
+
+          {/** 
+           * 
           <li>
             <Link href="/resenas" onClick={() => setMenuOpen(false)}>
               Reseñas
             </Link>
           </li>
+          */}
+
           <li>
             <Link
               href="/preguntas-frecuentes"
               onClick={() => setMenuOpen(false)}
             >
-              Preguntas frecuentes
+              BLOG
             </Link>
           </li>
+
+          {/**
+           * 
           <li>
             <Link href="/contactanos" onClick={() => setMenuOpen(false)}>
               Contáctanos
@@ -73,7 +88,12 @@ export default function Navbar() {
               Noticias jurídicas
             </Link>
           </li>
+          */}
         </ul>
+
+        <button className={styles.ctaButton} onClick={handleClick}>
+          Contactanos
+        </button>
 
         {/* BOTÓN HAMBURGUESA */}
         <div

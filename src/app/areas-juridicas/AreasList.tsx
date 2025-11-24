@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "./styles/AreasList.module.css";
 import DescriptionSection from "./DescriptionSection";
 import KnowledgeExperienceSection from "./knowledgeExperience";
@@ -9,6 +11,13 @@ import {
   faLock,
   faUsers,
 } from "@fortawesome/free-solid-svg-icons";
+
+const handleClick = () => {
+  window.open(
+    "https://api.whatsapp.com/message/RE7FEN4IGOISD1?autoload=1&app_absent=0",
+    "_blank"
+  );
+};
 
 const areas = [
   {
@@ -81,7 +90,7 @@ export default function AreasList() {
       <DescriptionSection />
       <section className={styles.container}>
         <p className={styles.subtitle}>Somos especialistas en</p>
-        <h2 className={styles.title}>Áreas del Derecho</h2>
+        <h2 className={styles.title}>Áreas de práctica</h2>
         <div className={styles.grid}>
           {areas.map(({ title, frontIcon, frontText, backList }) => (
             <div key={title} className={styles.cardWrapper}>
@@ -104,6 +113,9 @@ export default function AreasList() {
             </div>
           ))}
         </div>
+        <button className={styles.ctaButton} onClick={handleClick}>
+          Agenda tu asesoría
+        </button>
       </section>
       <KnowledgeExperienceSection />
     </>

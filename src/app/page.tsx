@@ -51,9 +51,12 @@ export default function Home() {
         <Hero />
       </section>
 
+      {/**  
+       * 
       <section id="aboutus">
         <AboutUs />
       </section>
+      */}
 
       <section id="portafolio">
         <Portfolio />
@@ -67,17 +70,23 @@ export default function Home() {
         <WhyChooseUs />
       </section>
 
+      {/** 
+       * 
       <section id="equipo">
         <Team />
       </section>
+      */}
 
       <section id="resenas">
         <Testimonials reviews={reviewsData} maxSlides={3} />
       </section>
 
+      {/**
+       * 
       <section id="noticias">
         <NoticiasLista />
       </section>
+      */}
     </>
   );
 }

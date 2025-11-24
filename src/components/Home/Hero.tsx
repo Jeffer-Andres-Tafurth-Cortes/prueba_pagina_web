@@ -11,6 +11,10 @@ const handleClick = () => {
 export default function Hero() {
   return (
     <section className={styles.hero}>
+      {/* Video de fondo */}
+      <video className={styles.videoBg} autoPlay muted loop playsInline>
+        <source src="/video-intro.mp4" type="video/mp4" />
+      </video>
       <motion.div
         className={styles.content}
         initial={{ opacity: 0, y: 20 }}
@@ -22,11 +26,12 @@ export default function Hero() {
           Especialistas en cada caso, excelencia en cada resultado
         </h1>
         <p className={styles.subtitle}>
-          Agenda tu consulta con nuestros expertos y obtén la mejor solución
-          legal.
+          Estamos aquí para escucharte, asesorarte y guiarte con la seguridad de
+          contar con especialistas dedicados a obtener el mejor resultado
+          posible. Da el primer paso hacia la solución legal que necesitas.
         </p>
         <button className={styles.ctaButton} onClick={handleClick}>
-          ¡Haz clic aquí!
+          Agenda tu asesoría
         </button>
       </motion.div>
     </section>

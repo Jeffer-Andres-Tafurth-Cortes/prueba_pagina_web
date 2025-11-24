@@ -91,47 +91,6 @@
   font-weight: 600;
 }
 
-/* ---------- NEWSLETTER ---------- */
-.newsletterForm {
-  display: flex;
-  gap: 4px;
-}
-
-.newsletterInput {
-  background-color: #222;
-  color: #cbb699;
-  border: none;
-  padding: 8px 16px;
-  flex-grow: 1;
-  border-radius: 3px;
-  font-size: 14px;
-}
-
-.newsletterInput::placeholder {
-  color: #444;
-}
-
-.newsletterButton {
-  background-color: #cbb699;
-  border: none;
-  color: black;
-  padding: 8px 12px;
-  font-weight: 600;
-  cursor: pointer;
-  border-radius: 3px;
-  transition: background-color 0.3s ease;
-}
-
-.newsletterButton:hover {
-  background-color: #a58843;
-}
-
-.divider {
-  border-color: #222;
-  margin: 0 auto 14px;
-  max-width: 1200px;
-}
-
 /* ---------- BOTTOM SECTION ---------- */
 .bottomSection {
   text-align: center;

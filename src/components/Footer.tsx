@@ -73,7 +73,7 @@ const Footer: FC = () => {
 
         {/* Área del Derecho */}
         <div className={styles.rightsSection}>
-          <h3 className={styles.title}>Área del Derecho</h3>
+          <h3 className={styles.title}>Áreas de Practica</h3>
           <ul className={styles.rightsList}>
             <li>Derecho Familia</li>
             <li>Derecho Comercial</li>
@@ -83,7 +83,7 @@ const Footer: FC = () => {
           </ul>
         </div>
 
-        {/* Síguenos y Newsletter */}
+        {/* Síguenos */}
         <div className={styles.followSection}>
           <h3 className={styles.title}>Síguenos</h3>
           <div className={styles.socialIcons}>
@@ -120,22 +120,6 @@ const Footer: FC = () => {
               <FontAwesomeIcon icon={faTiktok} />
             </a>
           </div>
-
-          <h3 className={styles.title}>Newsletter</h3>
-          <form
-            className={styles.newsletterForm}
-            onSubmit={(e) => e.preventDefault()}
-          >
-            <input
-              type="email"
-              placeholder="sample@mail.com"
-              className={styles.newsletterInput}
-              required
-            />
-            <button type="submit" className={styles.newsletterButton}>
-              Subscribirse
-            </button>
-          </form>
         </div>
       </div>
 
