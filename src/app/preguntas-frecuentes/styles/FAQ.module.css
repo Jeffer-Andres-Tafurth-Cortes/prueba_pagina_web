@@ -1,64 +1,66 @@
 .faqSection {
-  max-width: 1100px; /* Máximo ancho en desktop */
-  margin: 4rem auto; /* Centrado horizontal */
+  max-width: 1100px;
+  margin: 4rem auto;
   padding: 0 1rem;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: #0d48ad;
-  box-sizing: border-box;
+  color: #f5f5f5; /* Texto más claro */
   text-align: center;
+  box-sizing: border-box;
 }
 
 .heading {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 2rem;
-  color: #f9f7f1;
-  padding: 0 1rem;
-  max-width: 100%;
-  box-sizing: border-box;
+  color: #ffffff; /* Más blanco para contraste */
   text-align: center;
 }
 
-/* Contenedor de los acordeones */
+/* ==========================
+   CONTENEDOR DEL ACORDEÓN
+========================== */
 .accordion {
   width: 100%;
-  max-width: 900px; /* Ancho máximo acorde a tu preferencia */
-  margin: 0 auto; /* Centrado horizontal */
+  max-width: 900px;
+  margin: 0 auto;
   box-sizing: border-box;
 }
 
-/* Cada item */
+/* ==========================
+   CADA ITEM
+========================== */
 .accordionItem {
-  border-top: 1px solid #d4af37;
-  background: white;
-  transition: background-color 0.3s ease;
-}
-
-.accordionItem:first-child {
-  border-top: none;
+  background: rgba(255, 255, 255, 0.065); /* Fondo claro semi-transparente */
+  border: 1px solid rgba(212, 175, 55, 0.25); /* D4AF37 suavizado */
+  border-radius: 10px;
+  margin-bottom: 10px;
+  backdrop-filter: blur(4px); /* efecto sutil elegante */
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .accordionItem.active {
-  background: #f9f7f1;
+  background: rgba(255, 255, 255, 0.12); /* Más claro al abrir */
+  border-color: rgba(212, 175, 55, 0.45);
 }
 
-/* Botones acordeón */
+/* ==========================
+   BOTÓN DEL ACORDEÓN
+========================== */
 .accordionButton {
   background: transparent;
   border: none;
   width: 100%;
-  padding: 1.25rem 2rem;
+  padding: 1.25rem 1.5rem;
   text-align: left;
   font-size: 1.125rem;
   font-weight: 600;
-  color: #0b3d91;
+  color: #f1f1f1;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: color 0.3s ease;
-  position: relative;
   box-sizing: border-box;
+  transition: color 0.3s ease;
 }
 
 .accordionButton:hover,
@@ -69,7 +71,6 @@
 .icon {
   font-size: 1.5rem;
   font-weight: 700;
-  color: inherit;
   user-select: none;
   transition: transform 0.3s ease;
 }
@@ -78,53 +79,43 @@
   transform: rotate(180deg);
 }
 
-/* Contenido de acordeón */
+/* ==========================
+   CONTENIDO DEL ITEM
+========================== */
 .accordionContent {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease;
-  padding: 0 2rem;
-  background-color: white;
-  color: #444444;
+  padding: 0 1.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 0 0 10px 10px;
+  text-align: left;
+  color: #e1e1e1;
   box-sizing: border-box;
-  text-align: left; /* Legibilidad */
 }
 
 .accordionContent p {
   margin: 1rem 0 1.5rem;
-  line-height: 1.5;
+  line-height: 1.6;
+  font-size: 1rem;
 }
 
-/* RESPONSIVE */
-
-/* Tablets y pantallas medianas */
+/* ==========================
+        RESPONSIVE
+========================== */
 @media (max-width: 1024px) {
   .faqSection {
     max-width: 90vw;
-    padding: 0 1rem;
   }
 
   .heading {
     font-size: 2.2rem;
   }
-
-  .accordion {
-    max-width: 100%;
-  }
 }
 
-/* Tablets pequeñas y móviles grandes */
 @media (max-width: 768px) {
-  .faqSection {
-    padding: 0 1rem;
-  }
-
   .heading {
     font-size: 2rem;
-  }
-
-  .accordion {
-    max-width: 100%;
   }
 
   .accordionButton {
@@ -132,16 +123,15 @@
     font-size: 1rem;
   }
 
-  .icon {
-    font-size: 1.25rem;
-  }
-
   .accordionContent {
     padding: 0 1rem;
   }
+
+  .icon {
+    font-size: 1.25rem;
+  }
 }
 
-/* Móviles pequeños */
 @media (max-width: 480px) {
   .heading {
     font-size: 1.7rem;

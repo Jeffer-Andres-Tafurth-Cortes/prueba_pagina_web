@@ -1,90 +1,62 @@
-import React, { useState, useEffect } from "react";
+import React, { FC } from "react";
 import styles from "./styles/ExperienceSection.module.css";
-import "../../../public/Estatua.png";
 
-interface CounterProps {
-  end: number;
-  suffix?: string;
-}
-
-const Counter: React.FC<CounterProps> = ({ end, suffix = "" }) => {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    let start = 0;
-    const duration = 5000; // Duración total de la animación en ms
-    const incrementTime = 20; // Intervalo entre incrementos en ms
-    const totalSteps = duration / incrementTime;
-    const increment = end / totalSteps;
-
-    const interval = setInterval(() => {
-      start += increment;
-      if (start >= end) {
-        setCount(end);
-        clearInterval(interval);
-      } else {
-        setCount(Math.floor(start));
-      }
-    }, incrementTime);
-
-    return () => clearInterval(interval);
-  }, [end]);
-
+const ExperienceSection: FC = () => {
   return (
-    <span>
-      {count}
-      {suffix}
-    </span>
+    <section className={styles.container}>
+      <div className={styles.servicesSection}>
+        <div className={styles.serviceItem}>
+          <h4>Cobro de Cartera y Recuperación de Activos</h4>
+          <p>
+            Asistencia legal especializada para recuperar el dinero adeudado por
+            clientes, empresas o particulares, mediante estrategias jurídicas
+            efectivas como gestión persuasiva, negociación, acuerdos de pago,
+            títulos ejecutivos y procesos judiciales, garantizando la protección
+            de su flujo de caja y su patrimonio.
+          </p>
+        </div>
+
+        <div className={styles.serviceItem}>
+          <h4>
+            Solución rápida de conflictos sin acudir a instancias
+            jurisdiccionales
+          </h4>
+          <p>
+            Asistencia especializada para resolver conflictos legales de manera
+            ágil, confidencial y eficaz, a través de mecanismos alternativos,
+            conciliación, negociación jurídica y acuerdos estratégicos, evitando
+            procesos largos, costosos y desgastantes.
+          </p>
+        </div>
+
+        <div className={styles.serviceItem}>
+          <h4>Derecho Laboral y Empresarial</h4>
+          <p>
+            Asistencia legal especializada en prevención, asesoría y
+            representación en conflictos laborales y empresariales, incluyendo
+            reestructuraciones, cumplimiento normativo frente a la Reforma
+            Laboral 2025, demandas laborales, relaciones contractuales y
+            protección de la empresa frente a contingencias legales.
+          </p>
+        </div>
+
+        <div className={styles.serviceItem}>
+          <h4>Defensa y Protección Patrimonial</h4>
+          <p>
+            Asistencia especializada para la protección de sus bienes, contratos
+            e intereses económicos, frente a incumplimientos, ocupaciones
+            indebidas, fraudes, riesgos legales e inseguridad jurídica, a través
+            de acciones preventivas y correctivas de alto impacto legal.
+          </p>
+        </div>
+      </div>
+
+      {/* BOTÓN CENTRADO */}
+      <div className={styles.buttonContainer}>
+        <button className={styles.ctaButton}>PROGRAME UNA CONSULTA</button>
+      </div>
+    </section>
   );
 };
 
-export default function ExperienceSection() {
-  return (
-    <>
-      <h2 className={styles.title}>¿POR QUE ELEGIRNOS?</h2>
-
-      <section className={styles.container}>
-        <div className={styles.textSection}>
-          <h2>
-            25 años de experiencia <br /> protegiendo los intereses <br /> de
-            nuestros clientes.
-          </h2>
-          <p>
-            En <strong>Pravice Abogados</strong> contamos con una trayectoria
-            destacada en el ámbito legal, asesorando a empresas y personas en
-            diversas áreas del derecho. Nuestro equipo está conformado por
-            profesionales con amplia experiencia, que brindan soluciones
-            estratégicas adaptadas a las necesidades de cada cliente.
-          </p>
-
-          <div className={styles.counters}>
-            <div className={styles.counterBox}>
-              <h3>
-                <Counter end={210} suffix="+" />
-              </h3>
-              <p>
-                <strong>Aliados</strong>
-              </p>
-            </div>
-            <div className={styles.counterBox}>
-              <h3>
-                <Counter end={190} suffix="+" />
-              </h3>
-              <p>
-                <strong>Casos jurídicos</strong>
-              </p>
-            </div>
-            <div className={styles.counterBox}>
-              <h3>
-                <Counter end={100} suffix="+" />
-              </h3>
-              <p>
-                <strong>Casos ganados</strong>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
-  );
-}
+export default ExperienceSection;

@@ -63,7 +63,7 @@ export default function FAQ() {
   return (
     <>
       <section className={styles.faqSection}>
-        <h2 className={styles.heading}>Preguntas frecuentes</h2>
+        <h2 className={styles.heading}>PREGUNTAS FRECUENTES</h2>
         <div className={styles.accordion}>
           {faqData.map((item, index) => (
             <div
@@ -81,7 +81,7 @@ export default function FAQ() {
               >
                 {item.question}
                 <span className={styles.icon}>
-                  {activeIndex === index ? "−" : "+"}
+                  {activeIndex === index ? "-" : "+"}
                 </span>
               </button>
               <div
@@ -99,7 +99,10 @@ export default function FAQ() {
       </section>
       <ThreeBoxes3D />
 
+      {/**
+       * 
       <WhyChooseUs2 />
+      */}
     </>
   );
 }

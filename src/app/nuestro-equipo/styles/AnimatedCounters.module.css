@@ -1,121 +1,129 @@
 /* CONTENEDOR PRINCIPAL */
 .container {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  color: #efefee; /* texto general claro */
+}
+
+/* WRAPPER DEL TEXTO */
+.textWrapper {
+  max-width: 900px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* TITULAR */
+.subtitle {
+  font-size: 30px;
+  font-weight: 600;
+  color: #f4c300; /* amarillo dorado */
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+/* PÁRRAFOS */
+.text {
+  font-size: 18px;
+  color: #fff; /* gris medio para párrafos */
+  line-height: 1.7;
+  margin-bottom: 14px;
+  max-width: 850px;
+}
+
+/* WRAPPER DE CONTADORES */
+.countersWrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 60px;
-  margin-top: 50px;
   flex-wrap: wrap;
+  gap: 40px;
 }
 
-/* TARJETA DE CONTADOR */
+/* TARJETA */
 .counterCard {
-  background: rgba(255 255 255 / 0.1);
-  padding: 30px 40px;
-  border-radius: 8px;
+  background: rgba(
+    255,
+    255,
+    255,
+    0.08
+  ); /* blanco con transparencia para efecto glass */
+  padding: 35px 45px;
+  border-radius: 10px;
   text-align: center;
-  min-width: 140px;
-  backdrop-filter: blur(4px);
+  min-width: 180px;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: transform 0.25s ease, background 0.25s ease;
+  cursor: default;
 }
 
-/* NUMERO PRINCIPAL */
+.counterCard:hover {
+  transform: translateY(-5px);
+  background: rgba(244, 195, 0, 0.15); /* ligero brillo amarillo al hover */
+  border-color: #f7c600; /* borde amarillo brillante */
+}
+
+/* NÚMEROS */
 .count {
-  font-size: 48px;
-  color: #cbb699;
-  margin: 0 0 12px 0;
+  font-size: 52px;
+  color: #f7c600; /* amarillo brillante */
+  margin-bottom: 10px;
   font-weight: 700;
   font-family: serif;
 }
 
-/* SUBTÍTULOS */
-.subtitle {
-  font-size: 28px;
-  color: #fff;
-}
-
-/* TEXTO DESCRIPTIVO */
-.text {
-  font-size: 18px;
-  color: #e7e7e7;
-  margin-top: 8px;
-}
-
+/* TÍTULO DEL CONTADOR */
 .title {
   font-size: 16px;
-  color: white;
-  margin: 0;
+  color: #ffffff; /* blanco para el texto */
 }
 
 /* ===============================
-   TABLETS GRANDES (<= 992px)
-================================ */
-@media (max-width: 992px) {
-  .container {
-    gap: 40px;
-  }
-
-  .count {
-    font-size: 42px;
-  }
-
-  .subtitle {
-    font-size: 26px;
-  }
-}
-
-/* ===============================
-   TABLETS PEQUEÑAS / MÓVILES GRANDES (<= 768px)
+   RESPONSIVE
 ================================ */
 @media (max-width: 768px) {
-  .container {
-    gap: 30px;
-    margin-top: 40px;
-  }
-
-  .counterCard {
-    padding: 24px 32px;
-    min-width: 130px;
-  }
-
-  .count {
-    font-size: 36px;
-  }
-
   .subtitle {
-    font-size: 22px;
+    font-size: 26px;
   }
 
   .text {
     font-size: 16px;
   }
-}
-
-/* ===============================
-   MÓVILES PEQUEÑOS (<= 480px)
-================================ */
-@media (max-width: 480px) {
-  .container {
-    gap: 20px;
-  }
 
   .counterCard {
-    padding: 20px 26px;
-    min-width: 120px;
+    min-width: 150px;
+    padding: 25px 32px;
   }
 
   .count {
-    font-size: 30px;
+    font-size: 40px;
   }
+}
 
+@media (max-width: 480px) {
   .subtitle {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .text {
     font-size: 14px;
   }
 
+  .counterCard {
+    min-width: 130px;
+    padding: 22px 26px;
+  }
+
+  .count {
+    font-size: 32px;
+  }
+
   .title {
-    font-size: 14px;
+    font-size: 13px;
   }
 }

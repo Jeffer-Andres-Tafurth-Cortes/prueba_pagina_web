@@ -5,11 +5,9 @@ import DescriptionSection from "./DescriptionSection";
 import KnowledgeExperienceSection from "./knowledgeExperience";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faGavel,
-  faBalanceScale,
   faBuilding,
-  faLock,
   faUsers,
+  faMoneyBillWave,
 } from "@fortawesome/free-solid-svg-icons";
 
 const handleClick = () => {
@@ -21,8 +19,8 @@ const handleClick = () => {
 
 const areas = [
   {
-    title: "Derecho Laboral",
-    frontIcon: <FontAwesomeIcon icon={faGavel} className={styles.icon} />,
+    title: "PERSONAS",
+    frontIcon: <FontAwesomeIcon icon={faUsers} className={styles.icon} />,
     frontText:
       "El derecho laboral regula la relación entre empleadores y trabajadores, asegurando el cumplimiento de normas sobre contratación, despidos, seguridad social, prestaciones y condiciones de trabajo.",
     backList: [
@@ -33,10 +31,8 @@ const areas = [
     ],
   },
   {
-    title: "Derecho Civil",
-    frontIcon: (
-      <FontAwesomeIcon icon={faBalanceScale} className={styles.icon} />
-    ),
+    title: "EMPRESAS",
+    frontIcon: <FontAwesomeIcon icon={faBuilding} className={styles.icon} />,
     frontText:
       "Esta área regula relaciones entre personas, protegiendo derechos sobre bienes, contratos, herencias, responsabilidad civil y otros aspectos de la vida cotidiana. Se encarga de resolver disputas sobre propiedad, incumplimiento de acuerdos y daños y perjuicios.",
     backList: [
@@ -47,8 +43,10 @@ const areas = [
     ],
   },
   {
-    title: "Derecho Comercial",
-    frontIcon: <FontAwesomeIcon icon={faBuilding} className={styles.icon} />,
+    title: "COBRO DE CARTERA",
+    frontIcon: (
+      <FontAwesomeIcon icon={faMoneyBillWave} className={styles.icon} />
+    ),
     frontText:
       "El derecho comercial se enfoca en regular las actividades empresariales y mercantiles, incluyendo la constitución y funcionamiento de sociedades, la elabroación de contratos comerciales, la protección de la propiedad industrial y la resolución de conflictos entre empresas.",
     backList: [
@@ -58,30 +56,6 @@ const areas = [
       "Asesoría en cumplimiento normativo y buenas prácticas empresariales.",
     ],
   },
-  {
-    title: "Derecho Penal",
-    frontIcon: <FontAwesomeIcon icon={faLock} className={styles.icon} />,
-    frontText:
-      "Esta rama del derecho establece los delitos, sus penas y el proceso judicial correspondiente. Su objetivo es garantizar la justicia, protegiendo a las victimas y asegurando que quienes infrinjan la ley sean juzgados adecuadamente. Además, abarca la defensa penal en casos de acusaciones y procesos judiciales.",
-    backList: [
-      "Defensa penal estratégica en investigaciones y procesos judiciales.",
-      "Protección de los derechos del acusado o de la victima en cualquier etapa del proceso.",
-      "Acompañamiento en audiencias y negociaciones con la fiscalia.",
-      "Reduccion de riesgos legales mediante asesoría preventiva.",
-    ],
-  },
-  {
-    title: "Derecho de Familia",
-    frontIcon: <FontAwesomeIcon icon={faUsers} className={styles.icon} />,
-    frontText:
-      "Regula las relaciones familiares, incluyendo matrimonio, divorcio, custodia de menores, pensión alimenticia, adopciones y sucesiones. Su propósito es proteger los derechos de los integrantes de una familia y garantizar soluciones justas en situaciones de conflicto o reorganización familiar.",
-    backList: [
-      "Acompañamiento en procesos de divorcios y separación con acuerdos justos.",
-      "Representación en casos de custodia y régimen de visitas.",
-      "Gestion legal de herencias y sucesiones para evitar conflictos familiares.",
-      "Protección de los derechos de los menores y la familia en cada proceso.",
-    ],
-  },
 ];
 
 export default function AreasList() {
@@ -89,8 +63,8 @@ export default function AreasList() {
     <>
       <DescriptionSection />
       <section className={styles.container}>
-        <p className={styles.subtitle}>Somos especialistas en</p>
-        <h2 className={styles.title}>Áreas de práctica</h2>
+        <p className={styles.subtitle}>SOMOS ESPECIALISTAS EN</p>
+        <h2 className={styles.title}>ÁREAS DE PRÁCTICA</h2>
         <div className={styles.grid}>
           {areas.map(({ title, frontIcon, frontText, backList }) => (
             <div key={title} className={styles.cardWrapper}>
@@ -114,7 +88,7 @@ export default function AreasList() {
           ))}
         </div>
         <button className={styles.ctaButton} onClick={handleClick}>
-          Agenda tu asesoría
+          PROGRAME UNA CONSULTA
         </button>
       </section>
       <KnowledgeExperienceSection />

@@ -1,18 +1,26 @@
-import React from "react";
 import styles from "./styles/DescriptionSection.module.css";
 
 export default function DescriptionSection() {
   return (
     <section className={styles.container}>
       <h2 className={styles.title}>
-        Abogados con los
-        <br /> mejores resultados
+        ABOGADOS CON LOS
+        <br /> MEJORES RESULTADOS
       </h2>
+
       <p className={styles.text}>
         En <strong>Pravice Abogados</strong>, defendemos tus derechos con
-        estrategia y compromiso. Nuestro equipo de expertos trabaja para
-        ofrecerte las mejores soluciones legales, garantizando resultados
-        sólidos y eficaces en cada caso.
+        <span className={styles.highlight}>
+          {" "}
+          estrategia, experiencia y compromiso.{" "}
+        </span>
+        Nuestro equipo analiza cada caso con precisión, construyendo soluciones
+        legales sólidas que garanticen resultados reales y confiables.
+      </p>
+
+      <p className={styles.textSecondary}>
+        Atendemos tus necesidades legales con rigor profesional, atención
+        personalizada y un enfoque diseñado para proteger lo que más valoras.
       </p>
     </section>
   );

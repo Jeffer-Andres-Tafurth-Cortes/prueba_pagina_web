@@ -6,21 +6,21 @@ import styles from "./styles/AnimatedCounters.module.css";
 interface CounterProps {
   end: number;
   suffix?: string;
-  duration?: number; // duración animación en ms
+  duration?: number;
   title: string;
 }
 
 const Counter: React.FC<CounterProps> = ({
   end,
   suffix = "",
-  duration = 2000,
+  duration = 5000,
   title,
 }) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
     let start = 0;
-    const incrementTime = 30; // ms entre cada incremento
+    const incrementTime = 30;
     const totalSteps = Math.ceil(duration / incrementTime);
     const increment = end / totalSteps;
 
@@ -50,22 +50,29 @@ const Counter: React.FC<CounterProps> = ({
 export default function AnimatedCounters() {
   return (
     <section className={styles.container}>
-      <h3 className={styles.subtitle}>
-        20 años de experiencia en todas las áreas del derecho.
-      </h3>
-      <p className={styles.text}>
-        Con dos décadas de experiencia en el ámbito legal, hemos acompañado a
-        nuestros clientes en la resolución de casos complejos con
-        profesionalismo y compromiso. Nuestra trayectoria nos permite ofrecer
-        asesoramiento sólido, estrategias efectivas y soluciones adaptadas a
-        cada situación.En cada caso, combinamos conocimiento, ética y dedicación
-        para garantizar la mejor defensa de sus intereses. Ya sea en litigios,
-        asesoramiento empresarial o resolución de conflictos, nuestra
-        experiencia es su mayor respaldo.
-      </p>
-      <Counter end={99} suffix="%" title="Clientes Felices" />
-      <Counter end={210} suffix="+" title="Aliados" />
-      <Counter end={190} suffix="+" title="Casos Ganados" />
+      <div className={styles.textWrapper}>
+        <h3 className={styles.subtitle}>
+          20 AÑOS DE EXCELENCIA Y COMPROMISO LEGAL
+        </h3>
+
+        <p className={styles.text}>
+          Durante dos décadas hemos acompañado a empresas y personas en la
+          resolución de casos complejos, brindando asesoría estratégica,
+          representación sólida y un enfoque ético en cada etapa del proceso.
+        </p>
+
+        <p className={styles.text}>
+          Nuestra experiencia es el resultado de cientos de casos exitosos, un
+          equipo altamente capacitado y un compromiso inquebrantable con la
+          justicia y la protección de los intereses de nuestros clientes.
+        </p>
+      </div>
+
+      <div className={styles.countersWrapper}>
+        <Counter end={99} suffix="%" title="CLIENTES SATISFECHOS" />
+        <Counter end={210} suffix="+" title="ALIADOS ESTRATEGICOS" />
+        <Counter end={190} suffix="+" title="CASOS GANADOS" />
+      </div>
     </section>
   );
 }

@@ -7,11 +7,11 @@
 
 .icon {
   font-size: 1.5rem;
-  color: #d3b97d;
+  color: #f4c300; /* amarillo dorado para iconos */
 }
 
 .subtitle {
-  color: #d3b97d;
+  color: #f4c300; /* amarillo dorado */
   font-size: 14px;
   margin-bottom: 4px;
   font-weight: 400;
@@ -21,7 +21,7 @@
   font-size: 36px;
   font-weight: 700;
   margin-bottom: 40px;
-  color: #d3b97d;
+  color: #f4c300; /* amarillo dorado */
 }
 
 /* GRID PRINCIPAL */
@@ -48,22 +48,24 @@
   transition: transform 0.75s ease;
   cursor: pointer;
   border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* Botón CTA */
 .ctaButton {
-  background-color: #cba15f;
+  background-color: #f4c300; /* amarillo dorado */
   border: none;
   padding: 14px 28px;
   font-weight: 600;
   font-size: 16px;
-  color: white;
+  color: #004a80; /* azul oscuro para buen contraste */
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .ctaButton:hover {
-  background-color: #a17f35;
+  background-color: #f7c600; /* amarillo brillante */
 }
 
 /* Rotación en hover (solo desktop) */
@@ -81,40 +83,42 @@
   height: 100%;
   box-sizing: border-box;
   padding: 30px 24px;
-  border: 1.2px solid #d3b97d;
+  border: 1.5px solid #f4c300; /* borde amarillo dorado */
   border-radius: 6px;
   backface-visibility: hidden;
   display: flex;
   flex-direction: column;
-  color: #4b4b4b;
-  background-color: white;
+  background-color: #ffffff; /* fondo blanco para legibilidad */
+  color: #004a80; /* texto azul oscuro */
 }
 
 .front {
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .icon {
   font-size: 30px;
-  color: #b38d32;
+  color: #f4c300; /* iconos amarillo */
   margin-bottom: 12px;
 }
 
 .cardTitle {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 20px;
   margin-bottom: 6px;
+  color: #004a80; /* azul oscuro */
 }
 
 .frontText,
 .bulletList {
   font-size: 14px;
-  line-height: 1.4;
+  line-height: 1.5;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 8;
   -webkit-box-orient: vertical;
+  color: #808080; /* gris para texto */
 }
 
 /* Parte trasera */
@@ -122,10 +126,10 @@
   transform: rotateY(180deg);
   justify-content: center;
   font-size: 15px;
-  line-height: 1.5;
+  line-height: 1.6;
   padding-top: 30px;
-  text-align: center;
-  color: #4b4b4b;
+  text-align: left;
+  color: #808080; /* gris medio */
   overflow-y: auto; /* Scroll vertical si contenido excede */
 }
 
@@ -134,7 +138,7 @@
   margin: 0;
   padding-left: 20px;
   list-style-type: disc;
-  color: #4b4b4b;
+  color: #808080; /* gris */
   text-align: left;
 }
 
@@ -171,7 +175,7 @@
   .cardWrapper {
     width: 85%;
     max-width: 320px;
-    height: auto; /* Permitir que crezca si contenido es más */
+    height: auto;
     max-height: 350px;
     margin-bottom: 25px;
   }

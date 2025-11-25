@@ -2,8 +2,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700&display=swap");
 
 :root {
-  --bg-1: #0f1724; /* deep navy */
-  --bg-2: #021024;
+  --bg-1: #004a80; /* deep navy */
+  --bg-2: #5eb3e4; /* light blue */
   --accent: #6c5ce7; /* violet */
   --accent-2: #00d4ff; /* cyan */
   --muted: #9ca3af;
@@ -13,7 +13,7 @@ body {
   margin: 0;
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial;
-  background: linear-gradient(180deg, var(--bg-1), var(--bg-2));
+  background-color: var(--bg-1);
   color: #fff;
   -webkit-font-smoothing: antialiased;
 }

@@ -29,7 +29,7 @@ const CallToAction: FC = () => {
         </p>
 
         <button className={styles.button} onClick={handleClick}>
-          AGENDA UNA ASESORÍA
+          PROGRAME UNA CONSULTA
         </button>
       </div>
     </section>

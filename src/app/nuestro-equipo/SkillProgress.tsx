@@ -23,7 +23,7 @@ export default function SkillProgress() {
 
     skillsData.forEach((skill, index) => {
       let start = 0;
-      const duration = 2000; // Duración animación 2 segundos
+      const duration = 5000; // Duración animación 2 segundos
       const stepTime = 20; // ms entre incrementos
       const steps = duration / stepTime;
       const increment = skill.percentage / steps;
@@ -62,7 +62,7 @@ export default function SkillProgress() {
         />
       </div>
       <div className={styles.right}>
-        <h2>Habilidades de nuestros abogados</h2>
+        <h2>HABILIDADES DE NUESTROS ABOGADOS</h2>
         <p>
           Nuestro equipo está compuesto por abogados altamente capacitados, con
           una combinación de experiencia, conocimiento y compromiso con la

@@ -1,13 +1,12 @@
 "use client";
 
 import Hero from "@/components/Home/Hero";
-import Team from "@/components/Home/Team";
 import Testimonials from "@/components/Home/Testimonials";
-import NoticiasLista from "@/components/Home/NoticiasLista";
 import AboutUs from "@/components/Home/AboutUs";
 import Portfolio from "@/components/PortfolioComponents/Portfolio";
 import ExperienceSection from "@/components/Home/ExperienceSection";
-import WhyChooseUs from "@/components/Home/WhyChooseUs";
+import DifferentSection from "@/components/Home/DifferentSection";
+import AboutPraviceSection from "@/components/Home/AboutPraviceSection";
 
 const reviewsData = [
   {
@@ -51,42 +50,29 @@ export default function Home() {
         <Hero />
       </section>
 
-      {/**  
-       * 
       <section id="aboutus">
         <AboutUs />
-      </section>
-      */}
-
-      <section id="portafolio">
-        <Portfolio />
       </section>
 
       <section id="experiencesection">
         <ExperienceSection />
       </section>
 
-      <section id="whychooseus">
-        <WhyChooseUs />
+      <section id="portafolio">
+        <Portfolio />
       </section>
 
-      {/** 
-       * 
-      <section id="equipo">
-        <Team />
+      <section id="differentsection">
+        <DifferentSection />
       </section>
-      */}
+
+      <section id="aboutpravicesection">
+        <AboutPraviceSection />
+      </section>
 
       <section id="resenas">
         <Testimonials reviews={reviewsData} maxSlides={3} />
       </section>
-
-      {/**
-       * 
-      <section id="noticias">
-        <NoticiasLista />
-      </section>
-      */}
     </>
   );
 }

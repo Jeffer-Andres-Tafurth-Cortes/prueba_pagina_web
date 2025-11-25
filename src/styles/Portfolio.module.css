@@ -1,15 +1,22 @@
-/* CONTENEDOR PRINCIPAL DOS COLUMNAS */
+/* =============================== */
+/*   CONTENEDOR PRINCIPAL          */
+/* =============================== */
+
 .wrapper {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 40px;
   max-width: 1200px;
-  margin: 40px auto;
+  margin: 100px auto;
   padding: 0 20px;
+  color: #ffffff; /* texto base claro sobre fondo azul */
 }
 
-/* COLUMNA IZQUIERDA */
+/* =============================== */
+/*   COLUMNA IZQUIERDA            */
+/* =============================== */
+
 .left {
   flex: 1;
   text-align: left;
@@ -17,7 +24,7 @@
 }
 
 .subtitle {
-  color: #cbb699;
+  color: #5eb3e4; /* azul claro corporativo */
   font-weight: 400;
   font-size: 16px;
   margin-bottom: 6px;
@@ -27,35 +34,45 @@
   font-weight: 700;
   font-size: 36px;
   margin-bottom: 16px;
-  border-bottom: 2px solid #cbb699;
+  border-bottom: 2px solid #f4c300; /* amarillo corporativo */
   display: inline-block;
+  color: #ffffff; /* título en blanco */
 }
 
 .description {
-  color: #efefee;
+  color: #dfe8ef; /* blanco suave para mejor lectura */
   font-size: 16px;
   line-height: 1.6;
   margin-bottom: 20px;
   max-width: 550px;
 }
 
+/* BOTÓN PRINCIPAL */
 .ctaButton {
-  background-color: #cbb699;
-  color: white;
+  background: linear-gradient(
+    90deg,
+    #f4c300,
+    #f7c600
+  ); /* degradado amarillo PRAVICE */
+  color: #000;
   border: none;
   padding: 12px 26px;
   border-radius: 6px;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   transition: 0.3s ease;
 }
 
 .ctaButton:hover {
-  background-color: #a48c63;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
-/* COLUMNA DERECHA: LÍNEA DE TIEMPO */
+/* =============================== */
+/*   COLUMNA DERECHA (LINEA TIEMPO) */
+/* =============================== */
+
 .right {
   flex: 1;
   max-width: 450px;
@@ -75,12 +92,15 @@
   top: 0;
   width: 3px;
   height: 100%;
-  background: #cbb699;
+  background: #5eb3e4; /* azul claro */
   border-radius: 3px;
-  opacity: 0.4;
+  opacity: 0.5;
 }
 
-/* ITEM INDIVIDUAL */
+/* =============================== */
+/*   ITEM DEL TIMELINE             */
+/* =============================== */
+
 .timelineItem {
   display: flex;
   align-items: flex-start;
@@ -107,12 +127,12 @@
   animation-delay: 0.7s;
 }
 
-/* NÚMERO */
+/* NÚMERO CÍRCULO */
 .number {
   width: 36px;
   height: 36px;
-  background: #a48c63;
-  color: white;
+  background: #5eb3e4; /* azul claro */
+  color: #ffffff;
   font-weight: 700;
   border-radius: 50%;
   display: flex;
@@ -120,18 +140,21 @@
   align-items: center;
   font-size: 17px;
   flex-shrink: 0;
-  box-shadow: 0 0 8px rgba(203, 182, 153, 0.5);
+  box-shadow: 0 0 8px rgba(94, 179, 228, 0.6);
 }
 
 /* TEXTO DEL ITEM */
 .itemText {
-  color: #cbb699;
+  color: #f7c600; /* amarillo brillante */
   font-size: 18px;
   line-height: 1.5;
   font-weight: 500;
 }
 
-/* ANIMACIÓN */
+/* =============================== */
+/*   ANIMACIÓN                     */
+/* =============================== */
+
 @keyframes fadeSlideIn {
   from {
     opacity: 0;
@@ -143,7 +166,10 @@
   }
 }
 
-/* RESPONSIVE */
+/* =============================== */
+/*   RESPONSIVE                    */
+/* =============================== */
+
 @media (max-width: 900px) {
   .wrapper {
     flex-direction: column;

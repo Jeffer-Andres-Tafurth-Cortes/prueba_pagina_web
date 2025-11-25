@@ -30,7 +30,7 @@ export default function Portfolio() {
         </p>
 
         <Link href={"/areas-juridicas"}>
-          <button className={styles.ctaButton}>AREAS DE PRÁCTICA</button>
+          <button className={styles.ctaButton}>ÁREAS DE PRÁCTICA</button>
         </Link>
       </div>
 

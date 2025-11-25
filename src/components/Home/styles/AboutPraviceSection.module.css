@@ -1,0 +1,142 @@
+/* --- BACKGROUND --- */
+.wrapper {
+  width: 100%;
+  background-color: #004a80;
+  padding-bottom: 60px;
+  margin-top: 100px;
+  border: 1px solid #808080;
+  border-radius: 20px;
+}
+
+/* ========================= */
+/*   BARRA DE 3 PASOS        */
+/* ========================= */
+
+.stepsBar {
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  border-bottom: 2px solid #5eb3e4;
+  border-radius: 10px 10px 0 0;
+}
+
+.stepItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 600;
+  color: #000;
+  font-size: 15px;
+}
+
+.stepNumber {
+  width: 36px;
+  height: 36px;
+  background-color: #5eb3e4;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+/* ========================= */
+/*   CONTENEDOR PRINCIPAL   */
+/* ========================= */
+
+.container {
+  max-width: 1400px;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 0 20px;
+}
+
+.contentBox {
+  background: #ffffff;
+  padding: 40px 45px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  width: 55%;
+}
+
+.title {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #004a80;
+  font-weight: 700;
+}
+
+.paragraph {
+  color: #333;
+  line-height: 1.7;
+  font-size: 16px;
+  margin-bottom: 18px;
+}
+
+/* BOTÓN */
+.ctaButton {
+  margin-top: 10px;
+  padding: 14px 25px;
+  background-color: #f7c600; /* Dorado */
+  color: #000;
+  font-weight: 700;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* HOVER EFECTO PREMIUM */
+.ctaButton:hover {
+  background-color: #f4c300; /* Dorado más intenso */
+  transform: translateY(-3px); /* Elevar */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35); /* Sombra suave */
+}
+
+/* EFECTO DE FOCUS (teclado/accesibilidad) */
+.ctaButton:focus {
+  outline: 3px solid #5eb3e4; /* Azul de la paleta */
+  outline-offset: 3px;
+}
+
+/* ========================= */
+/*   IMAGEN DERECHA         */
+/* ========================= */
+
+.imageContainer {
+  width: 45%;
+  height: 500px; /* ⬅️ Ajusta la altura para recortar */
+  overflow: hidden; /* ⬅️ Oculta las partes sobrantes */
+  border-radius: 10px;
+}
+
+.imageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 10px;
+}
+
+/* ========================= */
+/*   RESPONSIVE             */
+/* ========================= */
+
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .contentBox,
+  .imageContainer {
+    width: 100%;
+  }
+}

@@ -1,12 +1,14 @@
-/* TopBar.module.css */
+/* ===========================
+      TOP BAR PRINCIPAL
+=========================== */
 
 .topBar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background-color: #052a47;
-  color: white;
+  background-color: #004a80; /* Azul corporativo */
+  color: #ffffff;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -14,7 +16,12 @@
   font-size: 14px;
   z-index: 1000;
   font-family: Arial, Helvetica, sans-serif;
+  border-bottom: 2px solid #5eb3e4; /* Azul claro como acento */
 }
+
+/* ===========================
+        SECCIONES
+=========================== */
 
 .leftSection {
   display: flex;
@@ -34,39 +41,51 @@
   gap: 5px;
 }
 
+/* ===========================
+        ICONOS
+=========================== */
+
 .icon {
   height: 15px;
   width: auto;
 }
 
 .emailLink {
-  color: white;
+  color: #ffffff;
   text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.emailLink:hover {
+  color: #f7c600; /* Dorado en hover */
 }
 
 .socialIcon {
   height: 22px;
   width: auto;
-  color: white;
-  transition: color 0.3s ease;
+  color: #ffffff;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .socialIcon:hover {
-  color: #b38d32; /* Color dorado al hover */
+  color: #f7c600; /* Dorado corporativo */
+  transform: translateY(-2px);
 }
 
-/* Media queries para responsivo */
+/* ===========================
+        RESPONSIVE
+=========================== */
 
-/* Tablets (pantallas menores a 768px) */
+/* Tablets */
 @media (max-width: 768px) {
   .topBar {
     padding: 4px 20px;
     font-size: 12px;
-    justify-content: center; /* Centrar las redes sociales ya que la info de contacto está oculta */
+    justify-content: center;
   }
 
   .leftSection {
-    display: none; /* Ocultar información de contacto */
+    display: none;
   }
 
   .rightSection {
@@ -78,18 +97,18 @@
   }
 }
 
-/* Móviles (pantallas menores a 480px) */
+/* Móviles */
 @media (max-width: 480px) {
   .topBar {
     flex-direction: column;
     padding: 4px 10px;
     font-size: 11px;
     text-align: center;
-    justify-content: center; /* Centrar verticalmente */
+    justify-content: center;
   }
 
   .leftSection {
-    display: none; /* Ocultar información de contacto */
+    display: none;
   }
 
   .rightSection {

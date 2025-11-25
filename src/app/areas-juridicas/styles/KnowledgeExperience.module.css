@@ -1,3 +1,6 @@
+/* ===========================
+   CONTENEDOR
+=========================== */
 .container {
   max-width: 1200px;
   margin: 80px auto;
@@ -5,13 +8,16 @@
   display: flex;
   align-items: center;
   gap: 60px;
+  color: #efefee; /* gris claro para texto general */
   font-family: Arial, Helvetica, sans-serif;
-  color: #444;
-  flex-wrap: wrap; /* Responsive */
+  flex-wrap: wrap;
+  background-color: #004a80; /* fondo azul oscuro para la sección */
+  border-radius: 8px;
+  box-sizing: border-box;
 }
 
 /* ===========================
-   IMAGEN  
+   IMAGEN
 =========================== */
 .imageWrapper {
   flex: 1 1 400px;
@@ -22,13 +28,12 @@
 .image {
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
   user-select: none;
-  background-color: none;
+  border-radius: 6px;
 }
 
 /* ===========================
-   CONTENIDO  
+   TEXTO
 =========================== */
 .content {
   flex: 1 1 500px;
@@ -39,92 +44,81 @@
   font-size: 32px;
   font-weight: 600;
   margin-bottom: 20px;
-  color: #efefee;
+  color: #f4c300; /* amarillo dorado */
 }
 
 .content p {
   margin-bottom: 16px;
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.6;
-  color: #efefee;
-}
-
-.bulletList {
-  list-style-type: disc;
-  padding-left: 20px;
-  font-size: 15px;
-  color: #e0b247;
-  margin-top: 24px;
-}
-
-.bulletList li {
-  margin-bottom: 10px;
+  color: #efefee; /* gris muy claro para buen contraste */
 }
 
 /* ===========================
-   TABLET / MÓVILES GRANDES
+   LISTADO (TIMELINE)
 =========================== */
-@media (max-width: 992px) {
-  .container {
-    gap: 40px;
-  }
+.timelineList {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 40px;
+  position: relative;
+  border-left: 2px solid #f4c300; /* línea amarilla */
+  padding-left: 25px;
+}
 
-  .title {
-    font-size: 28px;
-  }
+.timelineList li {
+  margin-bottom: 28px;
+  position: relative;
+  padding-left: 45px;
+}
 
-  .content p {
-    font-size: 15px;
-  }
+.timelineList li::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  background-color: #f4c300; /* punto amarillo */
+  border-radius: 50%;
+  position: absolute;
+  left: -31px;
+  top: 4px;
+}
+
+.number {
+  font-size: 18px;
+  font-weight: 700;
+  color: #f7c600; /* amarillo brillante */
+  margin-right: 10px;
+}
+
+/* Texto dentro de cada item */
+.timelineList li p {
+  display: inline;
+  font-size: 16px;
+  color: #efefee;
+  line-height: 1.5;
 }
 
 /* ===========================
-   MÓVILES MEDIOS
+   RESPONSIVE
 =========================== */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
+    gap: 30px;
     text-align: center;
-    margin: 40px auto;
-    padding: 0 5px; /* MÁS REDUCCIÓN DE PADDING LATERAL */
   }
 
-  .imageWrapper,
-  .content {
-    max-width: 100%;
-    flex: none;
-    padding: 0 5px; /* MÁS ESPACIO PARA EL TEXTO */
-  }
-
-  .bulletList {
-    text-align: left;
+  .timelineList {
     margin: 20px auto;
-    max-width: 98%; /* Ocupa casi todo el ancho */
-  }
-}
-
-/* ===========================
-   TELÉFONOS PEQUEÑOS
-=========================== */
-@media (max-width: 480px) {
-  .container {
-    padding: 0 3px; /* Casi sin padding para que ocupe el máximo espacio */
+    border-left: none;
+    padding-left: 0;
   }
 
-  .title {
-    font-size: 24px;
+  .timelineList li {
+    padding-left: 0;
   }
 
-  .content {
-    padding: 0 3px; /* Mínimo padding para el texto */
-  }
-
-  .content p {
-    font-size: 14px;
-  }
-
-  .bulletList {
-    font-size: 14px;
-    max-width: 100%; /* Todo el ancho disponible */
+  .timelineList li::before {
+    display: none;
   }
 }

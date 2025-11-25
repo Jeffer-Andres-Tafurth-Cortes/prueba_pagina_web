@@ -21,17 +21,32 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <p className={styles.subtitle}>Bienvenidos a nuestra Firma</p>
-        <h1 className={styles.title}>
-          Especialistas en cada caso, excelencia en cada resultado
+        <h1 className={styles.mainTitle}>
+          PRAVICE <br /> Donde tu problema legal encuentra solución real
         </h1>
-        <p className={styles.subtitle}>
-          Estamos aquí para escucharte, asesorarte y guiarte con la seguridad de
-          contar con especialistas dedicados a obtener el mejor resultado
-          posible. Da el primer paso hacia la solución legal que necesitas.
+
+        <p className={styles.paragraph}>
+          Sabemos que cuando enfrentas un problema legal no solo está en juego
+          tu patrimonio, tu tranquilidad o tu futuro. También existe un miedo
+          constante: poner tu caso en manos de un abogado que no tenga la
+          experiencia ni el conocimiento específico que tu situación requiere.
         </p>
+
+        <p className={styles.paragraph}>
+          Por eso, en PRAVICE no asignamos tu caso al azar. Te asignamos un
+          abogado especialista en tu tipo de problema, que diseña una estrategia
+          a tu medida, defiende tus intereses con criterio experto y actúa con
+          firmeza hasta lograr el mejor resultado posible.
+        </p>
+
+        <p className={styles.finalPhrase}>
+          No dejes tu caso en manos de cualquiera.
+          <br />
+          <strong>Déjalo en manos de especialistas.</strong>
+        </p>
+
         <button className={styles.ctaButton} onClick={handleClick}>
-          Agenda tu asesoría
+          PROGRAME UNA CONSULTA
         </button>
       </motion.div>
     </section>

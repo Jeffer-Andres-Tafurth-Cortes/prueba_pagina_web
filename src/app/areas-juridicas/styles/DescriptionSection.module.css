@@ -1,208 +1,82 @@
+/* ============================ 
+   CONTENEDOR GENERAL
+============================ */
 .container {
-  max-width: 1200px;
-  margin: 0 auto 80px auto;
+  max-width: 900px;
+  margin: 30px auto;
   padding: 0 20px;
   text-align: center;
 }
 
-/* Texto general */
-.icon {
-  font-size: 1.5rem;
-  color: #d3b97d;
-}
-
-.subtitle {
-  color: #d3b97d;
-  font-size: 14px;
-  margin-bottom: 4px;
-  font-weight: 400;
-}
-
+/* ============================
+   TITULO
+============================ */
 .title {
-  font-size: 36px;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 28px;
+  color: #f4c300; /* amarillo dorado, para destacar bien sobre el azul oscuro */
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* para mejor legibilidad */
+}
+
+/* ============================
+   PÁRRAFOS
+============================ */
+.text {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #ffffff; /* blanco para contraste sobre fondo azul oscuro */
+  max-width: 750px;
+  margin: 0 auto 18px auto;
+}
+
+.text strong {
+  color: #f7c600; /* amarillo brillante para énfasis */
   font-weight: 700;
-  margin-bottom: 40px;
-  color: #d3b97d;
 }
 
-/* GRID PRINCIPAL */
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-}
-
-/* TARJETA 3D */
-.cardWrapper {
-  width: 320px;
-  height: 350px;
-  perspective: 1200px;
-}
-
-.card {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.75s ease;
-  cursor: pointer;
-  border-radius: 6px;
-}
-
-/* Rotación en hover (solo desktop) */
-@media (min-width: 769px) {
-  .cardWrapper:hover .card {
-    transform: rotateY(180deg);
-  }
-}
-
-/* CARAS */
-.front,
-.back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  padding: 30px 24px;
-  border: 1.2px solid #d3b97d;
-  border-radius: 6px;
-  backface-visibility: hidden;
-  display: flex;
-  flex-direction: column;
-  color: #4b4b4b;
-  background-color: white;
-}
-
-.front {
-  justify-content: start;
-}
-
-.icon {
-  font-size: 30px;
-  color: #b38d32;
-  margin-bottom: 12px;
-}
-
-.cardTitle {
+.highlight {
+  color: #5eb3e4; /* azul claro para destacar */
   font-weight: 600;
-  font-size: 20px;
-  margin-bottom: 6px;
 }
 
-.frontText {
-  font-size: 14px;
-  line-height: 1.4;
-  flex-grow: 1;
-}
-
-/* Parte trasera */
-.back {
-  transform: rotateY(180deg);
-  justify-content: center;
-  font-size: 15px;
-  line-height: 1.5;
-  padding-top: 40px;
-  text-align: center;
-  color: #4b4b4b;
-}
-
-.bulletList {
-  margin: 0;
-  padding-left: 20px;
-  list-style-type: disc;
-  font-size: 14px;
-  line-height: 1.5;
-  color: #4b4b4b;
-  text-align: left;
+/* Segundo párrafo */
+.textSecondary {
+  font-size: 16px;
+  color: #808080; /* gris medio para menor énfasis */
+  line-height: 1.6;
+  max-width: 720px;
+  margin: 0 auto;
+  opacity: 0.9;
 }
 
 /* ============================
    RESPONSIVE
 ============================ */
-
-/* Laptops pequeñas / Tablets grandes */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .title {
     font-size: 32px;
   }
 
-  .cardWrapper {
-    width: 300px;
-    height: 330px;
+  .text,
+  .textSecondary {
+    font-size: 15px;
   }
 }
 
-/* Tablets y móviles grandes */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .title {
-    font-size: 28px;
+    font-size: 26px;
   }
 
-  .container {
-    padding: 0 10px; /* Reducir padding lateral para aprovechar ancho */
+  .text {
+    font-size: 14px;
   }
 
-  .grid {
-    gap: 20px;
-    justify-content: center;
-  }
-
-  /* Cards más flexibles y centradas */
-  .cardWrapper {
-    width: 95%;
-    max-width: 320px;
-    height: 320px;
-  }
-
-  /* Activación de flip por tap */
-  .cardWrapper:active .card {
-    transform: rotateY(180deg);
-  }
-}
-
-/* Móviles estándar */
-@media (max-width: 550px) {
-  .cardWrapper {
-    width: 100%;
-    height: 300px;
-  }
-
-  .cardTitle {
-    font-size: 18px;
-  }
-
-  .frontText,
-  .bulletList {
+  .textSecondary {
     font-size: 13px;
-  }
-}
-
-/* Móviles muy pequeños (iPhone SE, Android pequeños) */
-@media (max-width: 400px) {
-  .title {
-    font-size: 22px;
-  }
-
-  .container {
-    padding: 0 5px; /* Mínimo padding para aprovechar espacio */
-  }
-
-  .cardWrapper {
-    height: 280px;
-  }
-
-  .front,
-  .back {
-    padding: 20px 16px;
-  }
-
-  .cardTitle {
-    font-size: 17px;
-  }
-
-  .frontText,
-  .bulletList {
-    font-size: 12px;
   }
 }

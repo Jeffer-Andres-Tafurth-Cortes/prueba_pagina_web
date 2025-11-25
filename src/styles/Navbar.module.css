@@ -14,23 +14,7 @@
   background: transparent;
 }
 
-.ctaButton {
-  background-color: #cba15f;
-  border: none;
-  padding: 14px 28px;
-  font-weight: 600;
-  font-size: 16px;
-  color: white;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.ctaButton:hover {
-  background-color: #a17f35;
-}
-
-/* Navbar con fondo blanco (siempre activo en tu caso) */
+/* Navbar con fondo blanco (activo al hacer scroll) */
 .scrolled {
   background: #ffffff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -53,18 +37,18 @@
 ============================ */
 .logo {
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
 }
 
-/* light (cuando navbar es transparente o en home arriba) */
+/* light (para navbar transparente) */
 .light {
   color: #ffffff;
 }
 
-/* dark (cuando navbar tiene fondo blanco) */
+/* dark (para navbar con fondo blanco) */
 .dark {
-  color: #1a1a1a;
+  color: #004a80;
 }
 
 /* ============================
@@ -80,8 +64,35 @@
 .links a {
   text-decoration: none;
   font-size: 16px;
-  font-weight: 500;
-  color: #1a1a1a;
+  font-weight: 600;
+  color: #004a80;
+  transition: color 0.3s ease;
+}
+
+.links a:hover {
+  color: #f4c300;
+}
+
+/* ============================
+   CTA BUTTON
+============================ */
+.ctaButton {
+  background-color: #f7c600;
+  border: none;
+  padding: 14px 28px;
+  font-weight: 700;
+  font-size: 16px;
+  color: #004a80;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 2px 5px rgba(247, 198, 0, 0.5);
+}
+
+.ctaButton:hover {
+  background-color: #f4c300;
+  color: #000000;
+  box-shadow: 0 4px 10px rgba(244, 195, 0, 0.75);
 }
 
 /* ============================
@@ -97,9 +108,13 @@
 .hamburger span {
   width: 28px;
   height: 3px;
-  background: #1a1a1a;
+  background: #004a80;
   border-radius: 2px;
-  transition: 0.3s ease;
+  transition: background 0.3s ease;
+}
+
+.hamburger:hover span {
+  background: #f7c600;
 }
 
 /* ============================
@@ -114,7 +129,7 @@
   /* Menú móvil oculto inicialmente */
   .links {
     position: fixed;
-    top: 115px; /* debajo del topbar + navbar */
+    top: 85px; /* justo debajo navbar */
     right: -100%;
     width: 70%;
     height: 100vh;
@@ -135,8 +150,8 @@
   /* Links del menú móvil */
   .links a {
     font-size: 18px;
-    color: #1a1a1a !important;
-    font-weight: 600;
+    color: #004a80 !important;
+    font-weight: 700;
   }
 }
 

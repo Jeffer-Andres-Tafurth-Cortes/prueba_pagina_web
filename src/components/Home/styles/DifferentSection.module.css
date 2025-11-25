@@ -1,0 +1,52 @@
+/* Contenedor general */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 30px;
+  background: #ffffff; /* Caja clara sobre fondo azul oscuro */
+  border-radius: 20px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+/* Título */
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #004a80;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Párrafos */
+.paragraph {
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: #1a1a1a;
+  margin-bottom: 22px;
+  text-align: justify;
+}
+
+.paragraph strong {
+  color: #004a80;
+}
+
+/* Botón CTA */
+.ctaButton {
+  margin-top: 20px;
+  padding: 14px 28px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  background-color: #004a80;
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.ctaButton:hover {
+  background-color: #013a63;
+  transform: scale(1.03);
+}

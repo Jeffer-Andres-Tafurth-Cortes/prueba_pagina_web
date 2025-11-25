@@ -1,6 +1,6 @@
 "use client";
 
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLocationDot,
@@ -25,6 +25,14 @@ const handleClick = () => {
 };
 
 const Footer: FC = () => {
+  // Cargar script de Instagram una sola vez
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://www.instagram.com/embed.js";
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
+
   return (
     <footer className={styles.footer}>
       <div className={styles.topSection}>
@@ -38,12 +46,12 @@ const Footer: FC = () => {
             height={80}
             priority={true}
           />
-          <p className={styles.subtitle}>Asesores Especializados</p>
+          <p className={styles.subtitle}>ASESORES ESPECIALIZADOS</p>
         </div>
 
         {/* Contáctanos */}
         <div className={styles.contactSection}>
-          <h3 className={styles.title}>Contáctanos</h3>
+          <h3 className={styles.title}>CONTÁCTANOS</h3>
           <ul className={styles.contactList}>
             <li>
               <span aria-label="Dirección" role="img">
@@ -71,21 +79,9 @@ const Footer: FC = () => {
           </ul>
         </div>
 
-        {/* Área del Derecho */}
-        <div className={styles.rightsSection}>
-          <h3 className={styles.title}>Áreas de Practica</h3>
-          <ul className={styles.rightsList}>
-            <li>Derecho Familia</li>
-            <li>Derecho Comercial</li>
-            <li>Derecho Penal</li>
-            <li>Derecho Civil</li>
-            <li>Derecho Laboral</li>
-          </ul>
-        </div>
-
         {/* Síguenos */}
         <div className={styles.followSection}>
-          <h3 className={styles.title}>Síguenos</h3>
+          <h3 className={styles.title}>SÍGUENOS</h3>
           <div className={styles.socialIcons}>
             <a
               href="https://www.facebook.com/praviceabogadosespecializados"
@@ -121,6 +117,27 @@ const Footer: FC = () => {
             </a>
           </div>
         </div>
+
+        {/* ========================= */}
+        {/* FEED DE INSTAGRAM */}
+        {/* ========================= */}
+        <div className={styles.instagramFeed}>
+          <h3 className={styles.title}>FEED DE INSTAGRAM</h3>
+
+          <blockquote
+            className="instagram-media"
+            data-instgrm-permalink="https://www.instagram.com/pravice_abogados/"
+            data-instgrm-version="14"
+            style={{
+              background: "#fff",
+              border: 0,
+              margin: "0 auto",
+              padding: 0,
+              maxWidth: "350px",
+              width: "100%",
+            }}
+          ></blockquote>
+        </div>
       </div>
 
       <hr className={styles.divider} />
@@ -129,7 +146,7 @@ const Footer: FC = () => {
         © {new Date().getFullYear()} Pravice Abogados
       </div>
 
-      {/* Botones a la derecha (fijo) */}
+      {/* Botón fijo de WhatsApp */}
       <div className={styles.fixedButtons}>
         <button
           className={styles.phoneBtn}

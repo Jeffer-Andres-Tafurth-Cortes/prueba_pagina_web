@@ -6,6 +6,13 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import styles from "./styles/ThreeBoxes3D.module.css";
 
+const handleClick = () => {
+  window.open(
+    "https://api.whatsapp.com/message/RE7FEN4IGOISD1?autoload=1&app_absent=0",
+    "_blank"
+  );
+};
+
 export default function ThreeBoxes3D() {
   return (
     <section className={styles.container}>
@@ -16,7 +23,7 @@ export default function ThreeBoxes3D() {
             <div className={styles.front}>
               <FontAwesomeIcon icon={faAward} className={styles.icon} />
               <h3 className={styles.title}>
-                Asesoría Integral y Personalizada
+                ASESORÍA INTEGRAL Y PERSONALIZADA
               </h3>
               <hr className={styles.line} />
               <p className={styles.text}>
@@ -26,7 +33,11 @@ export default function ThreeBoxes3D() {
               </p>
             </div>
             <div className={styles.back}>
-              <p>
+              <h3 className={styles.title}>
+                ASESORÍA INTEGRAL Y PERSONALIZADA
+              </h3>
+              <hr className={styles.line} />
+              <p className={styles.text}>
                 Cada cliente y cada caso son unicos. Analizamos a fondo tu
                 situación para ofrecerles soluciones legales a la medida,
                 garantizando una atencion cercana y oportuna en todo momento.
@@ -40,7 +51,7 @@ export default function ThreeBoxes3D() {
           <div className={styles.card}>
             <div className={styles.front}>
               <FontAwesomeIcon icon={faBalanceScale} className={styles.icon} />
-              <h3 className={styles.title}>Experiencia y Compromiso</h3>
+              <h3 className={styles.title}>EXPERIENCIA Y COMPROMISO</h3>
               <hr className={styles.line} />
               <p className={styles.text}>
                 Nuestro equipo está conformado por abogados con amplia
@@ -49,6 +60,8 @@ export default function ThreeBoxes3D() {
               </p>
             </div>
             <div className={styles.back}>
+              <h3 className={styles.title}>EXPERIENCIA Y COMPROMISO</h3>
+              <hr className={styles.line} />
               <p>
                 Nuestro equipo cuenta con años de trayectoria en diferentes
                 áreas del derecho, brindando un respaldo legal sólido para
@@ -65,7 +78,7 @@ export default function ThreeBoxes3D() {
             <div className={styles.front}>
               <FontAwesomeIcon icon={faCheckDouble} className={styles.icon} />
               <h3 className={styles.title}>
-                Atención preventiva y estratégica
+                ATENCIÓN PREVENTIVA Y ESTRATÉGICA
               </h3>
               <hr className={styles.line} />
               <p className={styles.text}>
@@ -75,8 +88,12 @@ export default function ThreeBoxes3D() {
               </p>
             </div>
             <div className={styles.back}>
+              <h3 className={styles.title}>
+                ATENCIÓN PREVENTIVA Y ESTRATÉGICA
+              </h3>
+              <hr className={styles.line} />
               <p>
-                Má álla de resolver problemas legales, trabajamos para
+                Más álla de resolver problemas legales, trabajamos para
                 prevenirlos. A través de la asesoría continua, ayudamos a tu
                 empresa o a ti como cliente particular a tomar decisiones
                 informadas que minimicen riesgos laborales legales a futuro.
@@ -84,6 +101,11 @@ export default function ThreeBoxes3D() {
             </div>
           </div>
         </div>
+      </div>
+      <div className={styles.ctaContainer}>
+        <button className={styles.ctaButton} onClick={handleClick}>
+          PROGRAME UNA CONSULTA
+        </button>
       </div>
     </section>
   );
