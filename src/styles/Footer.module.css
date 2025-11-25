@@ -169,15 +169,19 @@
    ----------------------  RESPONSIVE  -------------------------
    =========================================================== */
 
-/* Tablets (<= 992px) */
+/* Tablets y móviles (<= 992px) */
 @media (max-width: 992px) {
   .footer {
     padding: 40px 30px;
   }
 
+  /* Cambiar layout a columna para apilar bloques */
   .topSection {
-    overflow-x: auto; /* ❗ scroll horizontal si no caben */
-    flex-wrap: nowrap; /* mantiene los 5 en fila */
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; /* espacio vertical entre bloques */
+    overflow-x: visible; /* quitar scroll horizontal */
   }
 
   .logoSection,
@@ -185,7 +189,13 @@
   .rightsSection,
   .followSection,
   .instagramFeed {
-    min-width: 260px; /* más ancho para scroll limpio */
+    min-width: auto; /* quitar mínimo fijo */
+    width: 100%; /* ocupar todo el ancho disponible */
+    max-width: 400px; /* opcional: limitar ancho para mejor lectura */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .logoSection {
