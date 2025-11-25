@@ -14,7 +14,7 @@
   background: transparent;
 }
 
-/* Navbar con fondo blanco (activo al hacer scroll) */
+/* Navbar con fondo blanco (activo siempre en tu caso) */
 .scrolled {
   background: #ffffff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -37,18 +37,18 @@
 ============================ */
 .logo {
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 600;
   text-decoration: none;
 }
 
-/* light (para navbar transparente) */
+/* light (cuando navbar es transparente o en home arriba) */
 .light {
   color: #ffffff;
 }
 
-/* dark (para navbar con fondo blanco) */
+/* dark (cuando navbar tiene fondo blanco) */
 .dark {
-  color: #004a80;
+  color: #004a80; /* azul oscuro */
 }
 
 /* ============================
@@ -65,19 +65,19 @@
   text-decoration: none;
   font-size: 16px;
   font-weight: 600;
-  color: #004a80;
+  color: #004a80; /* azul oscuro */
   transition: color 0.3s ease;
 }
 
 .links a:hover {
-  color: #f4c300;
+  color: #f7c600; /* amarillo brillante */
 }
 
 /* ============================
    CTA BUTTON
 ============================ */
 .ctaButton {
-  background-color: #f7c600;
+  background-color: #f4c300; /* amarillo dorado */
   border: none;
   padding: 14px 28px;
   font-weight: 700;
@@ -86,13 +86,14 @@
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
-  box-shadow: 0 2px 5px rgba(247, 198, 0, 0.5);
+  box-shadow: 0 2px 5px rgba(244, 195, 0, 0.5);
+  white-space: nowrap;
 }
 
 .ctaButton:hover {
-  background-color: #f4c300;
+  background-color: #5eb3e4; /* azul claro */
   color: #000000;
-  box-shadow: 0 4px 10px rgba(244, 195, 0, 0.75);
+  box-shadow: 0 4px 10px rgba(94, 179, 228, 0.75);
 }
 
 /* ============================
@@ -153,6 +154,14 @@
     color: #004a80 !important;
     font-weight: 700;
   }
+
+  /* Ajustes responsivos botón */
+  .ctaButton {
+    padding: 12px 24px;
+    font-size: 15px;
+    width: 100%; /* botón ancho completo en móvil */
+    max-width: none;
+  }
 }
 
 /* ============================
@@ -161,5 +170,11 @@
 @media (max-width: 480px) {
   .logo {
     font-size: 20px;
+  }
+
+  /* Ajustes responsivos botón */
+  .ctaButton {
+    padding: 10px 20px;
+    font-size: 14px;
   }
 }

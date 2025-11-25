@@ -7,6 +7,7 @@
   padding: 0 20px;
   display: flex;
   align-items: center;
+  justify-content: center; /* CENTRAR horizontalmente */
   gap: 60px;
   color: #efefee; /* gris claro para texto general */
   font-family: Arial, Helvetica, sans-serif;
@@ -22,7 +23,8 @@
 .imageWrapper {
   flex: 1 1 400px;
   display: flex;
-  justify-content: center;
+  justify-content: center; /* centrar la imagen */
+  align-items: center; /* centrar verticalmente si hay diferencia de altura */
 }
 
 .image {
@@ -38,6 +40,8 @@
 .content {
   flex: 1 1 500px;
   max-width: 600px;
+  margin: 0 auto; /* CENTRAR el contenido en su espacio */
+  text-align: left; /* por defecto alineado a la izquierda */
 }
 
 .title {
@@ -105,7 +109,12 @@
   .container {
     flex-direction: column;
     gap: 30px;
-    text-align: center;
+    text-align: center; /* CENTRAR texto y elementos en móvil */
+  }
+
+  .content {
+    max-width: 90%;
+    text-align: center; /* CENTRAR texto en móvil */
   }
 
   .timelineList {

@@ -1,9 +1,11 @@
 /* CONTENEDOR GENERAL */
 .container {
   width: 100%;
+  max-width: 1600px; /* Limita ancho máximo para que no se extienda demasiado en pantallas grandes */
   padding: 60px 20px;
   background: #f4f4f4;
-  margin-bottom: 100px;
+  margin: 0 auto 100px; /* Centra horizontalmente y mantiene margen inferior */
+  box-sizing: border-box;
 }
 
 /* GRID DE SERVICIOS */
@@ -11,8 +13,10 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 35px;
+  justify-content: center; /* Centra el grid si el ancho total es menor que el contenedor */
 }
 
+/* Items */
 .serviceItem {
   background: #ffffff;
   padding: 22px;
