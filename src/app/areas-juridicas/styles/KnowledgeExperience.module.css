@@ -4,15 +4,15 @@
 .container {
   max-width: 1200px;
   margin: 80px auto;
-  padding: 0 20px;
+  padding: 40px 20px; /* Ajustado para evitar desbordes */
   display: flex;
   align-items: center;
-  justify-content: center; /* CENTRAR horizontalmente */
+  justify-content: center;
   gap: 60px;
-  color: #efefee; /* gris claro para texto general */
+  color: #efefee;
   font-family: Arial, Helvetica, sans-serif;
   flex-wrap: wrap;
-  background-color: #004a80; /* fondo azul oscuro para la sección */
+  background-color: #004a80;
   border-radius: 8px;
   box-sizing: border-box;
 }
@@ -23,8 +23,8 @@
 .imageWrapper {
   flex: 1 1 400px;
   display: flex;
-  justify-content: center; /* centrar la imagen */
-  align-items: center; /* centrar verticalmente si hay diferencia de altura */
+  justify-content: center;
+  align-items: center;
 }
 
 .image {
@@ -40,22 +40,22 @@
 .content {
   flex: 1 1 500px;
   max-width: 600px;
-  margin: 0 auto; /* CENTRAR el contenido en su espacio */
-  text-align: left; /* por defecto alineado a la izquierda */
+  margin: 0 auto;
+  text-align: left;
 }
 
 .title {
   font-size: 32px;
   font-weight: 600;
   margin-bottom: 20px;
-  color: #f4c300; /* amarillo dorado */
+  color: #f4c300;
 }
 
 .content p {
   margin-bottom: 16px;
   font-size: 17px;
   line-height: 1.6;
-  color: #efefee; /* gris muy claro para buen contraste */
+  color: #efefee;
 }
 
 /* ===========================
@@ -63,11 +63,14 @@
 =========================== */
 .timelineList {
   list-style: none;
-  padding-left: 0;
-  margin-top: 40px;
+  margin: 40px auto 0 auto; /* CENTRAR bloque completo */
+  padding: 0;
   position: relative;
-  border-left: 2px solid #f4c300; /* línea amarilla */
+  width: 100%;
+  max-width: 520px;
+  border-left: 2px solid #f4c300;
   padding-left: 25px;
+  box-sizing: border-box;
 }
 
 .timelineList li {
@@ -80,7 +83,7 @@
   content: "";
   width: 14px;
   height: 14px;
-  background-color: #f4c300; /* punto amarillo */
+  background-color: #f4c300;
   border-radius: 50%;
   position: absolute;
   left: -31px;
@@ -90,8 +93,8 @@
 .number {
   font-size: 18px;
   font-weight: 700;
-  color: #f7c600; /* amarillo brillante */
-  margin-right: 10px;
+  color: #f7c600;
+  margin-right: 8px;
 }
 
 /* Texto dentro de cada item */
@@ -107,27 +110,47 @@
 =========================== */
 @media (max-width: 768px) {
   .container {
+    margin: 40px auto;
     flex-direction: column;
     gap: 30px;
-    text-align: center; /* CENTRAR texto y elementos en móvil */
+    text-align: center;
+    padding: 30px 16px; /* Corrige desplazamiento móvil */
   }
 
   .content {
-    max-width: 90%;
-    text-align: center; /* CENTRAR texto en móvil */
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
   }
 
+  .imageWrapper {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /* ✅ Timeline ahora centrado */
   .timelineList {
-    margin: 20px auto;
+    margin: 25px auto 0 auto;
     border-left: none;
     padding-left: 0;
+    text-align: center;
+    max-width: 100%;
   }
 
   .timelineList li {
     padding-left: 0;
+    margin-bottom: 20px;
   }
 
   .timelineList li::before {
     display: none;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+
+  .content p {
+    font-size: 15px;
   }
 }
