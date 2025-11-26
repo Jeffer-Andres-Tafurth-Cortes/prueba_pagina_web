@@ -10,9 +10,9 @@
   align-items: center;
   color: white;
   text-align: center;
-  overflow: hidden;
-  padding: 0 15px; /* Padding lateral para evitar que el contenido toque los bordes */
-  box-sizing: border-box; /* Asegura que padding no afecte el ancho total */
+  overflow-x: hidden;
+  padding: 0 15px;
+  box-sizing: border-box;
 }
 
 /* Video de fondo */
@@ -40,7 +40,6 @@
    CONTENEDOR DEL TEXTO
 ============================ */
 .content {
-  max-width: 780px;
   position: relative;
   z-index: 5;
   background-color: rgba(0, 0, 0, 0.45);
@@ -49,8 +48,13 @@
   backdrop-filter: blur(4px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 
-  margin: 0 auto; /* Centra el contenido horizontalmente */
-  overflow-wrap: break-word; /* Evita que palabras largas desborden */
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto;
+
+  overflow-x: hidden;
+  overflow-wrap: anywhere;
+  hyphens: auto;
 }
 
 /* ============================
@@ -61,7 +65,7 @@
   font-weight: 700;
   margin-bottom: 22px;
   line-height: 1.25;
-  word-break: break-word; /* Mejor manejo de texto largo */
+  word-break: break-word;
 }
 
 .paragraph {
@@ -99,7 +103,9 @@
   transition: all 0.25s ease;
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
-  white-space: nowrap; /* Para que el texto no se rompa en varias líneas */
+
+  white-space: normal;
+  text-align: center;
 }
 
 .ctaButton:hover {
@@ -140,11 +146,6 @@
     max-width: 520px;
   }
 
-  .paragraph {
-    /* Reducir un poco texto en móviles pequeños si se desea */
-    /* Podrías usar JS para recortar texto dinámicamente si es necesario */
-  }
-
   .ctaButton {
     padding: 14px 26px;
     font-size: 15px;
@@ -159,7 +160,7 @@
 
   .content {
     padding: 24px 18px;
-    max-width: 90vw; /* Limita el ancho a 90% del viewport para evitar borde */
+    max-width: 90vw;
   }
 
   .ctaButton {
@@ -175,6 +176,8 @@
 
   .content {
     padding: 20px 14px;
-    max-width: 85vw; /* Más recorte para pantallas ultra pequeñas */
+    max-width: 85vw;
+    text-align: center;
+    word-break: break-word;
   }
 }
