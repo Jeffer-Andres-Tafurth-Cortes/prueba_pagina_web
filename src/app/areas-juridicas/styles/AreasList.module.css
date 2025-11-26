@@ -66,6 +66,8 @@
 
 .ctaButton:hover {
   background-color: #f7c600; /* amarillo brillante */
+  transform: scale(1.03);
+  color: #000;
 }
 
 /* Rotación en hover (solo desktop) */

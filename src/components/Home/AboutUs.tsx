@@ -1,6 +1,13 @@
 import React, { FC } from "react";
 import styles from "./styles/AboutUs.module.css";
 
+const handleClick = () => {
+  window.open(
+    "https://api.whatsapp.com/message/RE7FEN4IGOISD1?autoload=1&app_absent=0",
+    "_blank"
+  );
+};
+
 const AboutUs: FC = () => {
   return (
     <section className={styles.container}>
@@ -59,9 +66,9 @@ const AboutUs: FC = () => {
       </div>
 
       <div className={styles.buttonWrapper}>
-        <a href="#contacto" className={styles.ctaButton}>
+        <button className={styles.ctaButton} onClick={handleClick}>
           PROGRAME UNA CONSULTA
-        </a>
+        </button>
       </div>
     </section>
   );

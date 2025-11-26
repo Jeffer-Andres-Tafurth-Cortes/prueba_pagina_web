@@ -1,6 +1,13 @@
 import React, { FC } from "react";
 import styles from "./styles/ExperienceSection.module.css";
 
+const handleClick = () => {
+  window.open(
+    "https://api.whatsapp.com/message/RE7FEN4IGOISD1?autoload=1&app_absent=0",
+    "_blank"
+  );
+};
+
 const ExperienceSection: FC = () => {
   return (
     <section className={styles.container}>
@@ -53,7 +60,9 @@ const ExperienceSection: FC = () => {
 
       {/* BOTÓN CENTRADO */}
       <div className={styles.buttonContainer}>
-        <button className={styles.ctaButton}>PROGRAME UNA CONSULTA</button>
+        <button className={styles.ctaButton} onClick={handleClick}>
+          PROGRAME UNA CONSULTA
+        </button>
       </div>
     </section>
   );

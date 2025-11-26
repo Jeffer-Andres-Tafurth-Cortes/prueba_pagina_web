@@ -96,7 +96,7 @@ const ContactSection: FC = () => {
           <textarea id="message" name="message" rows={6} required />
 
           <button type="submit" className={styles.button}>
-            Send
+            ENVIAR
           </button>
         </form>
       </div>

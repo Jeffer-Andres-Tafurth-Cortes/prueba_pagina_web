@@ -14,21 +14,17 @@ const CallToAction: FC = () => {
   return (
     <section className={styles.ctaSection}>
       <div className={styles.contentWrapper}>
-        <small className={styles.topText}>ESCRÍBENOS 24/7</small>
-
-        <h2 className={styles.mainText}>
-          Protege tu empresa con asesoría legal experta.
-          <span className={styles.highlight}> Agenda tu consulta hoy.</span>
-        </h2>
+        <h2 className={styles.mainText}>PROGRAME UNA CONSULTA</h2>
 
         <div className={styles.divider}></div>
 
-        <p className={styles.bottomText}>
-          Estamos listos para ayudarte. Habla con nuestro equipo y recibe la
-          orientación que necesitas.
+        <p className={styles.bottomText}>¡Esperamos poder ayudarlo!</p>
+
+        <p className={styles.finalText}>
+          ¿Necesita ayuda inmediata? Escribanos ahora
         </p>
 
-        <button className={styles.button} onClick={handleClick}>
+        <button className={styles.ctaButton} onClick={handleClick}>
           PROGRAME UNA CONSULTA
         </button>
       </div>
