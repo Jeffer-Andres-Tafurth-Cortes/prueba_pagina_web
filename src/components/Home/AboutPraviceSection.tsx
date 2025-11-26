@@ -49,7 +49,7 @@ const AboutPraviceSection = () => {
 
         {/* Imagen derecha */}
         <div className={styles.imageContainer}>
-          <img src="/foto-grupal.jpg" alt="Equipo PRAVICE" />
+          <img src="/foto-abogados.jpg" alt="Equipo PRAVICE" />
         </div>
       </div>
     </section>

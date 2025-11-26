@@ -7,7 +7,8 @@
   padding: 0 20px;
   text-align: center;
   font-family: "Segoe UI", Arial, sans-serif;
-  color: #ffffff; /* texto principal blanco */
+  color: #ffffff;
+  box-sizing: border-box;
 }
 
 /* ===========================
@@ -17,10 +18,10 @@
   font-size: 32px;
   font-weight: 700;
   margin-bottom: 50px;
-  color: #fff; /* azul claro destacado */
+  color: #fff;
   letter-spacing: -0.4px;
   line-height: 1.3;
-  border-bottom: 3px solid #f4c300; /* dorado elegante */
+  border-bottom: 3px solid #f4c300;
   display: inline-block;
   padding-bottom: 8px;
 }
@@ -33,34 +34,46 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 25px;
   margin-bottom: 50px;
+  justify-items: center; /* ✅ CENTRADO REAL */
 }
 
+/* ===========================
+   ITEM
+=========================== */
 .item {
+  width: 100%; /* ✅ elimina desplazamientos raros */
+  max-width: 100%;
   background: rgba(255, 255, 255, 0.08);
   padding: 18px 20px;
   border-radius: 14px;
-  text-align: left;
   font-size: 17px;
   line-height: 1.6;
-  border: 1px solid rgba(94, 179, 228, 0.25); /* borde azul claro */
+  border: 1px solid rgba(94, 179, 228, 0.25);
   backdrop-filter: blur(6px);
   display: flex;
   gap: 12px;
   align-items: flex-start;
   transition: 0.25s ease;
+  box-sizing: border-box;
+
+  margin-inline: auto; /* ✅ fuerza centrado */
+  text-align: left;
 }
 
 .item:hover {
   background: rgba(255, 255, 255, 0.13);
-  border-color: #5eb3e4; /* resalta azul claro */
+  border-color: #5eb3e4;
   transform: translateY(-2px);
 }
 
-/* Icono */
+/* ===========================
+   ICONO
+=========================== */
 .icon {
-  color: #f7c600; /* dorado más brillante */
+  color: #f7c600;
   font-size: 20px;
   margin-top: 2px;
+  flex-shrink: 0;
 }
 
 /* ===========================
@@ -68,16 +81,18 @@
 =========================== */
 .buttonWrapper {
   margin-top: 20px;
+  display: flex;
+  justify-content: center; /* ✅ */
 }
 
 .ctaButton {
   display: inline-block;
-  background: linear-gradient(90deg, #f4c300, #f7c600); /* dorado corporativo */
+  background: linear-gradient(90deg, #f4c300, #f7c600);
   padding: 15px 35px;
   border-radius: 30px;
   font-size: 17px;
   font-weight: 600;
-  color: #000; /* texto negro profesional */
+  color: #000;
   text-decoration: none;
   letter-spacing: 0.3px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -95,10 +110,21 @@
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: 1fr;
+    justify-items: center; /* ✅ */
+  }
+
+  .item {
+    width: 100%;
+    max-width: 100%;
   }
 
   .mainTitle {
     font-size: 26px;
     margin-bottom: 35px;
+  }
+
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
