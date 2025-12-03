@@ -13,7 +13,7 @@ const equipo = [
   {
     nombre: "Leydi Tirado",
     cargo: "CCO & Abogada",
-    img: "/doc-leidy.jpeg",
+    img: "/doc-leidy.jpg",
   },
   {
     nombre: "Angie Rivera",
