@@ -1,4 +1,13 @@
+"use client";
+
 import styles from "./styles/DifferentSection.module.css";
+
+const handleClick = () => {
+  window.open(
+    "https://api.whatsapp.com/message/RE7FEN4IGOISD1?autoload=1&app_absent=0",
+    "_blank"
+  );
+};
 
 const DifferentSection = () => {
   return (
@@ -28,7 +37,9 @@ const DifferentSection = () => {
         especialistas.
       </p>
 
-      <button className={styles.ctaButton}>PROGRAME UNA CONSULTA</button>
+      <button className={styles.ctaButton} onClick={handleClick}>
+        PROGRAME UNA CONSULTA
+      </button>
     </section>
   );
 };
