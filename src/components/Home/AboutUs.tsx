@@ -11,41 +11,28 @@ const handleClick = () => {
   );
 };
 
-// Variants seguros para TS
-const fadeUp = {
-  hidden: { opacity: 0, y: 35 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
-};
-
-const staggerContainer = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-};
-
 const AboutUs: FC = () => {
   return (
     <motion.section
       className={styles.container}
-      variants={staggerContainer}
-      initial="hidden"
-      whileInView="show"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.6 }}
     >
-      {/* Título */}
-      <motion.h2 className={styles.mainTitle} variants={fadeUp}>
+      {/* TÍTULO */}
+      <motion.h2
+        className={styles.mainTitle}
+        initial={{ opacity: 0, y: 35 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
         ¿Está buscando un abogado competente, transparente y atento?
       </motion.h2>
 
-      {/* Grid con stagger */}
-      <motion.div className={styles.grid} variants={staggerContainer}>
+      {/* GRID con fadeUp + stagger manual */}
+      <div className={styles.grid}>
         {[
           "¿Está buscando un abogado verdaderamente especialista en su problema legal y no uno que “haga de todo”?",
           "¿Tiene dinero por cobrar y necesita una firma experta en cobro de cartera y recuperación de activos?",
@@ -59,22 +46,27 @@ const AboutUs: FC = () => {
           <motion.div
             key={i}
             className={styles.item}
-            variants={fadeUp}
-            whileHover={{ scale: 1.02, translateX: 6 }}
-            transition={{ duration: 0.2 }}
+            initial={{ opacity: 0, y: 35 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: i * 0.15 }} // 🔥 stagger manual
+            whileHover={{ scale: 1.02, x: 6 }}
           >
             <span className={styles.icon}>✔</span>
             {text}
           </motion.div>
         ))}
-      </motion.div>
+      </div>
 
-      {/* Botón */}
+      {/* BOTÓN */}
       <div className={styles.buttonWrapper}>
         <motion.button
           className={styles.ctaButton}
           onClick={handleClick}
-          variants={fadeUp}
+          initial={{ opacity: 0, y: 35 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >

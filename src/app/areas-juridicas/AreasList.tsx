@@ -18,23 +18,6 @@ const handleClick = () => {
   );
 };
 
-// Variants globales
-const fadeUp = {
-  hidden: { opacity: 0, y: 35 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.55, ease: "easeOut" },
-  },
-};
-
-const stagger = {
-  hidden: {},
-  show: {
-    transition: { staggerChildren: 0.15, delayChildren: 0.1 },
-  },
-};
-
 const areas = [
   {
     title: "PERSONAS",
@@ -42,22 +25,22 @@ const areas = [
     frontText:
       "El derecho laboral regula la relación entre empleadores y trabajadores, asegurando el cumplimiento de normas sobre contratación, despidos, seguridad social, prestaciones y condiciones de trabajo.",
     backList: [
-      "Prevencion y manejo de conflictos laborales para evitar demandas y sanciones.",
-      "Asesoría en contratación, despidos y normativas laborales vigentes.",
-      "Defensa en procesos judiciales o administrativos ante inspecciones o reclamaciones.",
-      "Diseño de estrategias para la estabilidad y seguridad legal de tu empresa.",
+      "Prevencion y manejo de conflictos laborales.",
+      "Asesoría en contratación y despidos.",
+      "Defensa ante inspecciones y reclamaciones.",
+      "Estrategias legales para estabilidad de tu empresa.",
     ],
   },
   {
     title: "EMPRESAS",
     frontIcon: <FontAwesomeIcon icon={faBuilding} className={styles.icon} />,
     frontText:
-      "Esta área regula relaciones entre personas, protegiendo derechos sobre bienes, contratos, herencias, responsabilidad civil y otros aspectos de la vida cotidiana. Se encarga de resolver disputas sobre propiedad, incumplimiento de acuerdos y daños y perjuicios.",
+      "Regula relaciones entre personas, derechos sobre bienes, contratos, herencias, responsabilidad civil y otros aspectos de la vida cotidiana.",
     backList: [
-      "Redacción y revisión de contratos para evitar riesgos legales.",
-      "Acompañamiento en disputas civiles, como incumplimiento contractuales o daños y perjuicios.",
-      "Protección y defensa en procesos de propiedad, herencias y sucesiones.",
-      "Soluciones jurídicas personalizadas para cada caso",
+      "Redacción y revisión de contratos.",
+      "Acompañamiento en disputas civiles.",
+      "Defensa en herencias y sucesiones.",
+      "Soluciones jurídicas personalizadas.",
     ],
   },
   {
@@ -66,12 +49,12 @@ const areas = [
       <FontAwesomeIcon icon={faMoneyBillWave} className={styles.icon} />
     ),
     frontText:
-      "El derecho comercial se enfoca en regular las actividades empresariales y mercantiles, incluyendo la constitución y funcionamiento de sociedades, la elabroación de contratos comerciales, la protección de la propiedad industrial y la resolución de conflictos entre empresas.",
+      "Regula actividades empresariales, contratos comerciales, propiedad industrial y conflictos mercantiles.",
     backList: [
-      "Creación y estructuración legal de empresas con seguridad jurídica.",
-      "Redacción y negociación de contratos comerciales sólidos.",
-      "Protección ante conflictos mercantiles y litigios comerciales.",
-      "Asesoría en cumplimiento normativo y buenas prácticas empresariales.",
+      "Creación y estructuración legal de empresas.",
+      "Contratos comerciales sólidos.",
+      "Protección ante litigios mercantiles.",
+      "Asesoría en cumplimiento normativo.",
     ],
   },
 ];
@@ -83,40 +66,54 @@ export default function AreasList() {
 
       <motion.section
         className={styles.container}
-        variants={stagger}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
       >
-        <motion.p className={styles.subtitle} variants={fadeUp}>
+        {/* SUBTÍTULO */}
+        <motion.p
+          className={styles.subtitle}
+          initial={{ opacity: 0, y: 35 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           SOMOS ESPECIALISTAS EN
         </motion.p>
 
-        <motion.h2 className={styles.title} variants={fadeUp}>
+        {/* TÍTULO */}
+        <motion.h2
+          className={styles.title}
+          initial={{ opacity: 0, y: 35 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55 }}
+        >
           ÁREAS DE PRÁCTICA
         </motion.h2>
 
-        {/* Grid animada */}
-        <motion.div className={styles.grid} variants={stagger}>
+        {/* GRID animada SIN variants */}
+        <div className={styles.grid}>
           {areas.map(({ title, frontIcon, frontText, backList }) => (
             <motion.div
               key={title}
-              variants={fadeUp}
+              className={styles.cardWrapper}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.5,
+                ease: [0.25, 0.8, 0.25, 1],
+              }}
               whileHover={{
                 scale: 1.03,
                 transition: { type: "spring", stiffness: 220, damping: 14 },
               }}
-              className={styles.cardWrapper}
             >
               <div className={styles.card}>
-                {/* Frente */}
                 <div className={styles.front}>
                   <div className={styles.icon}>{frontIcon}</div>
                   <h3 className={styles.cardTitle}>{title}</h3>
                   <p className={styles.frontText}>{frontText}</p>
                 </div>
 
-                {/* Reverso */}
                 <div className={styles.back}>
                   <ul className={styles.bulletList}>
                     {backList.map((item, i) => (
@@ -127,13 +124,15 @@ export default function AreasList() {
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
 
-        {/* Botón CTA */}
+        {/* CTA */}
         <motion.button
           className={styles.ctaButton}
           onClick={handleClick}
-          variants={fadeUp}
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
           whileHover={{ scale: 1.08 }}
           whileTap={{ scale: 0.95 }}
         >
