@@ -4,6 +4,7 @@ import { useState } from "react";
 import styles from "./styles/FAQ.module.css";
 import ThreeBoxes3D from "./ThreeBoxes3D";
 import WhyChooseUs2 from "./WhyChooseUs2";
+import { motion, AnimatePresence } from "framer-motion";
 
 type FAQItem = {
   question: string;

@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import styles from "./styles/AreasList.module.css";
 import DescriptionSection from "./DescriptionSection";
 import KnowledgeExperienceSection from "./knowledgeExperience";
@@ -15,6 +16,23 @@ const handleClick = () => {
     "https://api.whatsapp.com/message/RE7FEN4IGOISD1?autoload=1&app_absent=0",
     "_blank"
   );
+};
+
+// Variants globales
+const fadeUp = {
+  hidden: { opacity: 0, y: 35 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.55, ease: "easeOut" },
+  },
+};
+
+const stagger = {
+  hidden: {},
+  show: {
+    transition: { staggerChildren: 0.15, delayChildren: 0.1 },
+  },
 };
 
 const areas = [
@@ -62,12 +80,34 @@ export default function AreasList() {
   return (
     <>
       <DescriptionSection />
-      <section className={styles.container}>
-        <p className={styles.subtitle}>SOMOS ESPECIALISTAS EN</p>
-        <h2 className={styles.title}>ÁREAS DE PRÁCTICA</h2>
-        <div className={styles.grid}>
+
+      <motion.section
+        className={styles.container}
+        variants={stagger}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <motion.p className={styles.subtitle} variants={fadeUp}>
+          SOMOS ESPECIALISTAS EN
+        </motion.p>
+
+        <motion.h2 className={styles.title} variants={fadeUp}>
+          ÁREAS DE PRÁCTICA
+        </motion.h2>
+
+        {/* Grid animada */}
+        <motion.div className={styles.grid} variants={stagger}>
           {areas.map(({ title, frontIcon, frontText, backList }) => (
-            <div key={title} className={styles.cardWrapper}>
+            <motion.div
+              key={title}
+              variants={fadeUp}
+              whileHover={{
+                scale: 1.03,
+                transition: { type: "spring", stiffness: 220, damping: 14 },
+              }}
+              className={styles.cardWrapper}
+            >
               <div className={styles.card}>
                 {/* Frente */}
                 <div className={styles.front}>
@@ -75,6 +115,7 @@ export default function AreasList() {
                   <h3 className={styles.cardTitle}>{title}</h3>
                   <p className={styles.frontText}>{frontText}</p>
                 </div>
+
                 {/* Reverso */}
                 <div className={styles.back}>
                   <ul className={styles.bulletList}>
@@ -84,13 +125,22 @@ export default function AreasList() {
                   </ul>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
-        <button className={styles.ctaButton} onClick={handleClick}>
+        </motion.div>
+
+        {/* Botón CTA */}
+        <motion.button
+          className={styles.ctaButton}
+          onClick={handleClick}
+          variants={fadeUp}
+          whileHover={{ scale: 1.08 }}
+          whileTap={{ scale: 0.95 }}
+        >
           PROGRAME UNA CONSULTA
-        </button>
-      </section>
+        </motion.button>
+      </motion.section>
+
       <KnowledgeExperienceSection />
     </>
   );

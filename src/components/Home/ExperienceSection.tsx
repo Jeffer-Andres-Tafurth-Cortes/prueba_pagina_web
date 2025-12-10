@@ -1,4 +1,7 @@
+"use client";
+
 import React, { FC } from "react";
+import { motion } from "framer-motion";
 import styles from "./styles/ExperienceSection.module.css";
 
 const handleClick = () => {
@@ -8,63 +11,89 @@ const handleClick = () => {
   );
 };
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.25,
+      duration: 0.4,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 40 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.55,
+      ease: "easeOut",
+    },
+  },
+};
+
 const ExperienceSection: FC = () => {
   return (
-    <section className={styles.container}>
-      <div className={styles.servicesSection}>
-        <div className={styles.serviceItem}>
+    <motion.section
+      className={styles.container}
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.2 }}
+    >
+      <motion.div
+        className={styles.servicesSection}
+        variants={containerVariants}
+      >
+        <motion.div className={styles.serviceItem} variants={itemVariants}>
           <h4>Cobro de Cartera y Recuperación de Activos</h4>
           <p>
             Asistencia legal especializada para recuperar el dinero adeudado por
             clientes, empresas o particulares, mediante estrategias jurídicas
             efectivas como gestión persuasiva, negociación, acuerdos de pago,
-            títulos ejecutivos y procesos judiciales, garantizando la protección
-            de su flujo de caja y su patrimonio.
+            títulos ejecutivos y procesos judiciales.
           </p>
-        </div>
+        </motion.div>
 
-        <div className={styles.serviceItem}>
-          <h4>
-            Solución rápida de conflictos sin acudir a instancias
-            jurisdiccionales
-          </h4>
+        <motion.div className={styles.serviceItem} variants={itemVariants}>
+          <h4>Solución rápida de conflictos</h4>
           <p>
-            Asistencia especializada para resolver conflictos legales de manera
-            ágil, confidencial y eficaz, a través de mecanismos alternativos,
-            conciliación, negociación jurídica y acuerdos estratégicos, evitando
-            procesos largos, costosos y desgastantes.
+            Resolución de conflictos legales de manera ágil, confidencial y
+            eficaz mediante conciliación, negociación y acuerdos estratégicos.
           </p>
-        </div>
+        </motion.div>
 
-        <div className={styles.serviceItem}>
+        <motion.div className={styles.serviceItem} variants={itemVariants}>
           <h4>Derecho Laboral y Empresarial</h4>
           <p>
-            Asistencia legal especializada en prevención, asesoría y
-            representación en conflictos laborales y empresariales, incluyendo
-            reestructuraciones, cumplimiento normativo frente a la Reforma
-            Laboral 2025, demandas laborales, relaciones contractuales y
-            protección de la empresa frente a contingencias legales.
+            Asesoría en prevención, representación en conflictos laborales,
+            cumplimiento normativo y protección frente a contingencias legales.
           </p>
-        </div>
+        </motion.div>
 
-        <div className={styles.serviceItem}>
+        <motion.div className={styles.serviceItem} variants={itemVariants}>
           <h4>Defensa y Protección Patrimonial</h4>
           <p>
-            Asistencia especializada para la protección de sus bienes, contratos
-            e intereses económicos, frente a incumplimientos, ocupaciones
-            indebidas, fraudes, riesgos legales e inseguridad jurídica, a través
-            de acciones preventivas y correctivas de alto impacto legal.
+            Protección de bienes, contratos e intereses frente a
+            incumplimientos, fraudes y riesgos legales a través de acciones
+            preventivas y correctivas.
           </p>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
-      {/* BOTÓN CENTRADO */}
-      <div className={styles.buttonContainer}>
-        <button className={styles.ctaButton} onClick={handleClick}>
+      <motion.div className={styles.buttonContainer} variants={itemVariants}>
+        <motion.button
+          className={styles.ctaButton}
+          onClick={handleClick}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.97 }}
+        >
           PROGRAME UNA CONSULTA
-        </button>
-      </div>
-    </section>
+        </motion.button>
+      </motion.div>
+    </motion.section>
   );
 };
 
