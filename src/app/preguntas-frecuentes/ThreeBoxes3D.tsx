@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAward,
@@ -16,9 +19,29 @@ const handleClick = () => {
 export default function ThreeBoxes3D() {
   return (
     <section className={styles.container}>
-      <div className={styles.grid}>
-        {/* Caja 1  */}
-        <div className={styles.cardWrapper}>
+      {/* GRID con animación stagger */}
+      <motion.div
+        className={styles.grid}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={{
+          hidden: {},
+          visible: {
+            transition: { staggerChildren: 0.2 },
+          },
+        }}
+      >
+        {/* Caja 1 */}
+        <motion.div
+          className={styles.cardWrapper}
+          variants={{
+            hidden: { opacity: 0, y: 40 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.6 }}
+          whileHover={{ scale: 1.03 }}
+        >
           <div className={styles.card}>
             <div className={styles.front}>
               <FontAwesomeIcon icon={faAward} className={styles.icon} />
@@ -38,16 +61,24 @@ export default function ThreeBoxes3D() {
               </h3>
               <hr className={styles.line} />
               <p className={styles.text}>
-                Cada cliente y cada caso son unicos. Analizamos a fondo tu
-                situación para ofrecerles soluciones legales a la medida,
-                garantizando una atencion cercana y oportuna en todo momento.
+                Cada cliente y cada caso son únicos. Analizamos tu situación a
+                fondo para ofrecer soluciones legales a la medida, garantizando
+                atención cercana y oportuna.
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Caja 2*/}
-        <div className={styles.cardWrapper}>
+        {/* Caja 2 */}
+        <motion.div
+          className={styles.cardWrapper}
+          variants={{
+            hidden: { opacity: 0, y: 40 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.6 }}
+          whileHover={{ scale: 1.03 }}
+        >
           <div className={styles.card}>
             <div className={styles.front}>
               <FontAwesomeIcon icon={faBalanceScale} className={styles.icon} />
@@ -62,18 +93,24 @@ export default function ThreeBoxes3D() {
             <div className={styles.back}>
               <h3 className={styles.title}>EXPERIENCIA Y COMPROMISO</h3>
               <hr className={styles.line} />
-              <p>
-                Nuestro equipo cuenta con años de trayectoria en diferentes
-                áreas del derecho, brindando un respaldo legal sólido para
-                proteger tus derechos e intereses con profesionalismo y
-                transparencia.
+              <p className={styles.text}>
+                Contamos con años de experiencia en diversas áreas del derecho,
+                brindando un respaldo legal sólido para proteger tus derechos.
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Caja 3 */}
-        <div className={styles.cardWrapper}>
+        <motion.div
+          className={styles.cardWrapper}
+          variants={{
+            hidden: { opacity: 0, y: 40 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.6 }}
+          whileHover={{ scale: 1.03 }}
+        >
           <div className={styles.card}>
             <div className={styles.front}>
               <FontAwesomeIcon icon={faCheckDouble} className={styles.icon} />
@@ -82,9 +119,9 @@ export default function ThreeBoxes3D() {
               </h3>
               <hr className={styles.line} />
               <p className={styles.text}>
-                No solo resolvemos conflictos, sino que también brindamos
-                asesoría preventiva para evitar riesgos legales que pueden
-                afectar tu empresa o vida personal.
+                No solo resolvemos conflictos: brindamos asesoría preventiva
+                para evitar riesgos legales que puedan afectar tu empresa o vida
+                personal.
               </p>
             </div>
             <div className={styles.back}>
@@ -92,21 +129,28 @@ export default function ThreeBoxes3D() {
                 ATENCIÓN PREVENTIVA Y ESTRATÉGICA
               </h3>
               <hr className={styles.line} />
-              <p>
-                Más álla de resolver problemas legales, trabajamos para
-                prevenirlos. A través de la asesoría continua, ayudamos a tu
-                empresa o a ti como cliente particular a tomar decisiones
-                informadas que minimicen riesgos laborales legales a futuro.
+              <p className={styles.text}>
+                Ayudamos a prevenir riesgos legales mediante asesoría continua,
+                permitiéndote tomar decisiones informadas que minimicen futuros
+                problemas.
               </p>
             </div>
           </div>
-        </div>
-      </div>
-      <div className={styles.ctaContainer}>
+        </motion.div>
+      </motion.div>
+
+      {/* CTA BUTTON */}
+      <motion.div
+        className={styles.ctaContainer}
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        viewport={{ once: true }}
+      >
         <button className={styles.ctaButton} onClick={handleClick}>
           PROGRAME UNA CONSULTA
         </button>
-      </div>
+      </motion.div>
     </section>
   );
 }

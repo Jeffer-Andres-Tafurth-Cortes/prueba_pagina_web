@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -16,7 +17,7 @@ interface Review {
 
 interface TestimonialsProps {
   reviews: Review[];
-  maxSlides?: number; // cantidad máxima a mostrar
+  maxSlides?: number;
 }
 
 const Testimonials: React.FC<TestimonialsProps> = ({ reviews, maxSlides }) => {
@@ -24,7 +25,14 @@ const Testimonials: React.FC<TestimonialsProps> = ({ reviews, maxSlides }) => {
 
   return (
     <section className={styles.testimonialsSection}>
-      <div className={styles.textContainer}>
+      {/* --- TEXT ANIMATION --- */}
+      <motion.div
+        className={styles.textContainer}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
         <h2>¿Qué piensan nuestros clientes de nosotros?</h2>
         <p>
           En <b>Pravice Abogados</b>, nuestros clientes destacan nuestra
@@ -33,29 +41,36 @@ const Testimonials: React.FC<TestimonialsProps> = ({ reviews, maxSlides }) => {
           solución efectiva de sus problemas legales y por la tranquilidad que
           les ofrecemos en cada proceso.
         </p>
-      </div>
+      </motion.div>
 
       <Swiper
-        modules={[Pagination, Autoplay]} // Agrega los módulos aquí
+        modules={[Pagination, Autoplay]}
         spaceBetween={30}
         slidesPerView={1}
         pagination={{ clickable: true }}
         autoplay={{
-          delay: 5000, // 5000ms = 5 segundos
-          disableOnInteraction: false, // Sigue autoplay después de interacciones
-          pauseOnMouseEnter: true, // Pausa cuando el mouse está encima
+          delay: 5000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
         }}
-        loop={true} // Para que se reinicie infinito
+        loop={true}
         className={styles.swiperContainer}
       >
         {displayedReviews.map(({ id, name, title, photo, message }) => (
           <SwiperSlide key={id}>
-            <div className={styles.reviewCard}>
+            {/* --- CARD ANIMATION --- */}
+            <motion.div
+              className={styles.reviewCard}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.5 }}
+            >
               <p className={styles.message}>{message}</p>
               <img src="/profile.jpg" alt={name} className={styles.photo} />
               <h3 className={styles.name}>{name}</h3>
               <p className={styles.title}>{title}</p>
-            </div>
+            </motion.div>
           </SwiperSlide>
         ))}
       </Swiper>
