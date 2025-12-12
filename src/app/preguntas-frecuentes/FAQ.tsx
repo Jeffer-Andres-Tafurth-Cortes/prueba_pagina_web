@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import styles from "./styles/FAQ.module.css";
 import ThreeBoxes3D from "./ThreeBoxes3D";
-import WhyChooseUs2 from "./WhyChooseUs2";
 
 type FAQItem = {
   question: string;
@@ -61,48 +61,67 @@ export default function FAQ() {
   };
 
   return (
-    <>
-      <section className={styles.faqSection}>
-        <h2 className={styles.heading}>PREGUNTAS FRECUENTES</h2>
-        <div className={styles.accordion}>
-          {faqData.map((item, index) => (
-            <div
-              key={index}
-              className={`${styles.accordionItem} ${
-                activeIndex === index ? styles.active : ""
-              }`}
-            >
-              <button
-                className={styles.accordionButton}
-                onClick={() => toggleIndex(index)}
-                aria-expanded={activeIndex === index}
-                aria-controls={`faq-content-${index}`}
-                id={`faq-header-${index}`}
-              >
-                {item.question}
-                <span className={styles.icon}>
-                  {activeIndex === index ? "-" : "+"}
-                </span>
-              </button>
-              <div
-                id={`faq-content-${index}`}
-                role="region"
-                aria-labelledby={`faq-header-${index}`}
-                className={styles.accordionContent}
-                style={{ maxHeight: activeIndex === index ? "500px" : "0" }}
-              >
-                <p>{item.answer}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-      <ThreeBoxes3D />
+    <section className={styles.faqSection}>
+      <motion.h2
+        className={styles.heading}
+        initial={{ opacity: 0, y: 25 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        PREGUNTAS FRECUENTES
+      </motion.h2>
 
-      {/**
-       * 
-      <WhyChooseUs2 />
-      */}
-    </>
+      <div className={styles.accordion}>
+        {faqData.map((item, index) => (
+          <motion.div
+            key={index}
+            className={`${styles.accordionItem} ${
+              activeIndex === index ? styles.active : ""
+            }`}
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, delay: index * 0.06 }}
+          >
+            <button
+              className={styles.accordionButton}
+              onClick={() => toggleIndex(index)}
+              aria-expanded={activeIndex === index}
+              aria-controls={`faq-content-${index}`}
+              id={`faq-header-${index}`}
+            >
+              {item.question}
+              <span className={styles.icon}>
+                {activeIndex === index ? "-" : "+"}
+              </span>
+            </button>
+
+            {/* Contenido animado */}
+            <AnimatePresence>
+              {activeIndex === index && (
+                <motion.div
+                  id={`faq-content-${index}`}
+                  role="region"
+                  aria-labelledby={`faq-header-${index}`}
+                  className={styles.accordionContent}
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.35 }}
+                >
+                  <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.1 }}
+                  >
+                    {item.answer}
+                  </motion.p>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
+        ))}
+      </div>
+      <ThreeBoxes3D />
+    </section>
   );
 }

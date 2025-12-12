@@ -27,7 +27,7 @@
 .card {
   position: relative;
   width: 100%;
-  min-height: 300px;
+  min-height: 350px;
   transform-style: preserve-3d;
   transition: transform 0.8s ease;
   border-radius: 12px;

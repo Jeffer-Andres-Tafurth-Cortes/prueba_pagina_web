@@ -83,9 +83,7 @@
    CONTENIDO DEL ITEM
 ========================== */
 .accordionContent {
-  max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease;
   padding: 0 1.5rem;
   background: rgba(255, 255, 255, 0.08);
   border-radius: 0 0 10px 10px;
