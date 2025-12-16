@@ -1,6 +1,5 @@
 "use client";
 
-import React, { FC } from "react";
 import styles from "./styles/ContactForm.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -15,7 +14,7 @@ import {
   faTiktok,
 } from "@fortawesome/free-brands-svg-icons";
 
-const ContactSection: FC = () => {
+function ContactSection() {
   return (
     <section className={styles.contactSection}>
       {/* Contenedor blanco con formulario y detalles */}
@@ -113,6 +112,6 @@ const ContactSection: FC = () => {
       </div>
     </section>
   );
-};
+}
 
 export default ContactSection;

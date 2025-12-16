@@ -1,6 +1,5 @@
 "use client";
 
-import React, { FC } from "react";
 import { motion } from "framer-motion";
 import styles from "./styles/ExperienceSection.module.css";
 
@@ -11,7 +10,7 @@ const handleClick = () => {
   );
 };
 
-const ExperienceSection: FC = () => {
+function ExperienceSection() {
   const items = [
     {
       title: "Cobro de Cartera y Recuperación de Activos",
@@ -79,6 +78,6 @@ const ExperienceSection: FC = () => {
       </motion.div>
     </motion.section>
   );
-};
+}
 
 export default ExperienceSection;

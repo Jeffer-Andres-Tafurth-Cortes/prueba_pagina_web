@@ -1,6 +1,5 @@
 "use client";
 
-import React, { FC } from "react";
 import { motion } from "framer-motion";
 import styles from "./styles/AboutUs.module.css";
 
@@ -11,7 +10,7 @@ const handleClick = () => {
   );
 };
 
-const AboutUs: FC = () => {
+function AboutUs() {
   return (
     <motion.section
       className={styles.container}
@@ -75,6 +74,6 @@ const AboutUs: FC = () => {
       </div>
     </motion.section>
   );
-};
+}
 
 export default AboutUs;

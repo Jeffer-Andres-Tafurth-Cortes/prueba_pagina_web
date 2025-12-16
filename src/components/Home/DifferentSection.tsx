@@ -10,7 +10,7 @@ const handleClick = () => {
   );
 };
 
-const DifferentSection = () => {
+function DifferentSection() {
   return (
     <section className={styles.container}>
       {/* TÍTULO CON ANIMACIÓN */}
@@ -70,6 +70,6 @@ const DifferentSection = () => {
       </motion.button>
     </section>
   );
-};
+}
 
 export default DifferentSection;

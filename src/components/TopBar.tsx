@@ -12,7 +12,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import styles from "../styles/TopBar.module.css";
 
-const TopBar = () => {
+function TopBar() {
   return (
     <div className={styles.topBar}>
       {/* Información izquierda */}
@@ -73,6 +73,6 @@ const TopBar = () => {
       </div>
     </div>
   );
-};
+}
 
 export default TopBar;

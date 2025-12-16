@@ -1,6 +1,6 @@
 "use client";
 
-import React, { FC, useEffect } from "react";
+import { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLocationDot,
@@ -24,7 +24,7 @@ const handleClick = () => {
   );
 };
 
-const Footer: FC = () => {
+function Footer() {
   // Cargar script de Instagram una sola vez
   useEffect(() => {
     const script = document.createElement("script");
@@ -158,6 +158,6 @@ const Footer: FC = () => {
       </div>
     </footer>
   );
-};
+}
 
 export default Footer;
