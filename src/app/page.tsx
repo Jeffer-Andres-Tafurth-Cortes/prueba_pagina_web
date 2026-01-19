@@ -8,6 +8,9 @@ import ExperienceSection from "@/components/Home/ExperienceSection";
 import DifferentSection from "@/components/Home/DifferentSection";
 import AboutPraviceSection from "@/components/Home/AboutPraviceSection";
 
+import styles from "./page.module.css";
+import { motion } from "framer-motion";
+
 const reviewsData = [
   {
     id: "1",
@@ -73,6 +76,22 @@ export default function Home() {
       <section id="resenas">
         <Testimonials reviews={reviewsData} maxSlides={3} />
       </section>
+
+      <motion.div
+        className={styles.mapWrapper}
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <h3 className={styles.mapTitle}>Nuestra oficina</h3>
+        <div className={styles.mapContainer}>
+          <iframe
+            src="https://www.google.com/maps?q=Abogados%20Especialistas%20Pravice%20Bogot%C3%A1&output=embed"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
+      </motion.div>
     </>
   );
 }
