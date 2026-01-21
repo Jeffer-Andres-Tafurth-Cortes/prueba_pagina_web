@@ -9,7 +9,7 @@ import Image from "next/image";
 const handleClick = () => {
   window.open(
     "https://api.whatsapp.com/message/RE7FEN4IGOISD1?autoload=1&app_absent=0",
-    "_blank"
+    "_blank",
   );
 };
 
@@ -22,7 +22,7 @@ export default function Navbar() {
       className={`${styles.navbar} ${styles.scrolled}`}
       style={{
         position: "fixed",
-        top: "30px",
+        top: "40px",
         left: 0,
         right: 0,
         zIndex: 999,

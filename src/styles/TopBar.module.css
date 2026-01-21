@@ -7,16 +7,20 @@
   top: 0;
   left: 0;
   right: 0;
-  background-color: #004a80; /* Azul corporativo */
+
+  background-color: #004a80;
   color: #ffffff;
+
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+
   padding: 6px 30px;
   font-size: 14px;
   z-index: 1000;
+
   font-family: Arial, Helvetica, sans-serif;
-  border-bottom: 2px solid #5eb3e4; /* Azul claro como acento */
+  border-bottom: 2px solid #5eb3e4;
 }
 
 /* ===========================
@@ -26,28 +30,29 @@
 .leftSection {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 16px;
 }
 
 .rightSection {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 14px;
 }
 
 .infoItem {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
+  white-space: nowrap;
 }
 
 /* ===========================
-        ICONOS
+        ICONOS INFO
 =========================== */
 
 .icon {
-  height: 15px;
-  width: auto;
+  font-size: 14px;
+  color: #f7c600;
 }
 
 .emailLink {
@@ -57,19 +62,42 @@
 }
 
 .emailLink:hover {
-  color: #f7c600; /* Dorado en hover */
+  color: #f7c600;
+}
+
+/* ===========================
+     ICONOS REDES SOCIALES
+=========================== */
+
+.rightSection a {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+
+  transition: all 0.3s ease;
 }
 
 .socialIcon {
-  height: 22px;
-  width: auto;
+  font-size: 18px;
   color: #ffffff;
-  transition: color 0.3s ease, transform 0.2s ease;
+  transition: all 0.3s ease;
 }
 
-.socialIcon:hover {
-  color: #f7c600; /* Dorado corporativo */
-  transform: translateY(-2px);
+/* Hover vistoso y profesional */
+.rightSection a:hover {
+  background-color: #f7c600;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(247, 198, 0, 0.45);
+}
+
+.rightSection a:hover .socialIcon {
+  color: #004a80;
 }
 
 /* ===========================
@@ -92,8 +120,13 @@
     gap: 10px;
   }
 
+  .rightSection a {
+    width: 32px;
+    height: 32px;
+  }
+
   .socialIcon {
-    height: 18px;
+    font-size: 16px;
   }
 }
 
@@ -103,8 +136,6 @@
     flex-direction: column;
     padding: 4px 10px;
     font-size: 11px;
-    text-align: center;
-    justify-content: center;
   }
 
   .leftSection {
@@ -115,7 +146,12 @@
     gap: 12px;
   }
 
+  .rightSection a {
+    width: 30px;
+    height: 30px;
+  }
+
   .socialIcon {
-    height: 16px;
+    font-size: 15px;
   }
 }
