@@ -13,6 +13,10 @@ const handleClick = () => {
   );
 };
 
+const handleClickApp = () => {
+  window.open("https://legalapp.pravice.co/login.php", "_blank");
+};
+
 export default function Navbar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -91,8 +95,8 @@ export default function Navbar() {
           */}
         </ul>
 
-        <button className={styles.ctaButton} onClick={handleClick}>
-          PROGRAME UNA CONSULTA
+        <button className={styles.ctaButton} onClick={handleClickApp}>
+          VER MI CASO
         </button>
 
         {/* BOTÓN HAMBURGUESA */}
