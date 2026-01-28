@@ -12,21 +12,46 @@ export default function TeamPage() {
       <Team />
       <AnimatedCounters />
       <SkillProgress />
-      <motion.div
+
+      {/* MAPA */}
+      <motion.section
         className={styles.mapWrapper}
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
       >
-        <h3 className={styles.mapTitle}>Nuestra oficina</h3>
+        <span className={styles.mapSubtitle}>UBICACIÓN</span>
+
+        <h3 className={styles.mapTitle}>
+          Nuestra oficina en <strong>Bogotá</strong>
+        </h3>
+
+        <p className={styles.mapDescription}>
+          Visítanos en nuestras oficinas y recibe asesoría legal personalizada.
+          En <strong>Pravice Abogados</strong> estamos ubicados estratégicamente
+          para brindarte atención profesional y oportuna.
+        </p>
+
         <div className={styles.mapContainer}>
           <iframe
+            title="Ubicación Pravice Abogados en Bogotá"
             src="https://www.google.com/maps?q=Abogados%20Especialistas%20Pravice%20Bogot%C3%A1&output=embed"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
+            aria-label="Mapa de ubicación de Pravice Abogados"
           />
         </div>
-      </motion.div>
+
+        <a
+          href="https://www.google.com/maps?q=Abogados+Especialistas+Pravice+Bogotá"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.mapButton}
+        >
+          VER EN GOOGLE MAPS
+        </a>
+      </motion.section>
     </div>
   );
 }

@@ -17,7 +17,7 @@ export default function KnowledgeExperienceSection() {
       >
         <Image
           src="/estatua2-removebg.png"
-          alt="Estatua de la justicia y libros"
+          alt="Estatua de la justicia representando el conocimiento y la experiencia jurídica de abogados profesionales"
           width={600}
           height={600}
           className={styles.image}
@@ -39,7 +39,7 @@ export default function KnowledgeExperienceSection() {
           transition={{ duration: 0.6, delay: 0.1 }}
           viewport={{ once: true }}
         >
-          CONOCIMIENTO Y EXPERIENCIA
+          Conocimiento jurídico y experiencia profesional
         </motion.h2>
 
         <motion.p
@@ -48,9 +48,10 @@ export default function KnowledgeExperienceSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          En Pravice Abogados, contamos con un equipo de profesionales altamente
-          capacitados en diversas áreas del derecho, con amplia experiencia en
-          la resolución de conflictos legales.
+          En <strong>Pravice Abogados</strong> contamos con un equipo de
+          abogados especializados, con sólida formación y amplia experiencia en
+          diversas áreas del derecho, enfocados en la asesoría y representación
+          legal de personas y empresas.
         </motion.p>
 
         <motion.p
@@ -59,14 +60,14 @@ export default function KnowledgeExperienceSection() {
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          Nuestra trayectoria nos ha permitido asesorar y representar a clientes
-          en casos complejos, ofreciendo estrategias jurídicas sólidas y
-          soluciones efectivas. Nos enfocamos en prevenir riesgos, proteger los
-          intereses de nuestros clientes y alcanzar los mejores resultados,
-          siempre con un enfoque claro, práctico y orientado a la justicia.
+          Nuestra trayectoria nos permite abordar casos complejos con una visión
+          estratégica, ofreciendo soluciones jurídicas claras, seguras y
+          orientadas a resultados. Trabajamos en la prevención de riesgos
+          legales, la protección de intereses y la defensa efectiva de nuestros
+          clientes en cada etapa del proceso.
         </motion.p>
 
-        {/* LISTA CON STAGGER */}
+        {/* LISTA DE VALOR */}
         <motion.ul
           className={styles.timelineList}
           initial="hidden"
@@ -84,10 +85,10 @@ export default function KnowledgeExperienceSection() {
           }}
         >
           {[
-            "EXPERIENCIA Y ESPECIALIZACIÓN",
-            "DEFENSA Y REPRESENTACIÓN EFECTIVA",
-            "PREVENCIÓN Y SEGURIDAD JURÍDICA",
-            "COMPROMISO Y ATENCIÓN PERSONALIZADA",
+            "Experiencia comprobada en asesoría y representación legal",
+            "Defensa jurídica estratégica y efectiva",
+            "Prevención de riesgos y seguridad jurídica",
+            "Atención personalizada y compromiso profesional",
           ].map((text, index) => (
             <motion.li
               key={index}
@@ -107,9 +108,7 @@ export default function KnowledgeExperienceSection() {
                 {String(index + 1).padStart(2, "0")}
               </motion.span>
 
-              <p>
-                <strong>{text}</strong>
-              </p>
+              <p>{text}</p>
             </motion.li>
           ))}
         </motion.ul>

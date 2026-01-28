@@ -32,7 +32,7 @@ function TopBar() {
         </span>
         <span className={styles.infoItem}>
           <FontAwesomeIcon icon={faPhone} className={styles.icon} />
-          (601)3827477
+          (601)3099331
         </span>
       </div>
 

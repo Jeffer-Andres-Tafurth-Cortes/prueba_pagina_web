@@ -6,9 +6,12 @@ import DescriptionSection from "./DescriptionSection";
 import KnowledgeExperienceSection from "./knowledgeExperience";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faBuilding,
+  faGavel,
   faUsers,
+  faScaleBalanced,
+  faBuilding,
   faMoneyBillWave,
+  faHandshake,
 } from "@fortawesome/free-solid-svg-icons";
 
 const handleClick = () => {
@@ -20,41 +23,75 @@ const handleClick = () => {
 
 const areas = [
   {
-    title: "PERSONAS",
-    frontIcon: <FontAwesomeIcon icon={faUsers} className={styles.icon} />,
-    frontText:
-      "El derecho laboral regula la relación entre empleadores y trabajadores, asegurando el cumplimiento de normas sobre contratación, despidos, seguridad social, prestaciones y condiciones de trabajo.",
-    backList: [
-      "Prevencion y manejo de conflictos laborales.",
-      "Asesoría en contratación y despidos.",
-      "Defensa ante inspecciones y reclamaciones.",
-      "Estrategias legales para estabilidad de tu empresa.",
+    title: "Derecho Laboral",
+    icon: faGavel,
+    description:
+      "Asesoría legal en derecho laboral para trabajadores y empleadores, enfocada en la protección de derechos y solución de conflictos.",
+    cases: [
+      "Despidos sin justa causa",
+      "Liquidaciones y prestaciones sociales",
+      "Conflictos laborales",
+      "Contratos de trabajo",
     ],
   },
   {
-    title: "EMPRESAS",
-    frontIcon: <FontAwesomeIcon icon={faBuilding} className={styles.icon} />,
-    frontText:
-      "Regula relaciones entre personas, derechos sobre bienes, contratos, herencias, responsabilidad civil y otros aspectos de la vida cotidiana.",
-    backList: [
-      "Redacción y revisión de contratos.",
-      "Acompañamiento en disputas civiles.",
-      "Defensa en herencias y sucesiones.",
-      "Soluciones jurídicas personalizadas.",
+    title: "Derecho de Familia",
+    icon: faUsers,
+    description:
+      "Acompañamiento jurídico en derecho de familia con enfoque humano, confidencial y orientado a la protección familiar.",
+    cases: [
+      "Divorcios y separaciones",
+      "Custodia y visitas",
+      "Cuota alimentaria",
+      "Sucesiones y herencias",
     ],
   },
   {
-    title: "COBRO DE CARTERA",
-    frontIcon: (
-      <FontAwesomeIcon icon={faMoneyBillWave} className={styles.icon} />
-    ),
-    frontText:
-      "Regula actividades empresariales, contratos comerciales, propiedad industrial y conflictos mercantiles.",
-    backList: [
-      "Creación y estructuración legal de empresas.",
-      "Contratos comerciales sólidos.",
-      "Protección ante litigios mercantiles.",
-      "Asesoría en cumplimiento normativo.",
+    title: "Derecho Civil",
+    icon: faScaleBalanced,
+    description:
+      "Defensa de derechos civiles, contractuales y patrimoniales entre personas naturales y jurídicas.",
+    cases: [
+      "Contratos civiles",
+      "Arrendamientos",
+      "Responsabilidad civil",
+      "Procesos de sucesión",
+    ],
+  },
+  {
+    title: "Derecho Comercial y Empresarial",
+    icon: faBuilding,
+    description:
+      "Asesoría legal para empresas y emprendedores, enfocada en prevención de riesgos y seguridad jurídica.",
+    cases: [
+      "Constitución de empresas",
+      "Contratos comerciales",
+      "Conflictos entre socios",
+      "Asesoría empresarial",
+    ],
+  },
+  {
+    title: "Cobro de Cartera",
+    icon: faMoneyBillWave,
+    description:
+      "Gestión jurídica especializada en recuperación de cartera vencida y obligaciones incumplidas.",
+    cases: [
+      "Cobro prejurídico",
+      "Cobro judicial",
+      "Acuerdos de pago",
+      "Recuperación de activos",
+    ],
+  },
+  {
+    title: "Conciliación en Derecho",
+    icon: faHandshake,
+    description:
+      "Resolución de conflictos legales mediante conciliación, evitando procesos judiciales largos.",
+    cases: [
+      "Conciliaciones civiles",
+      "Conciliaciones familiares",
+      "Acuerdos extrajudiciales",
+      "Prevención de litigios",
     ],
   },
 ];
@@ -64,81 +101,36 @@ export default function AreasList() {
     <>
       <DescriptionSection />
 
-      <motion.section
-        className={styles.container}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.2 }}
-      >
-        {/* SUBTÍTULO */}
-        <motion.p
-          className={styles.subtitle}
-          initial={{ opacity: 0, y: 35 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          SOMOS ESPECIALISTAS EN
-        </motion.p>
+      <section className={styles.container}>
+        <p className={styles.subtitle}>SOMOS ESPECIALISTAS EN</p>
+        <h2 className={styles.title}>ÁREAS DE PRÁCTICA</h2>
 
-        {/* TÍTULO */}
-        <motion.h2
-          className={styles.title}
-          initial={{ opacity: 0, y: 35 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55 }}
-        >
-          ÁREAS DE PRÁCTICA
-        </motion.h2>
-
-        {/* GRID animada SIN variants */}
         <div className={styles.grid}>
-          {areas.map(({ title, frontIcon, frontText, backList }) => (
-            <motion.div
+          {areas.map(({ title, icon, description, cases }) => (
+            <motion.article
               key={title}
-              className={styles.cardWrapper}
-              initial={{ opacity: 0, y: 40 }}
+              className={styles.card}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.5,
-                ease: [0.25, 0.8, 0.25, 1],
-              }}
-              whileHover={{
-                scale: 1.03,
-                transition: { type: "spring", stiffness: 220, damping: 14 },
-              }}
+              transition={{ duration: 0.4 }}
+              viewport={{ once: true }}
             >
-              <div className={styles.card}>
-                <div className={styles.front}>
-                  <div className={styles.icon}>{frontIcon}</div>
-                  <h3 className={styles.cardTitle}>{title}</h3>
-                  <p className={styles.frontText}>{frontText}</p>
-                </div>
-
-                <div className={styles.back}>
-                  <ul className={styles.bulletList}>
-                    {backList.map((item, i) => (
-                      <li key={i}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </motion.div>
+              <FontAwesomeIcon icon={icon} className={styles.icon} />
+              <h3 className={styles.cardTitle}>{title}</h3>
+              <p className={styles.description}>{description}</p>
+              <ul className={styles.caseList}>
+                {cases.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
+            </motion.article>
           ))}
         </div>
 
-        {/* CTA */}
-        <motion.button
-          className={styles.ctaButton}
-          onClick={handleClick}
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-          whileHover={{ scale: 1.08 }}
-          whileTap={{ scale: 0.95 }}
-        >
+        <button className={styles.ctaButton} onClick={handleClick}>
           PROGRAME UNA CONSULTA
-        </motion.button>
-      </motion.section>
+        </button>
+      </section>
 
       <KnowledgeExperienceSection />
     </>

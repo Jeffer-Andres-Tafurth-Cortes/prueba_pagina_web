@@ -8,6 +8,7 @@ interface CounterProps {
   suffix?: string;
   duration?: number;
   title: string;
+  ariaLabel: string;
 }
 
 const Counter: React.FC<CounterProps> = ({
@@ -15,6 +16,7 @@ const Counter: React.FC<CounterProps> = ({
   suffix = "",
   duration = 5000,
   title,
+  ariaLabel,
 }) => {
   const [count, setCount] = useState(0);
 
@@ -37,7 +39,7 @@ const Counter: React.FC<CounterProps> = ({
   }, [end, duration]);
 
   return (
-    <div className={styles.counterCard}>
+    <div className={styles.counterCard} role="group" aria-label={ariaLabel}>
       <h3 className={styles.count}>
         {count}
         {suffix}
@@ -49,29 +51,48 @@ const Counter: React.FC<CounterProps> = ({
 
 export default function AnimatedCounters() {
   return (
-    <section className={styles.container}>
+    <section className={styles.container} aria-labelledby="experience-title">
       <div className={styles.textWrapper}>
-        <h3 className={styles.subtitle}>
-          20 AÑOS DE EXCELENCIA Y COMPROMISO LEGAL
-        </h3>
+        <h2 id="experience-title" className={styles.subtitle}>
+          Más de 20 años de experiencia jurídica comprobada
+        </h2>
 
         <p className={styles.text}>
-          Durante dos décadas hemos acompañado a empresas y personas en la
-          resolución de casos complejos, brindando asesoría estratégica,
-          representación sólida y un enfoque ético en cada etapa del proceso.
+          En <strong>Pravice Abogados</strong> contamos con una trayectoria
+          sólida asesorando y representando a personas y empresas en{" "}
+          <strong>derecho laboral, civil y asesoría legal integral</strong>.
+          Nuestra experiencia se refleja en resultados reales, estrategias
+          jurídicas efectivas y una atención profesional personalizada.
         </p>
 
         <p className={styles.text}>
-          Nuestra experiencia es el resultado de cientos de casos exitosos, un
-          equipo altamente capacitado y un compromiso inquebrantable con la
-          justicia y la protección de los intereses de nuestros clientes.
+          Cada caso es abordado con rigor técnico, ética profesional y un
+          enfoque orientado a la protección de los intereses de nuestros
+          clientes, consolidándonos como una firma legal confiable y reconocida.
         </p>
       </div>
 
       <div className={styles.countersWrapper}>
-        <Counter end={99} suffix="%" title="CLIENTES SATISFECHOS" />
-        <Counter end={210} suffix="+" title="ALIADOS ESTRATEGICOS" />
-        <Counter end={190} suffix="+" title="CASOS GANADOS" />
+        <Counter
+          end={99}
+          suffix="%"
+          title="Clientes satisfechos"
+          ariaLabel="Porcentaje de clientes satisfechos"
+        />
+
+        <Counter
+          end={210}
+          suffix="+"
+          title="Aliados estratégicos"
+          ariaLabel="Cantidad de aliados estratégicos"
+        />
+
+        <Counter
+          end={190}
+          suffix="+"
+          title="Casos ganados"
+          ariaLabel="Número de casos legales ganados"
+        />
       </div>
     </section>
   );

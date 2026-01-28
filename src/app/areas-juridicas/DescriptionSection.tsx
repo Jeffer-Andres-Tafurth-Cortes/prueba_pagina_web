@@ -6,7 +6,7 @@ import styles from "./styles/DescriptionSection.module.css";
 export default function DescriptionSection() {
   return (
     <section className={styles.container}>
-      {/* TÍTULO */}
+      {/* TÍTULO SEO */}
       <motion.h2
         className={styles.title}
         initial={{ opacity: 0, y: 25 }}
@@ -14,11 +14,11 @@ export default function DescriptionSection() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        ABOGADOS CON LOS
-        <br /> MEJORES RESULTADOS
+        Abogados especializados
+        <br /> con resultados comprobados
       </motion.h2>
 
-      {/* PRIMER PÁRRAFO */}
+      {/* PRIMER PÁRRAFO SEO */}
       <motion.p
         className={styles.text}
         initial={{ opacity: 0, y: 15 }}
@@ -26,16 +26,16 @@ export default function DescriptionSection() {
         transition={{ duration: 0.7, delay: 0.2 }}
         viewport={{ once: true }}
       >
-        En <strong>Pravice Abogados</strong>, defendemos tus derechos con
+        En <strong>Pravice Abogados</strong> somos una firma legal comprometida
+        con la defensa de los derechos de personas y empresas, ofreciendo{" "}
         <span className={styles.highlight}>
-          {" "}
-          estrategia, experiencia y compromiso.{" "}
-        </span>
-        Nuestro equipo analiza cada caso con precisión, construyendo soluciones
-        legales sólidas que garanticen resultados reales y confiables.
+          asesoría jurídica estratégica, ética y orientada a resultados.
+        </span>{" "}
+        Analizamos cada caso de manera rigurosa para diseñar soluciones legales
+        sólidas, claras y efectivas.
       </motion.p>
 
-      {/* SEGUNDO PÁRRAFO */}
+      {/* SEGUNDO PÁRRAFO SEO */}
       <motion.p
         className={styles.textSecondary}
         initial={{ opacity: 0, x: -20 }}
@@ -43,8 +43,10 @@ export default function DescriptionSection() {
         transition={{ duration: 0.7, delay: 0.3 }}
         viewport={{ once: true }}
       >
-        Atendemos tus necesidades legales con rigor profesional, atención
-        personalizada y un enfoque diseñado para proteger lo que más valoras.
+        Contamos con experiencia en derecho laboral, civil, empresarial y cobro
+        de cartera, brindando acompañamiento legal personalizado, prevención de
+        riesgos jurídicos y representación profesional en cada etapa del
+        proceso.
       </motion.p>
     </section>
   );

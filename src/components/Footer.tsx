@@ -25,7 +25,6 @@ const handleClick = () => {
 };
 
 function Footer() {
-  // Cargar script de Instagram una sola vez
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://www.instagram.com/embed.js";
@@ -34,35 +33,36 @@ function Footer() {
   }, []);
 
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footer} role="contentinfo">
       <div className={styles.topSection}>
-        {/* Logo */}
+        {/* LOGO Y DESCRIPCIÓN */}
         <div className={styles.logoSection}>
           <Image
             src="/logopravice.png"
-            alt="Logo Pravice Abogados"
+            alt="Pravice Abogados – Abogados especialistas en Colombia"
             className={styles.logo}
-            width={100}
-            height={80}
-            priority={true}
+            width={110}
+            height={85}
+            priority
           />
-          <p className={styles.subtitle}>ASESORES ESPECIALIZADOS</p>
+          <p className={styles.subtitle}>
+            Abogados especializados en asesoría y representación legal en
+            Colombia
+          </p>
         </div>
 
-        {/* Contáctanos */}
-        <div className={styles.contactSection}>
-          <h3 className={styles.title}>CONTÁCTANOS</h3>
+        {/* CONTACTO */}
+        <address className={styles.contactSection}>
+          <h3 className={styles.title}>Contacto legal</h3>
+
           <ul className={styles.contactList}>
             <li>
-              <span aria-label="Dirección" role="img">
-                <FontAwesomeIcon icon={faLocationDot} />
-              </span>
-              Calle 98 # 22-64 OF 716
+              <FontAwesomeIcon icon={faLocationDot} />
+              <span>Calle 98 # 22-64 Oficina 716, Bogotá – Colombia</span>
             </li>
+
             <li>
-              <span aria-label="Correo" role="img">
-                <FontAwesomeIcon icon={faMailForward} />
-              </span>
+              <FontAwesomeIcon icon={faMailForward} />
               <a
                 href="mailto:info.pravice@abogadosespecialistas.com.co"
                 className={styles.link}
@@ -70,46 +70,54 @@ function Footer() {
                 info.pravice@abogadosespecialistas.com.co
               </a>
             </li>
+
             <li>
-              <span aria-label="Teléfono" role="img">
-                <FontAwesomeIcon icon={faPhone} />
-              </span>
-              (311) 465 93 15
+              <FontAwesomeIcon icon={faPhone} />
+              <a href="tel:+573114659315" className={styles.link}>
+                +57 311 465 9315
+              </a>
             </li>
           </ul>
-        </div>
+        </address>
 
-        {/* Síguenos */}
+        {/* REDES SOCIALES */}
         <div className={styles.followSection}>
-          <h3 className={styles.title}>SÍGUENOS</h3>
+          <h3 className={styles.title}>Síguenos</h3>
+          <p className={styles.subtitleSmall}>
+            Contenido legal, noticias y asesoría jurídica
+          </p>
+
           <div className={styles.socialIcons}>
             <a
               href="https://www.facebook.com/praviceabogadosespecializados"
-              aria-label="Facebook"
+              aria-label="Facebook Pravice Abogados"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FontAwesomeIcon icon={faFacebookF} />
             </a>
+
             <a
               href="https://co.linkedin.com/company/praviceabogadosespecializados"
-              aria-label="LinkedIn"
+              aria-label="LinkedIn Pravice Abogados"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FontAwesomeIcon icon={faLinkedinIn} />
             </a>
+
             <a
               href="https://www.instagram.com/pravice_abogados/"
-              aria-label="Instagram"
+              aria-label="Instagram Pravice Abogados"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FontAwesomeIcon icon={faInstagram} />
             </a>
+
             <a
               href="https://www.tiktok.com/@pravice_abogados"
-              aria-label="TikTok"
+              aria-label="TikTok Pravice Abogados"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -118,11 +126,9 @@ function Footer() {
           </div>
         </div>
 
-        {/* ========================= */}
-        {/* FEED DE INSTAGRAM */}
-        {/* ========================= */}
+        {/* INSTAGRAM */}
         <div className={styles.instagramFeed}>
-          <h3 className={styles.title}>FEED DE INSTAGRAM</h3>
+          <h3 className={styles.title}>Instagram</h3>
 
           <blockquote
             className="instagram-media"
@@ -136,21 +142,23 @@ function Footer() {
               maxWidth: "350px",
               width: "100%",
             }}
-          ></blockquote>
+          />
         </div>
       </div>
 
       <hr className={styles.divider} />
 
+      {/* COPYRIGHT */}
       <div className={styles.bottomSection}>
-        © {new Date().getFullYear()} Pravice Abogados
+        © {new Date().getFullYear()} Pravice Abogados · Todos los derechos
+        reservados
       </div>
 
-      {/* Botón fijo de WhatsApp */}
+      {/* WHATSAPP FLOAT */}
       <div className={styles.fixedButtons}>
         <button
           className={styles.phoneBtn}
-          aria-label="Llamar"
+          aria-label="Consulta legal por WhatsApp"
           onClick={handleClick}
         >
           <FontAwesomeIcon icon={faWhatsapp} />

@@ -5,26 +5,39 @@ import styles from "../styles/CallToAction.module.css";
 const handleClick = () => {
   window.open(
     "https://api.whatsapp.com/message/RE7FEN4IGOISD1?autoload=1&app_absent=0",
-    "_blank"
+    "_blank",
   );
 };
 
 function CallToAction() {
   return (
-    <section className={styles.ctaSection}>
+    <section className={styles.ctaSection} aria-labelledby="cta-legal-title">
       <div className={styles.contentWrapper}>
-        <h2 className={styles.mainText}>PROGRAME UNA CONSULTA</h2>
+        {/* TÍTULO SEO */}
+        <h2 id="cta-legal-title" className={styles.mainText}>
+          Agende su consulta legal con abogados especializados
+        </h2>
 
         <div className={styles.divider}></div>
 
-        <p className={styles.bottomText}>¡Esperamos poder ayudarlo!</p>
-
-        <p className={styles.finalText}>
-          ¿Necesita ayuda inmediata? Escribanos ahora
+        {/* TEXTO DE CONFIANZA */}
+        <p className={styles.bottomText}>
+          Estamos listos para analizar su caso y brindarle una asesoría clara,
+          profesional y confiable.
         </p>
 
-        <button className={styles.ctaButton} onClick={handleClick}>
-          PROGRAME UNA CONSULTA
+        {/* TEXTO DE ACCIÓN */}
+        <p className={styles.finalText}>
+          ¿Necesita asesoría legal inmediata? Contáctenos ahora por WhatsApp.
+        </p>
+
+        {/* BOTÓN CTA */}
+        <button
+          className={styles.ctaButton}
+          onClick={handleClick}
+          aria-label="Agendar consulta legal por WhatsApp"
+        >
+          Agendar consulta legal
         </button>
       </div>
     </section>

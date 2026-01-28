@@ -12,28 +12,30 @@ import styles from "./styles/ThreeBoxes3D.module.css";
 const handleClick = () => {
   window.open(
     "https://api.whatsapp.com/message/RE7FEN4IGOISD1?autoload=1&app_absent=0",
-    "_blank"
+    "_blank",
   );
 };
 
 export default function ThreeBoxes3D() {
   return (
-    <section className={styles.container}>
-      {/* GRID con animación stagger */}
+    <section className={styles.container} aria-labelledby="legal-values-title">
+      {/* Título SEO invisible o visible según diseño */}
+      <h2 id="legal-values-title" className="sr-only">
+        Valores y ventajas de nuestros abogados
+      </h2>
+
+      {/* GRID */}
       <motion.div
         className={styles.grid}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         variants={{
-          hidden: {},
-          visible: {
-            transition: { staggerChildren: 0.2 },
-          },
+          visible: { transition: { staggerChildren: 0.2 } },
         }}
       >
-        {/* Caja 1 */}
-        <motion.div
+        {/* CARD 1 */}
+        <motion.article
           className={styles.cardWrapper}
           variants={{
             hidden: { opacity: 0, y: 40 },
@@ -41,36 +43,36 @@ export default function ThreeBoxes3D() {
           }}
           transition={{ duration: 0.6 }}
           whileHover={{ scale: 1.03 }}
+          aria-label="Asesoría legal integral y personalizada"
         >
           <div className={styles.card}>
             <div className={styles.front}>
               <FontAwesomeIcon icon={faAward} className={styles.icon} />
               <h3 className={styles.title}>
-                ASESORÍA INTEGRAL Y PERSONALIZADA
+                Asesoría legal integral y personalizada
               </h3>
               <hr className={styles.line} />
               <p className={styles.text}>
-                Ofrecemos soluciones legales adaptadas a las necesidades
-                específicas de cada cliente, con un acompañamiento cercano en
-                cada etapa del proceso.
+                Brindamos asesoría jurídica especializada, adaptada a las
+                necesidades de cada cliente, con acompañamiento cercano y
+                soluciones legales efectivas.
               </p>
             </div>
+
             <div className={styles.back}>
-              <h3 className={styles.title}>
-                ASESORÍA INTEGRAL Y PERSONALIZADA
-              </h3>
+              <h3 className={styles.title}>Asesoría legal a la medida</h3>
               <hr className={styles.line} />
               <p className={styles.text}>
-                Cada cliente y cada caso son únicos. Analizamos tu situación a
-                fondo para ofrecer soluciones legales a la medida, garantizando
-                atención cercana y oportuna.
+                Analizamos cada caso de forma detallada para ofrecer estrategias
+                jurídicas personalizadas, garantizando atención clara, oportuna
+                y confiable.
               </p>
             </div>
           </div>
-        </motion.div>
+        </motion.article>
 
-        {/* Caja 2 */}
-        <motion.div
+        {/* CARD 2 */}
+        <motion.article
           className={styles.cardWrapper}
           variants={{
             hidden: { opacity: 0, y: 40 },
@@ -78,31 +80,36 @@ export default function ThreeBoxes3D() {
           }}
           transition={{ duration: 0.6 }}
           whileHover={{ scale: 1.03 }}
+          aria-label="Experiencia y compromiso legal"
         >
           <div className={styles.card}>
             <div className={styles.front}>
               <FontAwesomeIcon icon={faBalanceScale} className={styles.icon} />
-              <h3 className={styles.title}>EXPERIENCIA Y COMPROMISO</h3>
+              <h3 className={styles.title}>
+                Experiencia y compromiso jurídico
+              </h3>
               <hr className={styles.line} />
               <p className={styles.text}>
                 Nuestro equipo está conformado por abogados con amplia
-                trayectoria, enfocados en proteger los intereses de nuestros
-                clientes con ética y profesionalismo.
+                experiencia, comprometidos con la defensa de los derechos e
+                intereses de nuestros clientes.
               </p>
             </div>
+
             <div className={styles.back}>
-              <h3 className={styles.title}>EXPERIENCIA Y COMPROMISO</h3>
+              <h3 className={styles.title}>Abogados con trayectoria</h3>
               <hr className={styles.line} />
               <p className={styles.text}>
-                Contamos con años de experiencia en diversas áreas del derecho,
-                brindando un respaldo legal sólido para proteger tus derechos.
+                Contamos con una sólida trayectoria en diversas áreas del
+                derecho, ofreciendo respaldo legal confiable y estrategias
+                efectivas.
               </p>
             </div>
           </div>
-        </motion.div>
+        </motion.article>
 
-        {/* Caja 3 */}
-        <motion.div
+        {/* CARD 3 */}
+        <motion.article
           className={styles.cardWrapper}
           variants={{
             hidden: { opacity: 0, y: 40 },
@@ -110,36 +117,33 @@ export default function ThreeBoxes3D() {
           }}
           transition={{ duration: 0.6 }}
           whileHover={{ scale: 1.03 }}
+          aria-label="Prevención y estrategia legal"
         >
           <div className={styles.card}>
             <div className={styles.front}>
               <FontAwesomeIcon icon={faCheckDouble} className={styles.icon} />
-              <h3 className={styles.title}>
-                ATENCIÓN PREVENTIVA Y ESTRATÉGICA
-              </h3>
+              <h3 className={styles.title}>Prevención y estrategia legal</h3>
               <hr className={styles.line} />
               <p className={styles.text}>
-                No solo resolvemos conflictos: brindamos asesoría preventiva
-                para evitar riesgos legales que puedan afectar tu empresa o vida
-                personal.
+                No solo resolvemos conflictos legales, también brindamos
+                asesoría preventiva para minimizar riesgos jurídicos futuros.
               </p>
             </div>
+
             <div className={styles.back}>
-              <h3 className={styles.title}>
-                ATENCIÓN PREVENTIVA Y ESTRATÉGICA
-              </h3>
+              <h3 className={styles.title}>Seguridad jurídica a largo plazo</h3>
               <hr className={styles.line} />
               <p className={styles.text}>
-                Ayudamos a prevenir riesgos legales mediante asesoría continua,
-                permitiéndote tomar decisiones informadas que minimicen futuros
-                problemas.
+                Ayudamos a tomar decisiones legales informadas que protegen tu
+                patrimonio, empresa y derechos desde una perspectiva
+                estratégica.
               </p>
             </div>
           </div>
-        </motion.div>
+        </motion.article>
       </motion.div>
 
-      {/* CTA BUTTON */}
+      {/* CTA */}
       <motion.div
         className={styles.ctaContainer}
         initial={{ opacity: 0, scale: 0.9 }}
@@ -147,8 +151,12 @@ export default function ThreeBoxes3D() {
         transition={{ duration: 0.6, delay: 0.2 }}
         viewport={{ once: true }}
       >
-        <button className={styles.ctaButton} onClick={handleClick}>
-          PROGRAME UNA CONSULTA
+        <button
+          className={styles.ctaButton}
+          onClick={handleClick}
+          aria-label="Agendar consulta con abogados especializados"
+        >
+          Agende su consulta legal
         </button>
       </motion.div>
     </section>

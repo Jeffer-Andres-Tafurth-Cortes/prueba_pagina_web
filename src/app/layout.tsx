@@ -5,34 +5,33 @@ import CallToAction from "../components/CallToAction";
 import TopBar from "../components/TopBar";
 
 export const metadata = {
-  title: "Asesoría en diversas áreas del derecho | Pravice Abogados",
-  description: "Pravice Abogados",
+  title: "Pravice Abogados | Asesoría y representación legal",
+  description:
+    "Pravice Abogados es una firma especializada en asesoría y representación legal para personas y empresas. Defensa jurídica estratégica, experiencia y compromiso.",
   keywords: [
-    "recuperación de cartera",
-    "cobro jurídico",
-    "cobro prejurídico",
-    "gestión de cobranzas",
-    "recaudo de cartera",
-    "recuperación de deudas",
+    "abogados",
+    "firma de abogados",
     "asesoría legal",
-    "cobranza profesional",
-    "empresa de cobranza",
-    "recuperación de cartera en Colombia",
+    "representación legal",
+    "derecho laboral",
+    "derecho civil",
+    "abogados para empresas",
   ],
+  authors: [{ name: "Pravice Abogados" }],
+  creator: "Pravice Abogados",
+  metadataBase: new URL("https://www.tudominio.com"), // cámbialo
   openGraph: {
-    title: "Asesoría en diversas áreas del derecho | Pravice Abogados",
-    description: "Recuperación de cartera rápida y efectiva.",
-    url: "",
+    title: "Pravice Abogados | Asesoría legal profesional",
+    description:
+      "Abogados especializados en asesoría y representación legal. Protegemos tus derechos con estrategia y experiencia.",
+    url: "https://www.tudominio.com",
     siteName: "Pravice Abogados",
-    images: [
-      {
-        url: "/logo-pravice.jpg",
-        width: 1200,
-        height: 630,
-      },
-    ],
     locale: "es_CO",
     type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
