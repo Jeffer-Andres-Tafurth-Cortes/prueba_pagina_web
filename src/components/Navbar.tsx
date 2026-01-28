@@ -88,7 +88,11 @@ export default function Navbar() {
           */}
         </ul>
 
-        <button className={styles.ctaButton} onClick={handleClickApp}>
+        <button
+          className={styles.ctaButton}
+          onClick={handleClickApp}
+          aria-label="Portal para consultar el estado de mi proceso legal"
+        >
           CONSULTAR MI CASO
         </button>
 
