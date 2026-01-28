@@ -46,12 +46,12 @@ export default function Navbar() {
           </li>
           <li>
             <Link href="/areas-juridicas" onClick={() => setMenuOpen(false)}>
-              ÁREAS DE PRÁCTICA
+              ÁREAS JURIDICAS
             </Link>
           </li>
           <li>
             <Link href="/nuestro-equipo" onClick={() => setMenuOpen(false)}>
-              NUESTRO EQUIPO
+              EQUIPO LEGAL
             </Link>
           </li>
 
@@ -89,7 +89,7 @@ export default function Navbar() {
         </ul>
 
         <button className={styles.ctaButton} onClick={handleClickApp}>
-          VER MI CASO
+          CONSULTAR MI CASO
         </button>
 
         {/* BOTÓN HAMBURGUESA */}
