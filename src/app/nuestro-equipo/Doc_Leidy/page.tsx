@@ -2,6 +2,7 @@
 
 import styles from "../Abogado.module.css";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function LeydiTirado() {
   return (
@@ -11,90 +12,167 @@ export default function LeydiTirado() {
       ========================== */}
       <section className={styles.hero}>
         <div className={styles.heroContainer}>
-          <div className={styles.heroContent}>
-            <h1 className={styles.heroName}>Leidy Tirado</h1>
+          <motion.div
+            className={styles.heroContent}
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <motion.h1
+              className={styles.heroName}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+            >
+              Leydi Tirado
+            </motion.h1>
 
-            <h2 className={styles.heroRole}>
+            <motion.h2
+              className={styles.heroRole}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.35, duration: 0.6 }}
+            >
               Directora Área Comercial · Abogada especialista en Derecho
               Comercial y Protección al Consumidor en Colombia
-            </h2>
+            </motion.h2>
 
-            <p className={styles.heroMeta}>
+            <motion.p
+              className={styles.heroMeta}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+            >
               Abogada Universidad Militar · Sede en Bogotá · Atención nacional
               remota
-            </p>
+            </motion.p>
 
-            <div className={styles.heroButtons}>
-              <Link href="/contacto" className={styles.btnPrimary}>
-                Agendar Consulta
-              </Link>
-
-              <Link
-                href="https://wa.me/57XXXXXXXXXX"
-                target="_blank"
-                className={styles.btnSecondary}
+            <motion.div
+              className={styles.heroButtons}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.7, duration: 0.6 }}
+            >
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.97 }}
               >
-                WhatsApp
-              </Link>
-            </div>
-          </div>
+                <Link href="/contacto" className={styles.btnPrimary}>
+                  Agendar Consulta
+                </Link>
+              </motion.div>
 
-          <div className={styles.heroImage}>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.97 }}
+              >
+                <Link
+                  href="https://wa.me/57XXXXXXXXXX"
+                  target="_blank"
+                  className={styles.btnSecondary}
+                >
+                  WhatsApp
+                </Link>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+
+          <motion.div
+            className={styles.heroImage}
+            initial={{ opacity: 0, x: 60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9, ease: "easeOut" }}
+          >
             <img
               src="/doc-leidy.jpeg"
               alt="Leydi Tirado abogada especialista en derecho comercial y protección al consumidor en Colombia"
             />
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* =========================
           PERFIL PROFESIONAL
       ========================== */}
-      <section className={styles.profileSection}>
+      <motion.section
+        className={styles.profileSection}
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8 }}
+      >
         <h2 className={styles.sectionTitle}>Perfil Profesional</h2>
 
         <p className={styles.sectionText}>
           Leydi Tirado es abogada de la Universidad Militar, experta en gestión
           comercial, con profundo conocimiento en la Ley 1480 de 2011 (Estatuto
-          del Consumidor) y en garantías mobiliarias. Desde la dirección del
-          área comercial, acompaña a empresas en el cumplimiento de regulaciones
-          comerciales, protección de derechos del consumidor y optimización de
-          procesos contractuales, brindando seguridad jurídica en un entorno
-          empresarial dinámico.
+          del Consumidor) y en garantías mobiliarias...
         </p>
-      </section>
+      </motion.section>
 
       {/* =========================
           ESPECIALIDADES
       ========================== */}
-      <section className={styles.specialtiesSection}>
+      <motion.section
+        className={styles.specialtiesSection}
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8 }}
+      >
         <h2 className={styles.sectionTitle}>Áreas de Especialidad</h2>
 
         <ul className={styles.approachList}>
-          <li>Derecho comercial y empresarial.</li>
-          <li>Protección al consumidor (Ley 1480 de 2011).</li>
-          <li>Recuperación de cartera y cobro jurídico.</li>
-          <li>Diseño y revisión de contratos comerciales.</li>
+          {[
+            "Derecho comercial y empresarial.",
+            "Protección al consumidor (Ley 1480 de 2011).",
+            "Recuperación de cartera y cobro jurídico.",
+            "Diseño y revisión de contratos comerciales.",
+          ].map((item, i) => (
+            <motion.li
+              key={i}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1, duration: 0.5 }}
+            >
+              {item}
+            </motion.li>
+          ))}
         </ul>
-      </section>
+      </motion.section>
 
       {/* =========================
           ENFOQUE DE TRABAJO
       ========================== */}
-      <section className={styles.approachSection}>
+      <motion.section
+        className={styles.approachSection}
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8 }}
+      >
         <h2 className={styles.sectionTitle}>Enfoque de Trabajo</h2>
 
         <ul className={styles.approachList}>
-          <li>Visión jurídica con criterio comercial.</li>
-          <li>Lenguaje claro para gerencias y equipos comerciales.</li>
-          <li>Orientada a resultados y prevención de litigios innecesarios.</li>
-          <li>
-            Acompañamiento estratégico para fortalecer la seguridad jurídica
-            empresarial.
-          </li>
+          {[
+            "Visión jurídica con criterio comercial.",
+            "Lenguaje claro para gerencias y equipos comerciales.",
+            "Orientada a resultados y prevención de litigios innecesarios.",
+            "Acompañamiento estratégico para fortalecer la seguridad jurídica empresarial.",
+          ].map((item, i) => (
+            <motion.li
+              key={i}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1, duration: 0.5 }}
+            >
+              {item}
+            </motion.li>
+          ))}
         </ul>
-      </section>
+      </motion.section>
     </main>
   );
 }

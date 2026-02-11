@@ -12,109 +12,167 @@ export default function GuillermoRodriguez() {
       ========================== */}
       <section className={styles.hero}>
         <div className={styles.heroContainer}>
-          <div className={styles.heroContent}>
-            <h1 className={styles.heroName}>Guillermo Rodríguez</h1>
+          <motion.div
+            className={styles.heroContent}
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <motion.h1
+              className={styles.heroName}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+            >
+              Guillermo Rodríguez
+            </motion.h1>
 
-            <h2 className={styles.heroRole}>
+            <motion.h2
+              className={styles.heroRole}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.35, duration: 0.6 }}
+            >
               Especialista en Derecho de Familia y Derecho Laboral
-            </h2>
+            </motion.h2>
 
-            <p className={styles.heroMeta}>
+            <motion.p
+              className={styles.heroMeta}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+            >
               Más de 10 años de experiencia · Asesoría y litigio judicial y
               extrajudicial · Atención nacional
-            </p>
+            </motion.p>
 
-            <div className={styles.heroButtons}>
-              <Link href="/contacto" className={styles.btnPrimary}>
-                Agendar Consulta
-              </Link>
-
-              <Link
-                href="https://wa.me/57XXXXXXXXXX"
-                target="_blank"
-                className={styles.btnSecondary}
+            <motion.div
+              className={styles.heroButtons}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.7, duration: 0.6 }}
+            >
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.97 }}
               >
-                WhatsApp
-              </Link>
-            </div>
-          </div>
+                <Link href="/contacto" className={styles.btnPrimary}>
+                  Agendar Consulta
+                </Link>
+              </motion.div>
 
-          <div className={styles.heroImage}>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.97 }}
+              >
+                <Link
+                  href="https://wa.me/57XXXXXXXXXX"
+                  target="_blank"
+                  className={styles.btnSecondary}
+                >
+                  WhatsApp
+                </Link>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+
+          <motion.div
+            className={styles.heroImage}
+            initial={{ opacity: 0, x: 60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9, ease: "easeOut" }}
+          >
             <img
               src="/doct-guillermo.jpeg"
               alt="Guillermo Rodríguez especialista en derecho de familia y derecho laboral en Colombia"
             />
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* =========================
           PERFIL PROFESIONAL
       ========================== */}
-      <section className={styles.profileSection}>
+      <motion.section
+        className={styles.profileSection}
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8 }}
+      >
         <h2 className={styles.sectionTitle}>Perfil Profesional</h2>
 
         <p className={styles.sectionText}>
           Guillermo Rodríguez es abogado con más de 10 años de experiencia en
-          Derecho de Familia, Derecho Laboral y Seguridad Social. Cuenta con una
-          sólida trayectoria en asesoría y representación judicial y
-          extrajudicial, destacándose por su enfoque técnico, preventivo y
-          estratégico. Su práctica combina firmeza jurídica y sensibilidad
-          humana en asuntos familiares, junto con un criterio técnico
-          especializado en relaciones laborales, protección de derechos y
-          gestión preventiva de riesgos empresariales.
+          Derecho de Familia, Derecho Laboral y Seguridad Social...
         </p>
-      </section>
+      </motion.section>
 
       {/* =========================
           ESPECIALIDADES
       ========================== */}
-      <section className={styles.specialtiesSection}>
+      <motion.section
+        className={styles.specialtiesSection}
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8 }}
+      >
         <h2 className={styles.sectionTitle}>Áreas de Especialidad</h2>
 
         <ul className={styles.approachList}>
-          <li>
-            Divorcios, custodia, régimen de visitas y cuotas alimentarias.
-          </li>
-          <li>
-            Sucesiones, liquidación de sociedades conyugales y patrimonios de
-            hecho.
-          </li>
-          <li>Derecho laboral individual y colectivo.</li>
-          <li>
-            Contratos laborales, despidos y reclamaciones de acreencias
-            laborales.
-          </li>
-          <li>Prevención, investigación y atención de acoso laboral.</li>
-          <li>Accidentes de trabajo y riesgos laborales.</li>
+          {[
+            "Divorcios, custodia, régimen de visitas y cuotas alimentarias.",
+            "Sucesiones, liquidación de sociedades conyugales y patrimonios de hecho.",
+            "Derecho laboral individual y colectivo.",
+            "Contratos laborales, despidos y reclamaciones de acreencias laborales.",
+            "Prevención, investigación y atención de acoso laboral.",
+            "Accidentes de trabajo y riesgos laborales.",
+          ].map((item, i) => (
+            <motion.li
+              key={i}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1, duration: 0.5 }}
+            >
+              {item}
+            </motion.li>
+          ))}
         </ul>
-      </section>
+      </motion.section>
 
       {/* =========================
           ENFOQUE DE TRABAJO
       ========================== */}
-      <section className={styles.approachSection}>
+      <motion.section
+        className={styles.approachSection}
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8 }}
+      >
         <h2 className={styles.sectionTitle}>Enfoque de Trabajo</h2>
 
         <ul className={styles.approachList}>
-          <li>
-            Enfoque preventivo y conciliador para resolver conflictos con el
-            menor impacto emocional y empresarial posible.
-          </li>
-          <li>
-            Diseño de soluciones jurídicas personalizadas, alineadas con la
-            normativa vigente y los objetivos del cliente.
-          </li>
-          <li>
-            Protección integral de los derechos de familias, empleados y
-            empleadores.
-          </li>
-          <li>
-            Acompañamiento cercano durante todo el proceso, con comunicación
-            clara y estratégica.
-          </li>
+          {[
+            "Enfoque preventivo y conciliador para resolver conflictos con el menor impacto emocional y empresarial posible.",
+            "Diseño de soluciones jurídicas personalizadas, alineadas con la normativa vigente y los objetivos del cliente.",
+            "Protección integral de los derechos de familias, empleados y empleadores.",
+            "Acompañamiento cercano durante todo el proceso, con comunicación clara y estratégica.",
+          ].map((item, i) => (
+            <motion.li
+              key={i}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1, duration: 0.5 }}
+            >
+              {item}
+            </motion.li>
+          ))}
         </ul>
-      </section>
+      </motion.section>
     </main>
   );
 }

@@ -12,101 +12,167 @@ export default function SantiagoFranco() {
       ========================== */}
       <section className={styles.hero}>
         <div className={styles.heroContainer}>
-          <div className={styles.heroContent}>
-            <h1 className={styles.heroName}>Santiago Franco</h1>
+          <motion.div
+            className={styles.heroContent}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <motion.h1
+              className={styles.heroName}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+            >
+              Santiago Franco
+            </motion.h1>
 
-            <h2 className={styles.heroRole}>
+            <motion.h2
+              className={styles.heroRole}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.35, duration: 0.6 }}
+            >
               Especialista en Derecho Penal, Compliance y Delitos Económicos
-            </h2>
+            </motion.h2>
 
-            <p className={styles.heroMeta}>
+            <motion.p
+              className={styles.heroMeta}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+            >
               Litigio penal estratégico · Gestión de riesgos legales · Atención
               nacional
-            </p>
+            </motion.p>
 
-            <div className={styles.heroButtons}>
-              <Link href="/contacto" className={styles.btnPrimary}>
-                Agendar Consulta
-              </Link>
-
-              <Link
-                href="https://wa.me/57XXXXXXXXXX"
-                target="_blank"
-                className={styles.btnSecondary}
+            <motion.div
+              className={styles.heroButtons}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.7, duration: 0.6 }}
+            >
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.97 }}
               >
-                WhatsApp
-              </Link>
-            </div>
-          </div>
+                <Link href="/contacto" className={styles.btnPrimary}>
+                  Agendar Consulta
+                </Link>
+              </motion.div>
 
-          <div className={styles.heroImage}>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.97 }}
+              >
+                <Link
+                  href="https://wa.me/57XXXXXXXXXX"
+                  target="_blank"
+                  className={styles.btnSecondary}
+                >
+                  WhatsApp
+                </Link>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+
+          <motion.div
+            className={styles.heroImage}
+            initial={{ opacity: 0, x: 80, scale: 0.95 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+          >
             <img
               src="/doc-santiago.jpg"
               alt="Santiago Franco abogado especialista en derecho penal y compliance en Colombia"
             />
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* =========================
           PERFIL PROFESIONAL
       ========================== */}
-      <section className={styles.profileSection}>
+      <motion.section
+        className={styles.profileSection}
+        initial={{ opacity: 0, y: 70 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8 }}
+      >
         <h2 className={styles.sectionTitle}>Perfil Profesional</h2>
 
         <p className={styles.sectionText}>
           Santiago Franco es abogado con sólida trayectoria en Derecho Penal,
-          Derecho Penal Militar, Derecho Informático y Compliance. Especialista
-          en la prevención, detección y gestión de riesgos legales asociados a
-          delitos económicos y tecnológicos. Ha liderado litigios penales de
-          alta complejidad, representando tanto a personas naturales como
-          jurídicas en investigaciones y procesos judiciales, destacándose por
-          su enfoque estratégico, técnico y orientado a la protección jurídica y
-          reputacional.
+          Derecho Penal Militar, Derecho Informático y Compliance...
         </p>
-      </section>
+      </motion.section>
 
       {/* =========================
           ESPECIALIDADES
       ========================== */}
-      <section className={styles.specialtiesSection}>
+      <motion.section
+        className={styles.specialtiesSection}
+        initial={{ opacity: 0, y: 70 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8 }}
+      >
         <h2 className={styles.sectionTitle}>Áreas de Especialidad</h2>
 
         <ul className={styles.approachList}>
-          <li>Derecho Penal y Derecho Penal Militar.</li>
-          <li>Delitos económicos y financieros.</li>
-          <li>Delitos informáticos y cibercrimen.</li>
-          <li>Responsabilidad penal derivada del uso de tecnologías.</li>
-          <li>Diseño e implementación de programas de Compliance.</li>
-          <li>Gestión de riesgos legales corporativos.</li>
+          {[
+            "Derecho Penal y Derecho Penal Militar.",
+            "Delitos económicos y financieros.",
+            "Delitos informáticos y cibercrimen.",
+            "Responsabilidad penal derivada del uso de tecnologías.",
+            "Diseño e implementación de programas de Compliance.",
+            "Gestión de riesgos legales corporativos.",
+          ].map((item, i) => (
+            <motion.li
+              key={i}
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.12, duration: 0.55 }}
+            >
+              {item}
+            </motion.li>
+          ))}
         </ul>
-      </section>
+      </motion.section>
 
       {/* =========================
           ENFOQUE DE TRABAJO
       ========================== */}
-      <section className={styles.approachSection}>
+      <motion.section
+        className={styles.approachSection}
+        initial={{ opacity: 0, y: 70 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8 }}
+      >
         <h2 className={styles.sectionTitle}>Enfoque de Trabajo</h2>
 
         <ul className={styles.approachList}>
-          <li>
-            Enfoque estratégico y técnico en litigios penales de alta
-            complejidad.
-          </li>
-          <li>
-            Prevención de riesgos mediante programas de cumplimiento normativo
-            alineados a estándares internacionales.
-          </li>
-          <li>
-            Acompañamiento integral a personas y empresas en investigaciones y
-            procesos penales.
-          </li>
-          <li>
-            Protección jurídica y reputacional en escenarios de alto impacto
-            mediático y corporativo.
-          </li>
+          {[
+            "Enfoque estratégico y técnico en litigios penales de alta complejidad.",
+            "Prevención de riesgos mediante programas de cumplimiento normativo alineados a estándares internacionales.",
+            "Acompañamiento integral a personas y empresas en investigaciones y procesos penales.",
+            "Protección jurídica y reputacional en escenarios de alto impacto mediático y corporativo.",
+          ].map((item, i) => (
+            <motion.li
+              key={i}
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.12, duration: 0.55 }}
+            >
+              {item}
+            </motion.li>
+          ))}
         </ul>
-      </section>
+      </motion.section>
     </main>
   );
 }
