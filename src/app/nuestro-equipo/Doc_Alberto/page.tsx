@@ -102,7 +102,7 @@ export default function AlbertoCastro() {
             </div>
 
             <div>
-              <h3 className={styles.subTitle}>Enfoque</h3>
+              <h3 className={styles.subTitle}>Enfoque de Trabajo</h3>
               <ul className={styles.compactList}>
                 <li>Resultados medibles y verificables</li>
                 <li>Negociación estratégica con deudores</li>
