@@ -4,7 +4,7 @@ import styles from "../Abogado.module.css";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-export default function LeydiTirado() {
+export default function LeidyTirado() {
   return (
     <main className={styles.pageWrapper}>
       {/* =========================
@@ -12,60 +12,33 @@ export default function LeydiTirado() {
       ========================== */}
       <section className={styles.hero}>
         <div className={styles.heroContainer}>
+          {/* TEXTO HERO */}
           <motion.div
             className={styles.heroContent}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.8 }}
           >
-            <motion.h1
-              className={styles.heroName}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-            >
-              Leydi Tirado
-            </motion.h1>
+            <h1 className={styles.heroName}>Leidy Tirado</h1>
 
-            <motion.h2
-              className={styles.heroRole}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.35, duration: 0.6 }}
-            >
+            <h2 className={styles.heroRole}>
               Directora Área Comercial · Abogada especialista en Derecho
               Comercial y Protección al Consumidor en Colombia
-            </motion.h2>
+            </h2>
 
-            <motion.p
-              className={styles.heroMeta}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.6 }}
-            >
+            <p className={styles.heroMeta}>
               Abogada Universidad Militar · Sede en Bogotá · Atención nacional
               remota
-            </motion.p>
+            </p>
 
-            <motion.div
-              className={styles.heroButtons}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.7, duration: 0.6 }}
-            >
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.97 }}
-              >
+            <div className={styles.heroButtons}>
+              <motion.div whileHover={{ scale: 1.05 }}>
                 <Link href="/contacto" className={styles.btnPrimary}>
                   Agendar Consulta
                 </Link>
               </motion.div>
 
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.97 }}
-              >
+              <motion.div whileHover={{ scale: 1.05 }}>
                 <Link
                   href="https://wa.me/57XXXXXXXXXX"
                   target="_blank"
@@ -74,14 +47,15 @@ export default function LeydiTirado() {
                   WhatsApp
                 </Link>
               </motion.div>
-            </motion.div>
+            </div>
           </motion.div>
 
+          {/* IMAGEN HERO */}
           <motion.div
             className={styles.heroImage}
             initial={{ opacity: 0, x: 60 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.9, ease: "easeOut" }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
             <img
               src="/doc-leidy.jpeg"
@@ -92,86 +66,55 @@ export default function LeydiTirado() {
       </section>
 
       {/* =========================
-          PERFIL PROFESIONAL
+          SECCIÓN COMPACTA
       ========================== */}
       <motion.section
-        className={styles.profileSection}
-        initial={{ opacity: 0, y: 60 }}
+        className={styles.compactSection}
+        initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.2 }}
       >
-        <h2 className={styles.sectionTitle}>Perfil Profesional</h2>
+        <div className={styles.compactContainer}>
+          {/* COLUMNA IZQUIERDA */}
+          <div className={styles.compactLeft}>
+            <h2 className={styles.sectionTitle}>Perfil Profesional</h2>
 
-        <p className={styles.sectionText}>
-          Leydi Tirado es abogada de la Universidad Militar, experta en gestión
-          comercial, con profundo conocimiento en la Ley 1480 de 2011 (Estatuto
-          del Consumidor) y en garantías mobiliarias...
-        </p>
-      </motion.section>
+            <p className={styles.sectionText}>
+              Leidy Tirado es abogada de la Universidad Militar, experta en
+              gestión comercial, con profundo conocimiento en la Ley 1480 de
+              2011 (Estatuto del Consumidor) y en garantías mobiliarias...
+            </p>
+          </div>
 
-      {/* =========================
-          ESPECIALIDADES
-      ========================== */}
-      <motion.section
-        className={styles.specialtiesSection}
-        initial={{ opacity: 0, y: 60 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.8 }}
-      >
-        <h2 className={styles.sectionTitle}>Áreas de Especialidad</h2>
+          {/* COLUMNA DERECHA */}
+          <div className={styles.compactRight}>
+            <div>
+              <h3 className={styles.subTitle}>Áreas de Especialidad</h3>
+              <ul className={styles.compactList}>
+                <li>Derecho comercial y empresarial</li>
+                <li>Protección al consumidor (Ley 1480 de 2011)</li>
+                <li>Recuperación de cartera y cobro jurídico</li>
+                <li>Diseño y revisión de contratos comerciales</li>
+              </ul>
+            </div>
 
-        <ul className={styles.approachList}>
-          {[
-            "Derecho comercial y empresarial.",
-            "Protección al consumidor (Ley 1480 de 2011).",
-            "Recuperación de cartera y cobro jurídico.",
-            "Diseño y revisión de contratos comerciales.",
-          ].map((item, i) => (
-            <motion.li
-              key={i}
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
-            >
-              {item}
-            </motion.li>
-          ))}
-        </ul>
-      </motion.section>
-
-      {/* =========================
-          ENFOQUE DE TRABAJO
-      ========================== */}
-      <motion.section
-        className={styles.approachSection}
-        initial={{ opacity: 0, y: 60 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.8 }}
-      >
-        <h2 className={styles.sectionTitle}>Enfoque de Trabajo</h2>
-
-        <ul className={styles.approachList}>
-          {[
-            "Visión jurídica con criterio comercial.",
-            "Lenguaje claro para gerencias y equipos comerciales.",
-            "Orientada a resultados y prevención de litigios innecesarios.",
-            "Acompañamiento estratégico para fortalecer la seguridad jurídica empresarial.",
-          ].map((item, i) => (
-            <motion.li
-              key={i}
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
-            >
-              {item}
-            </motion.li>
-          ))}
-        </ul>
+            <div>
+              <h3 className={styles.subTitle}>Enfoque de Trabajo</h3>
+              <ul className={styles.compactList}>
+                <li>Visión jurídica con criterio comercial</li>
+                <li>Lenguaje claro para gerencias y equipos comerciales</li>
+                <li>
+                  Orientada a resultados y prevención de litigios innecesarios
+                </li>
+                <li>
+                  Acompañamiento estratégico para fortalecer la seguridad
+                  jurídica empresarial
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </motion.section>
     </main>
   );

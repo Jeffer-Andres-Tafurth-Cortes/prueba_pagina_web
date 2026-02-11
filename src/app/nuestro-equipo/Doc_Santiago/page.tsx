@@ -12,59 +12,32 @@ export default function SantiagoFranco() {
       ========================== */}
       <section className={styles.hero}>
         <div className={styles.heroContainer}>
+          {/* TEXTO HERO */}
           <motion.div
             className={styles.heroContent}
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.8 }}
           >
-            <motion.h1
-              className={styles.heroName}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-            >
-              Santiago Franco
-            </motion.h1>
+            <h1 className={styles.heroName}>Santiago Franco</h1>
 
-            <motion.h2
-              className={styles.heroRole}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.35, duration: 0.6 }}
-            >
+            <h2 className={styles.heroRole}>
               Especialista en Derecho Penal, Compliance y Delitos Económicos
-            </motion.h2>
+            </h2>
 
-            <motion.p
-              className={styles.heroMeta}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.6 }}
-            >
+            <p className={styles.heroMeta}>
               Litigio penal estratégico · Gestión de riesgos legales · Atención
               nacional
-            </motion.p>
+            </p>
 
-            <motion.div
-              className={styles.heroButtons}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.7, duration: 0.6 }}
-            >
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.97 }}
-              >
+            <div className={styles.heroButtons}>
+              <motion.div whileHover={{ scale: 1.05 }}>
                 <Link href="/contacto" className={styles.btnPrimary}>
                   Agendar Consulta
                 </Link>
               </motion.div>
 
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.97 }}
-              >
+              <motion.div whileHover={{ scale: 1.05 }}>
                 <Link
                   href="https://wa.me/57XXXXXXXXXX"
                   target="_blank"
@@ -73,14 +46,15 @@ export default function SantiagoFranco() {
                   WhatsApp
                 </Link>
               </motion.div>
-            </motion.div>
+            </div>
           </motion.div>
 
+          {/* IMAGEN HERO */}
           <motion.div
             className={styles.heroImage}
-            initial={{ opacity: 0, x: 80, scale: 0.95 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
-            transition={{ duration: 1, ease: "easeOut" }}
+            initial={{ opacity: 0, x: 60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
             <img
               src="/doc-santiago.jpg"
@@ -91,87 +65,61 @@ export default function SantiagoFranco() {
       </section>
 
       {/* =========================
-          PERFIL PROFESIONAL
+          SECCIÓN COMPACTA
       ========================== */}
       <motion.section
-        className={styles.profileSection}
-        initial={{ opacity: 0, y: 70 }}
+        className={styles.compactSection}
+        initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.2 }}
       >
-        <h2 className={styles.sectionTitle}>Perfil Profesional</h2>
+        <div className={styles.compactContainer}>
+          {/* COLUMNA IZQUIERDA */}
+          <div className={styles.compactLeft}>
+            <h2 className={styles.sectionTitle}>Perfil Profesional</h2>
 
-        <p className={styles.sectionText}>
-          Santiago Franco es abogado con sólida trayectoria en Derecho Penal,
-          Derecho Penal Militar, Derecho Informático y Compliance...
-        </p>
-      </motion.section>
+            <p className={styles.sectionText}>
+              Santiago Franco es abogado con sólida trayectoria en Derecho
+              Penal, Derecho Penal Militar, Derecho Informático y Compliance...
+            </p>
+          </div>
 
-      {/* =========================
-          ESPECIALIDADES
-      ========================== */}
-      <motion.section
-        className={styles.specialtiesSection}
-        initial={{ opacity: 0, y: 70 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.8 }}
-      >
-        <h2 className={styles.sectionTitle}>Áreas de Especialidad</h2>
+          {/* COLUMNA DERECHA */}
+          <div className={styles.compactRight}>
+            <div>
+              <h3 className={styles.subTitle}>Áreas de Especialidad</h3>
+              <ul className={styles.compactList}>
+                <li>Derecho Penal y Derecho Penal Militar</li>
+                <li>Delitos económicos y financieros</li>
+                <li>Responsabilidad penal derivada del uso de tecnologías</li>
+                <li>Gestión de riesgos legales corporativos</li>
+              </ul>
+            </div>
 
-        <ul className={styles.approachList}>
-          {[
-            "Derecho Penal y Derecho Penal Militar.",
-            "Delitos económicos y financieros.",
-            "Delitos informáticos y cibercrimen.",
-            "Responsabilidad penal derivada del uso de tecnologías.",
-            "Diseño e implementación de programas de Compliance.",
-            "Gestión de riesgos legales corporativos.",
-          ].map((item, i) => (
-            <motion.li
-              key={i}
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.12, duration: 0.55 }}
-            >
-              {item}
-            </motion.li>
-          ))}
-        </ul>
-      </motion.section>
-
-      {/* =========================
-          ENFOQUE DE TRABAJO
-      ========================== */}
-      <motion.section
-        className={styles.approachSection}
-        initial={{ opacity: 0, y: 70 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.8 }}
-      >
-        <h2 className={styles.sectionTitle}>Enfoque de Trabajo</h2>
-
-        <ul className={styles.approachList}>
-          {[
-            "Enfoque estratégico y técnico en litigios penales de alta complejidad.",
-            "Prevención de riesgos mediante programas de cumplimiento normativo alineados a estándares internacionales.",
-            "Acompañamiento integral a personas y empresas en investigaciones y procesos penales.",
-            "Protección jurídica y reputacional en escenarios de alto impacto mediático y corporativo.",
-          ].map((item, i) => (
-            <motion.li
-              key={i}
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.12, duration: 0.55 }}
-            >
-              {item}
-            </motion.li>
-          ))}
-        </ul>
+            <div>
+              <h3 className={styles.subTitle}>Enfoque de Trabajo</h3>
+              <ul className={styles.compactList}>
+                <li>
+                  Enfoque estratégico y técnico en litigios penales de alta
+                  complejidad
+                </li>
+                <li>
+                  Prevención de riesgos mediante programas de cumplimiento
+                  normativo alineados a estándares internacionales
+                </li>
+                <li>
+                  Acompañamiento integral a personas y empresas en
+                  investigaciones y procesos penales
+                </li>
+                <li>
+                  Protección jurídica y reputacional en escenarios de alto
+                  impacto mediático y corporativo
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </motion.section>
     </main>
   );

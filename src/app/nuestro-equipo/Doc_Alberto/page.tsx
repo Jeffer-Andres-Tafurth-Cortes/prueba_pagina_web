@@ -15,9 +15,9 @@ export default function AlbertoCastro() {
           {/* TEXTO HERO */}
           <motion.div
             className={styles.heroContent}
-            initial={{ opacity: 0, x: 0 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
           >
             <h1 className={styles.heroName}>Alberto Castro</h1>
 
@@ -54,7 +54,7 @@ export default function AlbertoCastro() {
             className={styles.heroImage}
             initial={{ opacity: 0, x: 60 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
             <img
               src="/doc-alberto.jpeg"
@@ -65,88 +65,53 @@ export default function AlbertoCastro() {
       </section>
 
       {/* =========================
-          PERFIL PROFESIONAL
+          SECCIÓN COMPACTA
       ========================== */}
       <motion.section
-        className={styles.profileSection}
+        className={styles.compactSection}
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.2 }}
       >
-        <h2 className={styles.sectionTitle}>Perfil Profesional</h2>
+        <div className={styles.compactContainer}>
+          {/* COLUMNA IZQUIERDA */}
+          <div className={styles.compactLeft}>
+            <h2 className={styles.sectionTitle}>Perfil Profesional</h2>
 
-        <p className={styles.sectionText}>
-          Alberto Castro es fundador de la firma y uno de los abogados expertos
-          en conciliación y recuperación de cartera empresarial en Colombia.
-          Cuenta con amplia experiencia en gestión de cobro jurídico,
-          negociación estratégica y diseño de soluciones legales orientadas a
-          resultados concretos para empresas que requieren procesos ágiles,
-          estructurados y jurídicamente sólidos.
-        </p>
-      </motion.section>
+            <p className={styles.sectionText}>
+              Alberto Castro es fundador de la firma y uno de los abogados
+              expertos en conciliación y recuperación de cartera empresarial en
+              Colombia. Cuenta con amplia experiencia en gestión de cobro
+              jurídico, negociación estratégica y diseño de soluciones legales
+              orientadas a resultados concretos para empresas que requieren
+              procesos ágiles, estructurados y jurídicamente sólidos.
+            </p>
+          </div>
 
-      {/* =========================
-          ESPECIALIDADES
-      ========================== */}
-      <motion.section
-        className={styles.specialtiesSection}
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true, amount: 0.3 }}
-      >
-        <h2 className={styles.sectionTitle}>Áreas de Especialidad</h2>
+          {/* COLUMNA DERECHA */}
+          <div className={styles.compactRight}>
+            <div>
+              <h3 className={styles.subTitle}>Áreas de Especialidad</h3>
+              <ul className={styles.compactList}>
+                <li>Conciliación empresarial</li>
+                <li>Gestión de cobro jurídico</li>
+                <li>Recuperación de cartera</li>
+                <li>Estrategias legales personalizadas</li>
+              </ul>
+            </div>
 
-        <ul className={styles.approachList}>
-          {[
-            "Conciliación y resolución de conflictos empresariales",
-            "Gestión de cobro jurídico y recuperación de cartera",
-            "Diseño de estrategias legales personalizadas",
-          ].map((item, index) => (
-            <motion.li
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.15 }}
-              viewport={{ once: true }}
-            >
-              {item}
-            </motion.li>
-          ))}
-        </ul>
-      </motion.section>
-
-      {/* =========================
-          ENFOQUE DE TRABAJO
-      ========================== */}
-      <motion.section
-        className={styles.approachSection}
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true, amount: 0.3 }}
-      >
-        <h2 className={styles.sectionTitle}>Enfoque de Trabajo</h2>
-
-        <ul className={styles.approachList}>
-          {[
-            "Enfoque práctico orientado a resultados medibles.",
-            "Estrategias adaptadas a la realidad financiera de cada empresa.",
-            "Negociación estratégica con deudores y acompañamiento legal continuo.",
-            "Atención remota a nivel nacional con seguimiento personalizado.",
-          ].map((item, index) => (
-            <motion.li
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.15 }}
-              viewport={{ once: true }}
-            >
-              {item}
-            </motion.li>
-          ))}
-        </ul>
+            <div>
+              <h3 className={styles.subTitle}>Enfoque</h3>
+              <ul className={styles.compactList}>
+                <li>Resultados medibles y verificables</li>
+                <li>Negociación estratégica con deudores</li>
+                <li>Soluciones adaptadas a cada empresa</li>
+                <li>Atención remota con seguimiento continuo</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </motion.section>
     </main>
   );
