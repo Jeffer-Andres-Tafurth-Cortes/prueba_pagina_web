@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import styles from "./styles/Team.module.css";
+import Link from "next/link";
 
 const equipo = [
   {
@@ -10,18 +11,21 @@ const equipo = [
     cargo: "CEO",
     img: "/doc-alberto.jpeg",
     seoAlt: "Alberto Castro, CEO de Pravice Abogados",
+    link: "/nuestro-equipo/Doc_Alberto",
   },
   {
     nombre: "Leydi Tirado",
     cargo: "CCO & Abogada",
     img: "/doc-leidy.jpg",
     seoAlt: "Leydi Tirado, abogada y directora jurídica en Pravice Abogados",
+    link: "/nuestro-equipo/Doc_Leidy",
   },
   {
     nombre: "Angie Rivera",
     cargo: "Abogada",
     img: "/doc-angie.jpg",
     seoAlt: "Angie Rivera, abogada especialista en asesoría legal",
+    link: "/nuestro-equipo/Doc_Angie",
   },
   {
     nombre: "Guillermo Rodríguez",
@@ -29,12 +33,14 @@ const equipo = [
     img: "/doct-guillermo.jpeg",
     seoAlt:
       "Guillermo Rodríguez, abogado con experiencia en derecho civil y laboral",
+    link: "/nuestro-equipo/Doc_Guillermo",
   },
   {
     nombre: "Milena Torres",
     cargo: "Contadora",
     img: "/doc-milena.jpg",
     seoAlt: "Milena Torres, contadora y asesora financiera legal",
+    link: "/nuestro-equipo/Doc_Milena",
   },
   {
     nombre: "Santiago Franco",
@@ -42,6 +48,7 @@ const equipo = [
     img: "/doc-santiago.jpg",
     seoAlt:
       "Santiago Franco, abogado especializado en resolución de conflictos legales",
+    link: "/nuestro-equipo/Doc_Santiago",
   },
 ];
 
@@ -81,6 +88,9 @@ export default function Equipo() {
               <div className={styles.info}>
                 <h3 className={styles.nombre}>{p.nombre}</h3>
                 <p className={styles.cargo}>{p.cargo}</p>
+                <Link href={`${p.link}`} className={styles.link}>
+                  Ver Perfil
+                </Link>
               </div>
             </motion.article>
           ))}
