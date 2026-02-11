@@ -90,6 +90,8 @@ export default function Equipo() {
                 <p className={styles.cargo}>{p.cargo}</p>
                 <Link
                   href={p.link}
+                  scroll={false}
+                  onClick={() => window.scrollTo(0, 0)}
                   className={styles.profileBtn}
                   aria-label={`Ver perfil completo de ${p.nombre}`}
                 >
