@@ -88,8 +88,12 @@ export default function Equipo() {
               <div className={styles.info}>
                 <h3 className={styles.nombre}>{p.nombre}</h3>
                 <p className={styles.cargo}>{p.cargo}</p>
-                <Link href={`${p.link}`} className={styles.link}>
-                  Ver Perfil
+                <Link
+                  href={p.link}
+                  className={styles.profileBtn}
+                  aria-label={`Ver perfil completo de ${p.nombre}`}
+                >
+                  Ver Perfil <span className={styles.arrow}>→</span>
                 </Link>
               </div>
             </motion.article>

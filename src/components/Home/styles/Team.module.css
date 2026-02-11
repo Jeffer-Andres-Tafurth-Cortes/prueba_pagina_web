@@ -91,6 +91,45 @@
 }
 
 /* ============================
+   BOTÓN VER PERFIL
+============================ */
+.profileBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 15px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 50px;
+  background: #111;
+  color: #fff;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.profileBtn:hover {
+  background: #a88e69;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(168, 142, 105, 0.3);
+}
+
+.profileBtn:active {
+  transform: scale(0.98);
+}
+
+/* Flecha animada */
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.profileBtn:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* ============================
    RESPONSIVE DESIGN
 ============================ */
 
